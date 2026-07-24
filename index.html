@@ -39,7 +39,7 @@
 <nav class="sidebar" id="app-sidebar" aria-label="Navigation principale">
 
     <header class="nav-brand">
-        <span class="brand-kicker">99 İSMİN TEFEKKÜRÜ</span>
+        <span class="brand-kicker" data-i18n="brand_kicker">99 İSMİN TEFEKKÜRÜ</span>
 
         <div class="brand-title">
             <span class="brand-arabic" lang="ar" dir="rtl">الأسماء الحسنى</span>
@@ -49,11 +49,11 @@
         <div class="brand-meta">
             <span class="brand-latin">Esmâ-i Hüsnâ</span>
             <span class="brand-line"></span>
-            <span class="brand-count">99 İSİM</span>
+            <span class="brand-count" data-i18n="brand_count">99 İSİM</span>
         </div>
     </header>
 
-    <div class="nav-section-label">GÖRÜNÜMLER</div>
+    <div class="nav-section-label" data-i18n="nav_section_label">GÖRÜNÜMLER</div>
 
     <div class="nav-tabs" role="tablist" aria-label="Görünüm seçimi">
 
@@ -67,8 +67,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">01</span>
             <span class="nav-content">
-        <span class="nav-title">Kart Görünümü</span>
-        <span class="nav-short">Kart</span>
+        <span class="nav-title" data-i18n="nav_grid_title">Kart Görünümü</span>
+        <span class="nav-short" data-i18n="nav_grid_short">Kart</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -83,8 +83,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">02</span>
             <span class="nav-content">
-        <span class="nav-title">Graf Görünümü</span>
-        <span class="nav-short">Graf</span>
+        <span class="nav-title" data-i18n="nav_graph_title">Graf Görünümü</span>
+        <span class="nav-short" data-i18n="nav_graph_short">Graf</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -99,8 +99,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">03</span>
             <span class="nav-content">
-        <span class="nav-title">Şecere</span>
-        <span class="nav-short">Şecere</span>
+        <span class="nav-title" data-i18n="nav_secere_title">Şecere</span>
+        <span class="nav-short" data-i18n="nav_secere_short">Şecere</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -115,8 +115,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">04</span>
             <span class="nav-content">
-        <span class="nav-title">Ayna</span>
-        <span class="nav-short">Ayna</span>
+        <span class="nav-title" data-i18n="nav_ayna_title">Ayna</span>
+        <span class="nav-short" data-i18n="nav_ayna_short">Ayna</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -131,8 +131,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">05</span>
             <span class="nav-content">
-        <span class="nav-title">Nefs Mertebeleri</span>
-        <span class="nav-short">Nefs</span>
+        <span class="nav-title" data-i18n="nav_nefs_title">Nefs Mertebeleri</span>
+        <span class="nav-short" data-i18n="nav_nefs_short">Nefs</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -147,8 +147,8 @@
             <span class="nav-rail" aria-hidden="true"></span>
             <span class="nav-number">06</span>
             <span class="nav-content">
-        <span class="nav-title">Ruh Mertebeleri</span>
-        <span class="nav-short">Ruhlar</span>
+        <span class="nav-title" data-i18n="nav_ruhlar_title">Ruh Mertebeleri</span>
+        <span class="nav-short" data-i18n="nav_ruhlar_short">Ruhlar</span>
       </span>
             <span class="nav-arrow" aria-hidden="true">↗</span>
         </button>
@@ -174,14 +174,21 @@
                     type="search"
                     id="search-input"
                     placeholder="İsim ara..."
+                    data-i18n-placeholder="search_placeholder"
                     autocomplete="off"
             >
 
             <kbd>/</kbd>
         </label>
 
+        <div class="lang-switch" id="lang-switch" role="group" aria-label="Dil / Language / Langue">
+            <button class="lang-btn active" data-lang="tr">TR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+
         <footer class="sidebar-footer">
-            <span>ESMÂ HARİTASI</span>
+            <span data-i18n="footer_label">ESMÂ HARİTASI</span>
             <span class="footer-symbol" aria-hidden="true">✦</span>
             <span>01—99</span>
         </footer>
@@ -191,21 +198,21 @@
 <div id="view-grid" class="view active">
   <div class="grid-header">
     <h1>اَلْأَسْمَاءُ الْحُسْنَى</h1>
-    <p>Allah'ın yüz güzel isminin tecellileri, ilişkileri ve kâinattaki izleri</p>
+    <p data-i18n="grid_subtitle">Allah'ın yüz güzel isminin tecellileri, ilişkileri ve kâinattaki izleri</p>
   </div>
   <div class="filters">
-    <button class="filter-btn active" data-filter="all">Tümü (100)</button>
-    <button class="filter-btn" data-filter="celal">Celâl — Azamet</button>
-    <button class="filter-btn" data-filter="cemal">Cemâl — Rahmet</button>
-    <button class="filter-btn" data-filter="kemal">Kemâl — Hakikat</button>
-    <button class="filter-btn" data-filter="cem">Cem — Kuşatıcı</button>
+    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tümü (100)</button>
+    <button class="filter-btn" data-filter="celal" data-i18n="filter_celal">Celâl — Azamet</button>
+    <button class="filter-btn" data-filter="cemal" data-i18n="filter_cemal">Cemâl — Rahmet</button>
+    <button class="filter-btn" data-filter="kemal" data-i18n="filter_kemal">Kemâl — Hakikat</button>
+    <button class="filter-btn" data-filter="cem" data-i18n="filter_cem">Cem — Kuşatıcı</button>
   </div>
   <div class="search-summary" id="search-summary" style="display:none"></div>
   <div class="names-grid" id="names-grid"></div>
 </div>
 
 <div id="view-graph" class="view">
-  <div class="graph-info">İsme tıkla → ayrıntı | Sürükle → konumu değiştir | Kaydır → zoom</div>
+  <div class="graph-info" data-i18n="graph_info">İsme tıkla → ayrıntı | Sürükle → konumu değiştir | Kaydır → zoom</div>
   <svg id="graph-svg"></svg>
   <div class="graph-legend">
     <div class="legend-item"><div class="legend-dot" style="background:#c44040"></div>Celâl</div>
@@ -214,21 +221,21 @@
     <div class="legend-item"><div class="legend-dot" style="background:#8030b8"></div>Cem</div>
     <div class="legend-item" style="margin-top:0.5rem">
       <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#c9a227" stroke-width="2"/></svg>
-      <span style="color:var(--text-dim)">Zıt çift</span>
+      <span style="color:var(--text-dim)" data-i18n="legend_opposite">Zıt çift</span>
     </div>
     <div class="legend-item">
       <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#555" stroke-width="1"/></svg>
-      <span style="color:var(--text-dim)">İlişkili</span>
+      <span style="color:var(--text-dim)" data-i18n="legend_related">İlişkili</span>
     </div>
   </div>
 </div>
 
 <div id="view-secere" class="view">
-  <div class="graph-info">Ümmehâtü'l-Esmâ — her isim, öngerektirdiği ana sıfata bağlıdır · yakınlaştır, isme dokun</div>
+  <div class="graph-info" data-i18n="secere_info">Ümmehâtü'l-Esmâ — her isim, öngerektirdiği ana sıfata bağlıdır · yakınlaştır, isme dokun</div>
   <svg id="secere-svg"></svg>
   <div class="secere-center-label" id="secere-hint">
     <div class="sc-ar">الذّات</div>
-    <div class="sc-tr">Bir isme dokun</div>
+    <div class="sc-tr" data-i18n="secere_hint_default">Bir isme dokun</div>
   </div>
   <div class="secere-tree" id="secere-tree"></div>
 </div>
@@ -237,8 +244,8 @@
   <canvas id="ayna-canvas"></canvas>
 
   <div class="ayna-top-label">
-    <span>Tasavvuf · Varlık Ontolojisi</span>
-    <h2>Ayna — Eşya — Tecelli</h2>
+    <span data-i18n="ayna_kicker">Tasavvuf · Varlık Ontolojisi</span>
+    <h2 data-i18n="ayna_title">Ayna — Eşya — Tecelli</h2>
   </div>
 
   <!-- Star of Solomon / Mühür-ü Süleyman -->
@@ -339,15 +346,16 @@
     <div class="ayna-quote-src" id="ayna-q-src"></div>
   </div>
 
-  <div class="ayna-hint">Suya tıkla — dalga yarat</div>
+  <div class="ayna-hint" data-i18n="ayna_hint">Suya tıkla — dalga yarat</div>
 </div>
 
 <div id="view-nefs" class="view">
   <div class="nefs-header">
     <h1>مَرَاتِبُ النَّفْس</h1>
-    <p>Nefs Mertebeleri</p>
+    <p data-i18n="nefs_view_title">Nefs Mertebeleri</p>
   </div>
   <div class="nefs-intro">
+    <span class="i18n-only-badge" data-i18n="content_tr_only"></span>
     Kur'ân'da nefs, tek bir sabit varlık değil; arınma yolunda geçtiği <em>hâller</em> ile anılır.
     Aşağıdaki yedi basamak, âyetlerde geçen üç temel mertebenin (emmâre, levvâme, mutmainne) İmâm-ı Gazzâlî'nin
     <strong>İhyâ-u Ulûmi'd-Dîn</strong>'i ve Muhyiddîn İbn Arabî'nin <strong>Fütûhât-ı Mekkiyye</strong>'siyle
@@ -356,6 +364,7 @@
   </div>
   <div class="nefs-ladder" id="nefs-ladder"></div>
   <div class="nefs-note">
+    <span class="i18n-only-badge" data-i18n="content_tr_only"></span>
     Basamaklara eşlik eden renk ve zikir isimleri tarikattan tarikata değişir; burada tasavvuf edebiyatında
     en yaygın aktarılan hâliyle, bir çerçeve olarak sunulmuştur — bağlayıcı bir hüküm değildir.
   </div>
@@ -369,9 +378,10 @@
 <div id="view-ruhlar" class="view">
   <div class="nefs-header">
     <h1>مَرَاتِبُ الرُّوح</h1>
-    <p>Ruh Mertebeleri</p>
+    <p data-i18n="ruh_view_title">Ruh Mertebeleri</p>
   </div>
   <div class="nefs-intro">
+    <span class="i18n-only-badge" data-i18n="content_tr_only"></span>
     Bazı tasavvuf sohbetlerinde (meselâ merhum Muzaffer Ozak Efendi'nin meclislerinde) insanın
     <strong>yedi ruh yönünden</strong> söz edilir: madenî, nebatî, hayvanî, nefsânî, insanî, sırrî ve en sırlı (ahfâ).
     Bu, "bedende yedi ayrı bağımsız ruh vardır" demek değildir — iki ayrı klasik hattın bir araya getirilmiş
@@ -381,6 +391,7 @@
   </div>
   <div class="nefs-ladder" id="ruh-ladder"></div>
   <div class="nefs-note">
+    <span class="i18n-only-badge" data-i18n="content_tr_only"></span>
     Bu yedili tasnif; ne Kur'ân'da tek bir âyette bu sırayla verilir, ne de tek bir hadiste. Aşağıdaki her
     kart, akademik (TDV İslâm Ansiklopedisi) ve klasik tasavvuf kaynaklarını ayrı ayrı işaretler — hangi
     bilginin doğrudan kaynaklı, hangisinin yorum/tefekkür olduğunu görebilesin diye.
@@ -405,6 +416,457 @@
 let NAMES = [];
 let currentFilter = 'all';
 let selectedId = null;
+
+// ── ÇOK DİLLİLİK (i18n) ────────────────────────────────
+// Kapsam: arayüz metinleri + isimlerin kısa anlamları + Nefs/Ruh başlıkları ve âyet mealleri.
+// Uzun metinler (kâinat/insan/bilim/tefekkür, Gazzâlî/İbn Arabî alıntıları, akademik/klasik
+// kaynaklar) şimdilik yalnızca Türkçe — ilgili sekmelerde bir rozetle belirtiliyor.
+// İngilizce âyet mealleri Sahih International çevirisine, Fransızca mealler ise
+// yaygın kullanılan bir Fransızca Kur'ân çevirisine (Hamidullah çizgisi) dayanır.
+let LANG = localStorage.getItem('site-lang') || 'tr';
+
+function t(key) {
+  return (I18N_UI[LANG] && I18N_UI[LANG][key]) || I18N_UI.tr[key] || key;
+}
+
+function nameMeaning(n) {
+  if (LANG !== 'tr' && I18N_MEANING[LANG] && I18N_MEANING[LANG][n.id]) return I18N_MEANING[LANG][n.id];
+  return n.tr_meaning;
+}
+
+function nefsTagline(s) {
+  const d = I18N_NEFS[LANG] && I18N_NEFS[LANG][s.id];
+  return (LANG !== 'tr' && d) ? d.tagline : s.tagline;
+}
+function nefsAyet(s) {
+  const d = I18N_NEFS[LANG] && I18N_NEFS[LANG][s.id];
+  return (LANG !== 'tr' && d && d.ayet) ? d.ayet : s.ayet_meal;
+}
+
+function ruhTagline(s) {
+  const d = I18N_RUH[LANG] && I18N_RUH[LANG][s.id];
+  return (LANG !== 'tr' && d) ? d.tagline : s.tagline;
+}
+function ruhAyet(s) {
+  const d = I18N_RUH[LANG] && I18N_RUH[LANG][s.id];
+  if (LANG !== 'tr' && d && d.ayet) return d.ayet;
+  return s.ayet_meal || null;
+}
+
+function trOnlyBadge() {
+  return `<span class="i18n-only-badge">${t('content_tr_only')}</span>`;
+}
+
+function applyLanguage() {
+  document.body.dataset.lang = LANG;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
+
+  if (NAMES.length) buildGrid();
+  if (renderedId) { const keepId = renderedId; renderedId = null; renderDetail(keepId, null); }
+  if (typeof buildNefs === 'function' && currentView === 'nefs') buildNefs();
+  if (typeof openNefsDetail === 'function' && openNefsId) openNefsDetail(openNefsId);
+  if (typeof buildRuh === 'function' && currentView === 'ruhlar') buildRuh();
+  if (typeof openRuhDetail === 'function' && openRuhId) openRuhDetail(openRuhId);
+  if (typeof buildSecere === 'function' && currentView === 'secere') buildSecere();
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.lang === LANG) return;
+    LANG = btn.dataset.lang;
+    localStorage.setItem('site-lang', LANG);
+    applyLanguage();
+  });
+});
+
+const I18N_UI = {
+  tr: {
+    footer_label: "ESMÂ HARİTASI",
+    brand_kicker: "99 İSMİN TEFEKKÜRÜ",
+    brand_count: "99 İSİM",
+    nav_section_label: "GÖRÜNÜMLER",
+    nav_grid_title: "Kart Görünümü", nav_grid_short: "Kart",
+    nav_graph_title: "Graf Görünümü", nav_graph_short: "Graf",
+    nav_secere_title: "Şecere", nav_secere_short: "Şecere",
+    nav_ayna_title: "Ayna", nav_ayna_short: "Ayna",
+    nav_nefs_title: "Nefs Mertebeleri", nav_nefs_short: "Nefs",
+    nav_ruhlar_title: "Ruh Mertebeleri", nav_ruhlar_short: "Ruhlar",
+    search_placeholder: "İsim ara...",
+    grid_subtitle: "Allah'ın yüz güzel isminin tecellileri, ilişkileri ve kâinattaki izleri",
+    filter_all: "Tümü (100)", filter_celal: "Celâl — Azamet", filter_cemal: "Cemâl — Rahmet",
+    filter_kemal: "Kemâl — Hakikat", filter_cem: "Cem — Kuşatıcı",
+    graph_info: "İsme tıkla → ayrıntı | Sürükle → konumu değiştir | Kaydır → zoom",
+    legend_opposite: "Zıt çift", legend_related: "İlişkili",
+    secere_info: "Ümmehâtü'l-Esmâ — her isim, öngerektirdiği ana sıfata bağlıdır · yakınlaştır, isme dokun",
+    secere_hint_default: "Bir isme dokun",
+    ayna_kicker: "Tasavvuf · Varlık Ontolojisi", ayna_title: "Ayna — Eşya — Tecelli",
+    ayna_hint: "Suya tıkla — dalga yarat",
+    nefs_view_title: "Nefs Mertebeleri", ruh_view_title: "Ruh Mertebeleri",
+    content_tr_only: "Bu bölüm şu an yalnızca Türkçe",
+    panel_name_of: "İsim",
+    tab_anlam: "Anlam", tab_kainat: "Kâinat", tab_insan: "İnsan", tab_bilim: "Bilim",
+    tab_tefekkur: "Tefekkür", tab_kaynaklar: "Kaynaklar",
+    label_root: "Kök", label_mother_attr: "Bağlı Olduğu Ana Sıfat", label_ummahat: "Ümmehâtü'l-Esmâ",
+    label_derived_names: "Bu Sıfattan Türeyen İsimler", label_opposite_pair: "Yapısal Zıt Çift",
+    label_opposite_pole: "Bu ismin karşı kutbu", label_related_names: "İlişkili İsimler",
+    label_cosmos_manifest: "Kâinattaki Tecelli", label_human_manifest: "İnsandaki Tecelli",
+    label_science_parallel: "Bilim ve Doğadaki Yapısal Paralel", label_contemplation_gate: "Tefekkür Kapısı",
+    panel_step_of: "Basamak", tab_tanim: "Tanım", tab_haller: "Hâller — Nasıl Anlaşılır", tab_zikir: "Renk & Zikir",
+    label_ayet: "Âyet", label_haller_how: "Bu mertebede olduğunu nasıl anlarsın",
+    label_color: "Renk", label_zikir: "Zikir",
+    panel_stage_of: "Mertebe", tab_kainat_insan: "Kâinat & İnsan", label_note: "Not",
+    label_academic_source: "Akademik Kaynak", label_classical_source: "Klasik / Tasavvufî Kaynak",
+    label_names_count: "isim",
+    search_no_result_for: "için sonuç yok.", search_hint: "İsim, anlam, kök ya da metinlerin içinde arayabilirsin.",
+    search_found: "isim bulundu", search_found_in_text: "tanesi metin içinde"
+  },
+  en: {
+    footer_label: "ESMA MAP",
+    brand_kicker: "CONTEMPLATING THE 99 NAMES",
+    brand_count: "99 NAMES",
+    nav_section_label: "VIEWS",
+    nav_grid_title: "Card View", nav_grid_short: "Card",
+    nav_graph_title: "Graph View", nav_graph_short: "Graph",
+    nav_secere_title: "Genealogy", nav_secere_short: "Tree",
+    nav_ayna_title: "Mirror", nav_ayna_short: "Mirror",
+    nav_nefs_title: "Stages of the Nafs", nav_nefs_short: "Nafs",
+    nav_ruhlar_title: "Stages of the Spirit", nav_ruhlar_short: "Spirit",
+    search_placeholder: "Search names...",
+    grid_subtitle: "The manifestations, relationships and traces in creation of the hundred Beautiful Names of Allah",
+    filter_all: "All (100)", filter_celal: "Majesty — Celâl", filter_cemal: "Beauty — Cemâl",
+    filter_kemal: "Perfection — Kemâl", filter_cem: "Unity — Cem",
+    graph_info: "Click a name → details | Drag → reposition | Scroll → zoom",
+    legend_opposite: "Opposite pair", legend_related: "Related",
+    secere_info: "Ummahat al-Asma — each name is linked to the primary attribute it presupposes · zoom in, tap a name",
+    secere_hint_default: "Tap a name",
+    ayna_kicker: "Sufism · Ontology of Being", ayna_title: "Mirror — Object — Manifestation",
+    ayna_hint: "Tap the water — create a ripple",
+    nefs_view_title: "Stages of the Nafs", ruh_view_title: "Stages of the Spirit",
+    content_tr_only: "This section is currently available in Turkish only",
+    panel_name_of: "Name",
+    tab_anlam: "Meaning", tab_kainat: "Cosmos", tab_insan: "Human", tab_bilim: "Science",
+    tab_tefekkur: "Reflection", tab_kaynaklar: "Sources",
+    label_root: "Root", label_mother_attr: "Primary Attribute It Belongs To", label_ummahat: "Ummahat al-Asma",
+    label_derived_names: "Names Derived From This Attribute", label_opposite_pair: "Structural Opposite Pair",
+    label_opposite_pole: "The opposite pole of this name", label_related_names: "Related Names",
+    label_cosmos_manifest: "Manifestation in the Cosmos", label_human_manifest: "Manifestation in the Human Being",
+    label_science_parallel: "Structural Parallel in Science and Nature", label_contemplation_gate: "Gate of Reflection",
+    panel_step_of: "Stage", tab_tanim: "Definition", tab_haller: "Signs — How to Recognize It", tab_zikir: "Color & Dhikr",
+    label_ayet: "Verse", label_haller_how: "How you know you are at this stage",
+    label_color: "Color", label_zikir: "Dhikr",
+    panel_stage_of: "Station", tab_kainat_insan: "Cosmos & Human", label_note: "Note",
+    label_academic_source: "Academic Source", label_classical_source: "Classical / Sufi Source",
+    label_names_count: "names",
+    search_no_result_for: "has no results.", search_hint: "You can search by name, meaning, root, or within the texts.",
+    search_found: "names found", search_found_in_text: "found within the text"
+  },
+  fr: {
+    footer_label: "CARTE DES ESMA",
+    brand_kicker: "MÉDITATION DES 99 NOMS",
+    brand_count: "99 NOMS",
+    nav_section_label: "VUES",
+    nav_grid_title: "Vue en cartes", nav_grid_short: "Cartes",
+    nav_graph_title: "Vue en graphe", nav_graph_short: "Graphe",
+    nav_secere_title: "Généalogie", nav_secere_short: "Arbre",
+    nav_ayna_title: "Miroir", nav_ayna_short: "Miroir",
+    nav_nefs_title: "Étapes du Nafs", nav_nefs_short: "Nafs",
+    nav_ruhlar_title: "Étapes de l'Esprit", nav_ruhlar_short: "Esprit",
+    search_placeholder: "Rechercher un nom...",
+    grid_subtitle: "Les manifestations, les relations et les traces dans la création des cent Plus Beaux Noms d'Allah",
+    filter_all: "Tous (100)", filter_celal: "Majesté — Celâl", filter_cemal: "Beauté — Cemâl",
+    filter_kemal: "Perfection — Kemâl", filter_cem: "Unité — Cem",
+    graph_info: "Cliquez un nom → détails | Glissez → repositionner | Molette → zoom",
+    legend_opposite: "Paire opposée", legend_related: "Lié",
+    secere_info: "Ummahât al-Asmâ — chaque nom est relié à l'attribut principal qu'il présuppose · zoomez, touchez un nom",
+    secere_hint_default: "Touchez un nom",
+    ayna_kicker: "Soufisme · Ontologie de l'Être", ayna_title: "Miroir — Objet — Manifestation",
+    ayna_hint: "Touchez l'eau — créez une onde",
+    nefs_view_title: "Étapes du Nafs", ruh_view_title: "Étapes de l'Esprit",
+    content_tr_only: "Cette section n'est actuellement disponible qu'en turc",
+    panel_name_of: "Nom",
+    tab_anlam: "Sens", tab_kainat: "Cosmos", tab_insan: "Humain", tab_bilim: "Science",
+    tab_tefekkur: "Réflexion", tab_kaynaklar: "Sources",
+    label_root: "Racine", label_mother_attr: "Attribut principal auquel il est rattaché", label_ummahat: "Ummahât al-Asmâ",
+    label_derived_names: "Noms dérivés de cet attribut", label_opposite_pair: "Paire opposée structurelle",
+    label_opposite_pole: "Le pôle opposé de ce nom", label_related_names: "Noms liés",
+    label_cosmos_manifest: "Manifestation dans le cosmos", label_human_manifest: "Manifestation chez l'être humain",
+    label_science_parallel: "Parallèle structurel en science et dans la nature", label_contemplation_gate: "Porte de réflexion",
+    panel_step_of: "Étape", tab_tanim: "Définition", tab_haller: "Signes — Comment le reconnaître", tab_zikir: "Couleur & Dhikr",
+    label_ayet: "Verset", label_haller_how: "Comment savoir que vous êtes à cette étape",
+    label_color: "Couleur", label_zikir: "Dhikr",
+    panel_stage_of: "Station", tab_kainat_insan: "Cosmos & Humain", label_note: "Remarque",
+    label_academic_source: "Source académique", label_classical_source: "Source classique / soufie",
+    label_names_count: "noms",
+    search_no_result_for: "n'a donné aucun résultat.", search_hint: "Vous pouvez chercher par nom, sens, racine, ou dans les textes.",
+    search_found: "noms trouvés", search_found_in_text: "trouvés dans le texte"
+  }
+};
+
+const I18N_MEANING = {
+  en: {
+    1:"The One true God; the source of all the Beautiful Names",
+    2:"Possessor of infinite mercy; who shows mercy to every being in this world and the next",
+    3:"Abounding in compassion; who reserves a special mercy for the believers in the Hereafter",
+    4:"The Absolute Sovereign; the true Owner of all dominion",
+    5:"Utterly pure, transcendent above every deficiency and imperfection",
+    6:"Free from every flaw and affliction; the source of peace and well-being",
+    7:"The Giver of security; who grants His servants safety from fear",
+    8:"The Watchful Guardian over all things; who holds sway over all existence",
+    9:"The Invincible; possessor of absolute might and honor",
+    10:"Who does as He wills through His power; the Exalted who mends what is broken",
+    11:"To whom alone true greatness belongs",
+    12:"The Creator; who brings everything into being from nothing, in perfect measure",
+    13:"Who creates each thing distinct from another; who brings forth unique beings",
+    14:"Who gives each thing its own form and shape; who fashions beauty",
+    15:"The Ever-Forgiving; who covers sins again and again",
+    16:"Who subdues all things and all beings by His power; the Absolute Vanquisher",
+    17:"Who gives without measure and without return; who bestows unceasingly",
+    18:"Who provides sustenance to all beings; who continually meets every need",
+    19:"Who opens every door; who unveils the truth through victorious opening",
+    20:"Who knows all things in perfect completeness; whose knowledge is boundless",
+    21:"The Constrictor; who withholds and restrains as He wills",
+    22:"The Expander; who unfolds and spreads forth sustenance and mercy",
+    23:"The Abaser; who brings down the disbeliever and the oppressor",
+    24:"The Exalter; who raises up the believers and all that is worthy",
+    25:"Who grants honor and dignity; who ennobles whom He wills",
+    26:"Who casts into abasement; who humbles the arrogant and the unjust",
+    27:"Who hears all things; neither sound nor silence is hidden from Him",
+    28:"Who sees all things; who perceives clearly even what is most hidden",
+    29:"The Absolute Arbiter; who judges beyond all dispute",
+    30:"The Absolutely Just; who never wrongs anyone, perfect equilibrium",
+    31:"Who knows the subtlest of secrets; who bestows favor with the utmost gentleness and tenderness",
+    32:"Who is fully aware of the inner reality of all things; who knows every hidden truth",
+    33:"Supremely forbearing; who does not hasten to punish the wrongdoer",
+    34:"Supremely great; exalted beyond the grasp of the intellect",
+    35:"The All-Forgiving; who covers and erases sins",
+    36:"Who richly welcomes gratitude; who rewards even a small deed many times over",
+    37:"The Most High; nothing stands above Him",
+    38:"The Greatest; without equal in greatness",
+    39:"Who protects and preserves; who safeguards all things",
+    40:"Who nourishes and sustains every being; possessor of power and provision",
+    41:"Who takes account; who reckons all things with perfect exactitude",
+    42:"Sublime and great; possessor of majesty and awe",
+    43:"Most generous; sublime in honor and abundant in bounty",
+    44:"Who watches over all things closely; from whose watch nothing escapes",
+    45:"Who answers prayers; who responds to every call",
+    46:"Who encompasses all things; whose knowledge, mercy and power fill everything",
+    47:"Possessor of absolute wisdom; who places everything exactly where it belongs",
+    48:"The most beloved of all that is loved; the source of true love",
+    49:"Of exalted renown and vast generosity; majesty and munificence combined",
+    50:"Who raises the dead to life; who sends prophets and brings creation into being anew",
+    51:"Who witnesses all things; nothing escapes His testimony",
+    52:"The Absolute Truth; whose existence is necessary and unchanging",
+    53:"Who undertakes every affair; the only Trustee worthy of reliance",
+    54:"The Absolutely Strong; whose power never wanes",
+    55:"Supremely firm; whose strength is never shaken",
+    56:"The Friend and Protector of His servants; the Patron of the saints",
+    57:"Most worthy of all praise; whose essence and acts merit endless gratitude",
+    58:"Who counts and records all things; who overlooks no detail",
+    59:"Who originates beings for the first time from nothing; the Initiator of creation",
+    60:"Who can bring beings to naught and restore them to life; who brings all things back",
+    61:"The Giver of Life; who breathes life into the dead",
+    62:"Who creates death; who takes life and sets transformation in motion",
+    63:"The Ever-Living; who carries life in His very essence, possessor of life without beginning or end",
+    64:"The Self-Subsisting; who sustains all things in existence",
+    65:"Who finds all that He seeks; who lacks for nothing",
+    66:"Of sublime renown and generosity; perfect in majesty and munificence",
+    67:"The One; without partner, likeness, or opposite",
+    68:"The Absolute One; a unity admitting neither division nor multiplication",
+    69:"Upon whom all things depend, while He depends on nothing",
+    70:"Who has the power to do whatever He wills; the Absolutely Capable",
+    71:"Who has power over all things; who manifests His power in action",
+    72:"Who brings forward whom He wills; who advances ranks",
+    73:"Who defers whom He wills; who holds ranks back",
+    74:"The First; before whom nothing exists",
+    75:"The Last; after whom nothing remains",
+    76:"The Manifest; most evident through His signs",
+    77:"The Hidden; present within and beneath all existence",
+    78:"Who governs and administers all existence; the Absolute Governor",
+    79:"Supremely exalted; above all things",
+    80:"Abounding in goodness; most kind and gracious toward His servants",
+    81:"Who readily accepts repentance; who forgives His servant again and again",
+    82:"Who upholds justice; who requites the wrongdoer",
+    83:"The Great Pardoner; who erases sins entirely",
+    84:"Most tender; whose compassion is of the utmost intensity",
+    85:"The true Owner of all dominion; whose sovereignty is everlasting and absolute",
+    86:"Possessor of Majesty and Generosity; who unites glory with munificence",
+    87:"Who acts with equity; who gives every being its due",
+    88:"Who gathers and unites; who will assemble all creation on the Day of Resurrection",
+    89:"Self-sufficient beyond all need; the Rich who depends on nothing",
+    90:"Who enriches whom He wills; who frees His servant from need",
+    91:"Who prevents whatever He wills; who guards against harm",
+    92:"Who can bring about harm; who has the power to afflict when He wills",
+    93:"The Bestower of benefit; the true source of all good",
+    94:"The Light that shines by itself; who illuminates both the seen and the unseen",
+    95:"Who guides to the right path; the sole source of guidance",
+    96:"Who creates with matchless beauty; the peerless and perfect Originator",
+    97:"The Everlasting; without end, ever-abiding",
+    98:"The true Heir to whom all things return; the only enduring Inheritor",
+    99:"Who guides to what is right; who directs every matter with perfect precision",
+    100:"The Most Patient; who is in no haste to punish His rebellious servants"
+  },
+  fr: {
+    1:"L'unique vrai Dieu ; la source de tous les Noms les plus beaux",
+    2:"Détenteur d'une miséricorde infinie ; qui fait miséricorde à toute créature ici-bas et dans l'au-delà",
+    3:"Débordant de compassion ; qui réserve une miséricorde particulière aux croyants dans l'au-delà",
+    4:"Le Souverain absolu ; le véritable Possesseur de toute royauté",
+    5:"Absolument pur, transcendant au-delà de toute imperfection",
+    6:"Exempt de tout défaut et de tout mal ; la source de la paix",
+    7:"Celui qui donne la sécurité ; qui préserve Ses serviteurs de la peur",
+    8:"Celui qui surveille et protège toute chose, souverain sur toute existence",
+    9:"L'Invincible ; détenteur d'une puissance et d'un honneur absolus",
+    10:"Qui accomplit toute chose selon Sa volonté par Sa puissance ; le Sublime qui répare ce qui est brisé",
+    11:"À qui seul appartient la grandeur suprême",
+    12:"Le Créateur ; qui fait exister toute chose à partir du néant, selon une mesure parfaite",
+    13:"Qui crée chaque chose distincte des autres ; qui fait naître des êtres uniques",
+    14:"Qui donne à chaque chose sa forme propre ; qui façonne la beauté",
+    15:"Celui qui pardonne sans cesse ; qui couvre les péchés maintes fois",
+    16:"Qui soumet toute chose et tout être par Sa puissance ; le Vainqueur absolu",
+    17:"Qui donne sans mesure et sans contrepartie ; qui accorde Ses faveurs sans cesse",
+    18:"Qui pourvoit à la subsistance de tous les êtres ; qui comble sans cesse leurs besoins",
+    19:"Qui ouvre toute porte ; qui dévoile la vérité par une ouverture victorieuse",
+    20:"Qui connaît toute chose de façon parfaite ; dont le savoir est sans limite",
+    21:"Celui qui restreint ; qui resserre et retient ce qu'Il veut",
+    22:"Celui qui étend ; qui déploie et répand la subsistance et la miséricorde",
+    23:"Celui qui abaisse ; qui rabaisse le mécréant et l'injuste",
+    24:"Celui qui élève ; qui exalte les croyants et ce qui a de la valeur",
+    25:"Qui accorde honneur et dignité ; qui ennoblit qui Il veut",
+    26:"Qui plonge dans l'humiliation ; qui abaisse l'orgueilleux et l'injuste",
+    27:"Qui entend toute chose ; ni le bruit ni le silence ne Lui échappent",
+    28:"Qui voit toute chose ; qui perçoit clairement même ce qui est le plus caché",
+    29:"L'Arbitre absolu ; qui juge sans contestation possible",
+    30:"L'Absolument Juste ; qui ne commet jamais d'injustice, équilibre parfait",
+    31:"Qui connaît les secrets les plus subtils ; qui accorde Ses bienfaits avec la plus grande délicatesse",
+    32:"Qui connaît parfaitement la réalité intime de toute chose ; qui sait toute vérité cachée",
+    33:"Souverainement indulgent ; qui ne se hâte pas de châtier le fautif",
+    34:"Souverainement grand ; exalté au-delà de ce que l'intelligence peut saisir",
+    35:"Celui qui pardonne abondamment ; qui couvre et efface les péchés",
+    36:"Qui accueille généreusement la reconnaissance ; qui récompense un acte modeste au centuple",
+    37:"Le Très-Haut ; rien ne se trouve au-dessus de Lui",
+    38:"Le Plus Grand ; sans égal en grandeur",
+    39:"Qui protège et préserve ; qui sauvegarde toute chose",
+    40:"Qui nourrit et fait subsister chaque être ; détenteur de la force et de la subsistance",
+    41:"Qui tient les comptes ; qui évalue toute chose avec une exactitude parfaite",
+    42:"Sublime et grand ; détenteur de majesté et de grandeur imposante",
+    43:"Très généreux ; sublime en honneur et abondant en largesses",
+    44:"Qui observe toute chose de près ; à Sa vigilance rien n'échappe",
+    45:"Qui exauce les invocations ; qui répond à tout appel",
+    46:"Qui embrasse toute chose ; dont le savoir, la miséricorde et la puissance emplissent tout",
+    47:"Détenteur d'une sagesse absolue ; qui met toute chose parfaitement à sa place",
+    48:"Le plus aimé de tout ce qui est aimé ; la source de l'amour véritable",
+    49:"De renommée sublime et de générosité immense ; alliant majesté et magnanimité",
+    50:"Qui ressuscite les morts ; qui envoie les prophètes et fait renaître la création",
+    51:"Qui est témoin de toute chose ; rien n'échappe à Son témoignage",
+    52:"La Vérité absolue ; dont l'existence est nécessaire et immuable",
+    53:"Qui prend en charge toute affaire ; le seul Garant digne de confiance",
+    54:"L'Absolument Fort ; dont la puissance ne s'épuise jamais",
+    55:"D'une fermeté suprême ; dont la force n'est jamais ébranlée",
+    56:"L'Ami et le Protecteur de Ses serviteurs ; le Patron des saints",
+    57:"Le plus digne de louange ; dont l'essence et les actes méritent une gratitude infinie",
+    58:"Qui compte et consigne toute chose ; qui n'omet aucun détail",
+    59:"Qui fait exister les êtres pour la première fois à partir du néant ; l'Initiateur de la création",
+    60:"Qui peut anéantir les êtres et les ramener à la vie ; qui fait tout revenir",
+    61:"Le Dispensateur de vie ; qui insuffle la vie aux morts",
+    62:"Qui crée la mort ; qui reprend la vie et amorce la transformation",
+    63:"Le Toujours-Vivant ; qui porte la vie en Son essence même, possesseur d'une vie sans commencement ni fin",
+    64:"Celui qui subsiste par Lui-même ; qui maintient toute chose dans l'existence",
+    65:"Qui trouve tout ce qu'Il cherche ; qui ne manque de rien",
+    66:"De gloire et de générosité sublimes ; parfait en majesté et en magnanimité",
+    67:"L'Unique ; sans associé, sans semblable et sans opposé",
+    68:"L'Unique absolu ; une unité qui n'admet ni division ni multiplication",
+    69:"Dont tout dépend, alors que Lui ne dépend de rien",
+    70:"Qui a le pouvoir de faire tout ce qu'Il veut ; l'Absolument Capable",
+    71:"Qui a pouvoir sur toute chose ; qui manifeste concrètement Sa puissance",
+    72:"Qui met en avant qui Il veut ; qui fait avancer les rangs",
+    73:"Qui diffère qui Il veut ; qui retient les rangs",
+    74:"Le Premier ; avant qui rien n'existe",
+    75:"Le Dernier ; après qui rien ne subsiste",
+    76:"L'Apparent ; le plus manifeste à travers Ses signes",
+    77:"Le Caché ; présent au cœur et au tréfonds de toute existence",
+    78:"Qui gouverne et administre toute existence ; le Gouverneur absolu",
+    79:"D'une élévation suprême ; au-dessus de toute chose",
+    80:"Débordant de bonté ; très bienveillant et généreux envers Ses serviteurs",
+    81:"Qui accueille volontiers le repentir ; qui pardonne à Son serviteur maintes fois",
+    82:"Qui fait valoir le droit ; qui punit le coupable",
+    83:"Celui qui pardonne abondamment ; qui efface entièrement les péchés",
+    84:"Extrêmement tendre ; dont la compassion est d'une intensité suprême",
+    85:"Le véritable Possesseur de toute royauté ; dont la souveraineté est éternelle et absolue",
+    86:"Détenteur de la Majesté et de la Générosité ; qui unit la grandeur à la magnanimité",
+    87:"Qui agit avec équité ; qui rend à chacun son dû",
+    88:"Qui rassemble et unit ; qui réunira toute la création au Jour de la Résurrection",
+    89:"Absolument suffisant à Lui-même ; le Riche qui ne dépend de rien",
+    90:"Qui enrichit qui Il veut ; qui affranchit Son serviteur du besoin",
+    91:"Qui empêche ce qu'Il veut ; qui protège du mal",
+    92:"Qui peut occasionner le dommage ; qui a le pouvoir d'affliger s'Il le veut",
+    93:"Le Dispensateur de bienfait ; la véritable source de tout bien",
+    94:"La Lumière qui brille par elle-même ; qui illumine le visible et l'invisible",
+    95:"Qui guide vers le droit chemin ; l'unique source de la guidance",
+    96:"Qui crée avec une beauté inégalée ; l'Inventeur sans pareil et parfait",
+    97:"L'Éternel ; sans fin, subsistant à jamais",
+    98:"Le véritable Héritier à qui tout revient ; le seul Héritier qui subsiste",
+    99:"Qui guide vers ce qui est droit ; qui dirige toute chose avec une parfaite justesse",
+    100:"Le Très Patient ; qui ne se hâte pas de châtier Ses serviteurs rebelles"
+  }
+};
+
+const I18N_NEFS = {
+  en: {
+    emmare:   { tagline:"The soul that commands evil — the first stage, dominated by heedlessness and desire",
+                ayet:"\"I do not acquit myself. Indeed, the soul is a persistent enjoiner of evil, except those upon which my Lord has mercy. Indeed, my Lord is Forgiving and Merciful.\" (Sahih International)" },
+    levvame:  { tagline:"The soul that reproaches itself — the awakening struggle of conscience",
+                ayet:"\"I swear by the Day of Resurrection. And I swear by the reproaching soul.\" (Sahih International)" },
+    mulhime:  { tagline:"The soul that receives inspiration — the stage where the power to choose good becomes clear",
+                ayet:"\"And [by] the soul and He who proportioned it. And inspired it [with discernment of] its wickedness and its righteousness.\" (Sahih International)" },
+    mutmainne:{ tagline:"The soul at peace — the heart finding stillness through remembrance",
+                ayet:"\"O reassured soul, return to your Lord, well-pleased and pleasing [to Him].\" — \"Unquestionably, by the remembrance of Allah hearts are assured.\" (Sahih International)" },
+    radiye:   { tagline:"The soul content with its Lord — a submission in which all objection to destiny falls away",
+                ayet:"\"...well-pleased...\" — return to your Lord, well-pleased and pleasing [to Him]. (Sahih International)" },
+    mardiyye: { tagline:"The soul with whom God is pleased — the maturity of a mutual contentment",
+                ayet:"\"...and pleasing [to Him]...\" — return to your Lord, well-pleased and pleasing [to Him]. (Sahih International)" },
+    kamile:   { tagline:"The purified, perfected soul — the horizon of the Complete Human Being", ayet:null }
+  },
+  fr: {
+    emmare:   { tagline:"L'âme qui incite au mal — le premier degré, dominé par l'insouciance et le désir",
+                ayet:"« Je ne m'innocente cependant pas, car l'âme est très incitatrice au mal, sauf en cas de miséricorde de mon Seigneur. Mon Seigneur est certes Pardonneur et très Miséricordieux. »" },
+    levvame:  { tagline:"L'âme qui se reproche à elle-même — l'éveil du combat de la conscience",
+                ayet:"« Je jure par le Jour de la Résurrection ! Mais non, je jure par l'âme qui ne cesse de se blâmer ! »" },
+    mulhime:  { tagline:"L'âme qui reçoit l'inspiration — le degré où la capacité de choisir le bien s'affirme",
+                ayet:"« Et par l'âme et Celui qui l'a harmonieusement façonnée ; et lui a alors inspiré son immoralité, de même que sa piété ! »" },
+    mutmainne:{ tagline:"L'âme apaisée — le cœur qui trouve la quiétude par le rappel de Dieu",
+                ayet:"« Ô âme apaisée, retourne vers ton Seigneur, satisfaite et agréée. » — « C'est par l'évocation d'Allah que les cœurs se tranquillisent. »" },
+    radiye:   { tagline:"L'âme satisfaite de son Seigneur — une soumission où toute objection au destin s'efface",
+                ayet:"« ...satisfaite... » — retourne vers ton Seigneur, satisfaite et agréée." },
+    mardiyye: { tagline:"L'âme agréée par Dieu — la maturité d'un contentement réciproque",
+                ayet:"« ...et agréée. » — retourne vers ton Seigneur, satisfaite et agréée." },
+    kamile:   { tagline:"L'âme purifiée et parfaite — l'horizon de l'Homme Parfait", ayet:null }
+  }
+};
+
+const I18N_RUH = {
+  en: {
+    madeni:   { tagline:"The spirit of inanimate beings — matter's densest, most still state" },
+    nebati:   { tagline:"The plant spirit — source of nourishment, growth and reproduction" },
+    hayvani:  { tagline:"The source of sense and motion — the bodily engine of life" },
+    nefsani:  { tagline:"The personal self — the stage where the \"I\" and the soul's ranks play out" },
+    insani:   { tagline:"The source of reason, conscience and perception — the noblest of creation",
+                ayet:"\"So when I have proportioned him and breathed into him of My [created] soul, then fall down to him in prostration.\" (Sahih International)" },
+    sirri:    { tagline:"The heart's innermost center — the third subtlety of the Naqshbandi path" },
+    ahfa:     { tagline:"The innermost point — the last subtlety, the station nearest to the Truth" }
+  },
+  fr: {
+    madeni:   { tagline:"L'esprit des êtres inanimés — l'état le plus dense et le plus immobile de la matière" },
+    nebati:   { tagline:"L'esprit végétal — source de la nutrition, de la croissance et de la reproduction" },
+    hayvani:  { tagline:"La source de la sensation et du mouvement — le moteur corporel de la vie" },
+    nefsani:  { tagline:"Le moi personnel — la scène où se joue le « je » et les degrés de l'âme" },
+    insani:   { tagline:"La source de la raison, de la conscience et de la perception — le plus noble des êtres créés",
+                ayet:"« Quand Je l'aurai bien formé et lui aurai insufflé Mon Esprit, jetez-vous alors, prosternés devant lui. »" },
+    sirri:    { tagline:"Le centre le plus intime du cœur — la troisième subtilité de la voie naqshbandî" },
+    ahfa:     { tagline:"Le point le plus intime — la dernière subtilité, la station la plus proche du Vrai" }
+  }
+};
 
 const classLabels = {
   celal: 'Celâl — Azamet ve Heybet',
@@ -560,7 +1022,7 @@ function buildGrid() {
     card.dataset.id = n.id;
     if (n.id === selectedId) card.classList.add('selected');
 
-    const shortMeaning = n.tr_meaning.split(';')[0];
+    const shortMeaning = nameMeaning(n).split(';')[0];
 
     // Eşleşme isim/anlam dışında bir yerdeyse, nerede bulunduğunu göster
     const hitHtml = (hit && hit.tab !== 'anlam' && hit.snippet) ? `
@@ -583,14 +1045,14 @@ function buildGrid() {
 
   if (!shown) {
     grid.innerHTML = `<div class="search-empty">
-      “${escapeHtml(q)}” için sonuç yok.<br>
-      İsim, anlam, kök ya da metinlerin içinde arayabilirsin.
+      “${escapeHtml(q)}” ${t('search_no_result_for')}<br>
+      ${t('search_hint')}
     </div>`;
   }
 
   if (q) {
     summary.textContent = shown
-      ? `${shown} isim bulundu` + (deepHits ? ` — ${deepHits} tanesi metin içinde` : '')
+      ? `${shown} ${t('search_found')}` + (deepHits ? ` — ${deepHits} ${t('search_found_in_text')}` : '')
       : '';
     summary.style.display = shown ? 'block' : 'none';
   } else {
@@ -697,58 +1159,58 @@ function renderDetail(id, tab) {
 
   inner.innerHTML = `
     <div class="panel-header">
-      <div class="panel-number">İsim ${n.id} / 100</div>
+      <div class="panel-number">${t('panel_name_of')} ${n.id} / 100</div>
       <div class="panel-arabic">${n.arabic}</div>
       <div class="panel-latin">${n.transliteration}</div>
-      <div class="panel-meaning">${n.tr_meaning}</div>
+      <div class="panel-meaning">${nameMeaning(n)}</div>
       <span class="panel-badge ${n.classification}">${classLabels[n.classification]}</span>
       ${motherStr}
     </div>
     <div class="panel-tabs">
-      <button class="panel-tab active" data-tab="anlam">Anlam</button>
-      <button class="panel-tab" data-tab="kainat">Kâinat</button>
-      <button class="panel-tab" data-tab="insan">İnsan</button>
-      <button class="panel-tab" data-tab="bilim">Bilim</button>
-      <button class="panel-tab" data-tab="tefekkur">Tefekkür</button>
-      <button class="panel-tab" data-tab="kaynaklar">Kaynaklar</button>
+      <button class="panel-tab active" data-tab="anlam">${t('tab_anlam')}</button>
+      <button class="panel-tab" data-tab="kainat">${t('tab_kainat')}</button>
+      <button class="panel-tab" data-tab="insan">${t('tab_insan')}</button>
+      <button class="panel-tab" data-tab="bilim">${t('tab_bilim')}</button>
+      <button class="panel-tab" data-tab="tefekkur">${t('tab_tefekkur')}</button>
+      <button class="panel-tab" data-tab="kaynaklar">${t('tab_kaynaklar')}</button>
     </div>
     <div class="panel-content">
 
       <div class="tab-section active" data-tab-content="anlam">
-        <div class="section-title">Kök</div>
+        <div class="section-title">${t('label_root')}</div>
         <div class="section-body" style="margin-bottom:1rem;direction:rtl;color:var(--gold);font-size:1.1rem">${n.root}</div>
 
         ${motherName ? `
-        <div class="section-title">Bağlı Olduğu Ana Sıfat</div>
+        <div class="section-title">${t('label_mother_attr')}</div>
         <div class="pair-link" onclick="openDetail(${motherName.id})">
           <span class="pair-arrow">↑</span>
           <div>
-            <div class="pair-label">Ümmehâtü'l-Esmâ</div>
+            <div class="pair-label">${t('label_ummahat')}</div>
             <div class="pair-name">${motherName.arabic} — ${motherName.transliteration}</div>
           </div>
         </div>
         ` : ''}
 
         ${children.length ? `
-        <div class="section-title" style="margin-top:1rem">Bu Sıfattan Türeyen İsimler (${children.length})</div>
+        <div class="section-title" style="margin-top:1rem">${t('label_derived_names')} (${children.length})</div>
         <div class="related-list">
           ${children.map(c => `<span class="related-chip" onclick="openDetail(${c.id})">${c.transliteration}</span>`).join('')}
         </div>
         ` : ''}
 
         ${pairName ? `
-        <div class="section-title">Yapısal Zıt Çift</div>
+        <div class="section-title">${t('label_opposite_pair')}</div>
         <div class="pair-link" onclick="openDetail(${pairName.id})">
           <span class="pair-arrow">⇄</span>
           <div>
-            <div class="pair-label">Bu ismin karşı kutbu</div>
+            <div class="pair-label">${t('label_opposite_pole')}</div>
             <div class="pair-name">${pairName.arabic} — ${pairName.transliteration}</div>
           </div>
         </div>
         ` : ''}
 
         ${relatedNames.length ? `
-        <div class="section-title" style="margin-top:1rem">İlişkili İsimler</div>
+        <div class="section-title" style="margin-top:1rem">${t('label_related_names')}</div>
         <div class="related-list">
           ${relatedNames.map(r => `<span class="related-chip" onclick="openDetail(${r.id})">${r.transliteration}</span>`).join('')}
         </div>
@@ -756,28 +1218,33 @@ function renderDetail(id, tab) {
       </div>
 
       <div class="tab-section" data-tab-content="kainat">
-        <div class="section-title">Kâinattaki Tecelli</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_cosmos_manifest')}</div>
         <div class="section-body">${n.cosmos}</div>
       </div>
 
       <div class="tab-section" data-tab-content="insan">
-        <div class="section-title">İnsandaki Tecelli</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_human_manifest')}</div>
         <div class="section-body">${n.human}</div>
       </div>
 
       <div class="tab-section" data-tab-content="bilim">
-        <div class="section-title">Bilim ve Doğadaki Yapısal Paralel</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_science_parallel')}</div>
         <div class="section-body">${n.science}</div>
       </div>
 
       <div class="tab-section" data-tab-content="tefekkur">
-        <div class="section-title">Tefekkür Kapısı</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_contemplation_gate')}</div>
         <div class="contemplation-box">
           <div class="contemplation-q">${n.contemplation}</div>
         </div>
       </div>
 
       <div class="tab-section" data-tab-content="kaynaklar">
+        ${trOnlyBadge()}
         <div class="section-title">Gazzâlî — el-Maksadü'l-Esnâ</div>
         <div class="quote-box">
           ${n.ghazali}
@@ -1035,7 +1502,7 @@ function buildSecereTree(wrap, mothers, colorMap) {
           <span class="secere-group-arabic">${m.arabic}</span>
           <span class="secere-group-names">
             <span class="secere-group-tr">${m.transliteration}</span>
-            <span class="secere-group-count">${children.length} isim</span>
+            <span class="secere-group-count">${children.length} ${t('label_names_count')}</span>
           </span>
           <span class="secere-group-chevron" aria-hidden="true">⌄</span>
         </button>
@@ -1522,7 +1989,7 @@ function buildNefs() {
         <div class="nefs-step-arabic">${s.ar}</div>
         <div class="nefs-step-tr">${s.tr}</div>
       </div>
-      <div class="nefs-step-tagline">${s.tagline}</div>
+      <div class="nefs-step-tagline">${nefsTagline(s)}</div>
     </div>
   `).join('');
   wrap.querySelectorAll('.nefs-step').forEach(el => {
@@ -1543,32 +2010,38 @@ function openNefsDetail(id) {
   const panel = document.getElementById('nefs-panel');
   const inner = document.getElementById('nefs-panel-inner');
 
+  const nTr = nefsTagline(s);
+  const nAyet = nefsAyet(s);
+
   inner.innerHTML = `
     <div class="nefs-panel-header" style="--step-c:${s.color}">
-      <div class="nefs-panel-level">Basamak ${s.level} / 7</div>
+      <div class="nefs-panel-level">${t('panel_step_of')} ${s.level} / 7</div>
       <div class="nefs-panel-arabic">${s.ar}</div>
       <div class="nefs-panel-tr">${s.tr}</div>
       <span class="nefs-panel-badge"><span class="nefs-panel-badge-dot"></span>${s.colorName}</span>
+      <div class="section-body" style="margin-top:0.6rem;color:var(--cream-dim);font-size:0.85rem">${nTr}</div>
     </div>
     <div class="panel-tabs">
-      <button class="panel-tab active" data-ntab="tanim">Tanım</button>
+      <button class="panel-tab active" data-ntab="tanim">${t('tab_tanim')}</button>
       <button class="panel-tab" data-ntab="kaynaklar">Gazzâlî &amp; İbn Arabî</button>
-      <button class="panel-tab" data-ntab="haller">Hâller — Nasıl Anlaşılır</button>
-      <button class="panel-tab" data-ntab="zikir">Renk &amp; Zikir</button>
+      <button class="panel-tab" data-ntab="haller">${t('tab_haller')}</button>
+      <button class="panel-tab" data-ntab="zikir">${t('tab_zikir')}</button>
     </div>
     <div class="panel-content" style="--step-c:${s.color}">
 
       <div class="tab-section active" data-ntab-content="tanim">
-        <div class="section-title">Âyet</div>
+        <div class="section-title">${t('label_ayet')}</div>
         <div class="quote-box">
-          ${s.ayet_meal}
+          ${nAyet}
           <div class="source-label">— ${s.ayet_kaynak}</div>
         </div>
-        <div class="section-title" style="margin-top:1rem">Tanım</div>
+        <div class="section-title" style="margin-top:1rem">${t('tab_tanim')}</div>
+        ${trOnlyBadge()}
         <div class="section-body">${s.tanim}</div>
       </div>
 
       <div class="tab-section" data-ntab-content="kaynaklar">
+        ${trOnlyBadge()}
         <div class="section-title">Gazzâlî — İhyâ-u Ulûmi'd-Dîn</div>
         <div class="quote-box">
           ${s.gazzali}
@@ -1582,27 +2055,29 @@ function openNefsDetail(id) {
       </div>
 
       <div class="tab-section" data-ntab-content="haller">
-        <div class="section-title">Bu mertebede olduğunu nasıl anlarsın</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_haller_how')}</div>
         <ul class="haller-list">
           ${s.haller.map(h => `<li>${h}</li>`).join('')}
         </ul>
       </div>
 
       <div class="tab-section" data-ntab-content="zikir">
-        <div class="section-title">Renk</div>
+        <div class="section-title">${t('label_color')}</div>
         <div class="zikir-box">
           <div class="zikir-swatch"></div>
           <div>
             <div class="section-body" style="margin:0">${s.colorName}</div>
           </div>
         </div>
-        <div class="section-title">Zikir</div>
+        <div class="section-title">${t('label_zikir')}</div>
         <div class="zikir-box">
           <div>
             <div class="zikir-word">${s.zikir}</div>
             <div class="zikir-sub">${s.zikir_tr}</div>
           </div>
         </div>
+        ${trOnlyBadge()}
         <div class="section-body" style="color:var(--text-dim);font-size:0.8rem;margin-top:0.5rem">${s.zikir_not}</div>
       </div>
 
@@ -1734,7 +2209,7 @@ function buildRuh() {
         <div class="nefs-step-arabic">${s.ar}</div>
         <div class="nefs-step-tr">${s.tr}</div>
       </div>
-      <div class="nefs-step-tagline">${s.tagline}</div>
+      <div class="nefs-step-tagline">${ruhTagline(s)}</div>
     </div>
   `).join('');
   wrap.querySelectorAll('.nefs-step').forEach(el => {
@@ -1753,10 +2228,11 @@ function openRuhDetail(id) {
   const panel = document.getElementById('ruh-panel');
   const inner = document.getElementById('ruh-panel-inner');
 
-  const ayetHtml = s.ayet_meal ? `
-    <div class="section-title">Âyet</div>
+  const rAyet = ruhAyet(s);
+  const ayetHtml = rAyet ? `
+    <div class="section-title">${t('label_ayet')}</div>
     <div class="quote-box">
-      ${s.ayet_meal}
+      ${rAyet}
       <div class="source-label">— ${s.ayet_kaynak}</div>
     </div>
   ` : '';
@@ -1766,42 +2242,45 @@ function openRuhDetail(id) {
   ` : '';
 
   const notHtml = s.not ? `
-    <div class="section-title" style="margin-top:1rem">Not</div>
+    <div class="section-title" style="margin-top:1rem">${t('label_note')}</div>
     <div class="section-body" style="color:var(--text-dim);font-size:0.82rem">${s.not}</div>
   ` : '';
 
   inner.innerHTML = `
     <div class="nefs-panel-header" style="--step-c:${s.color}">
-      <div class="nefs-panel-level">Mertebe ${s.level} / 7</div>
+      <div class="nefs-panel-level">${t('panel_stage_of')} ${s.level} / 7</div>
       <div class="nefs-panel-arabic">${s.ar}</div>
       <div class="nefs-panel-tr">${s.tr}</div>
       <span class="nefs-panel-badge"><span class="nefs-panel-badge-dot"></span>${s.colorName}</span>
+      <div class="section-body" style="margin-top:0.6rem;color:var(--cream-dim);font-size:0.85rem">${ruhTagline(s)}</div>
       <div class="ruh-badges">
         ${s.rozet.map(r => `<span class="ruh-badge tip-${r}">${ROZET_LABELS[r]}</span>`).join('')}
       </div>
     </div>
     <div class="panel-tabs">
-      <button class="panel-tab active" data-rtab="tanim">Tanım</button>
-      <button class="panel-tab" data-rtab="kaynaklar">Kaynaklar</button>
-      <button class="panel-tab" data-rtab="tecelli">Kâinat &amp; İnsan</button>
+      <button class="panel-tab active" data-rtab="tanim">${t('tab_tanim')}</button>
+      <button class="panel-tab" data-rtab="kaynaklar">${t('tab_kaynaklar')}</button>
+      <button class="panel-tab" data-rtab="tecelli">${t('tab_kainat_insan')}</button>
     </div>
     <div class="panel-content" style="--step-c:${s.color}">
 
       <div class="tab-section active" data-rtab-content="tanim">
         ${ayetHtml}
-        <div class="section-title" style="margin-top:${s.ayet_meal ? '1rem' : '0'}">Tanım</div>
+        <div class="section-title" style="margin-top:${rAyet ? '1rem' : '0'}">${t('tab_tanim')}</div>
+        ${trOnlyBadge()}
         <div class="section-body">${s.tanim}</div>
         ${linkHtml}
         ${notHtml}
       </div>
 
       <div class="tab-section" data-rtab-content="kaynaklar">
-        <div class="section-title">Akademik Kaynak</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_academic_source')}</div>
         <div class="quote-box">
           ${s.akademik.text}
           <div class="source-label">— ${s.akademik.kaynak}</div>
         </div>
-        <div class="section-title" style="margin-top:1rem">Klasik / Tasavvufî Kaynak</div>
+        <div class="section-title" style="margin-top:1rem">${t('label_classical_source')}</div>
         <div class="quote-box">
           ${s.klasik.text}
           <div class="source-label">— ${s.klasik.kaynak}</div>
@@ -1809,9 +2288,10 @@ function openRuhDetail(id) {
       </div>
 
       <div class="tab-section" data-rtab-content="tecelli">
-        <div class="section-title">Kâinattaki Tecelli</div>
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_cosmos_manifest')}</div>
         <div class="section-body">${s.kainat}</div>
-        <div class="section-title" style="margin-top:1rem">İnsandaki Tecelli</div>
+        <div class="section-title" style="margin-top:1rem">${t('label_human_manifest')}</div>
         <div class="section-body">${s.insan}</div>
       </div>
 
@@ -1850,6 +2330,7 @@ document.addEventListener('keydown', e => {
 
 buildRuh();
 
+applyLanguage();
 loadData();
 </script>
 </body>
