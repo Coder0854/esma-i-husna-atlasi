@@ -230,6 +230,7 @@
     <div class="sc-ar">الذّات</div>
     <div class="sc-tr">Bir isme dokun</div>
   </div>
+  <div class="secere-tree" id="secere-tree"></div>
 </div>
 
 <div id="view-ayna" class="view">
@@ -911,16 +912,25 @@ function buildSecere() {
   const svg = d3.select('#secere-svg');
   svg.selectAll('*').remove();
 
+  const colorMap = { celal:'#c44040', cemal:'#2e9e48', kemal:'#3058c0', cem:'#8030b8' };
+  const mothers = NAMES.filter(n => n.is_mother);
+
+  // Dar ekranda 93 yaprak ismi bir sunburst halkasına okunaklı sığmaz —
+  // SVG yerine dokunmatik dostu, katlanır bir liste gösterilir.
+  const treeEl = document.getElementById('secere-tree');
+  if (window.innerWidth <= 760) {
+    if (treeEl) buildSecereTree(treeEl, mothers, colorMap);
+    return;
+  }
+  if (treeEl) treeEl.innerHTML = '';
+
   const el = document.getElementById('view-secere');
   const w = el.clientWidth || 1200;
   const h = el.clientHeight || 800;
   const radius = Math.min(w, h) / 2 - 28;
   if (radius <= 0) return;
 
-  const colorMap = { celal:'#c44040', cemal:'#2e9e48', kemal:'#3058c0', cem:'#8030b8' };
-
   // Zât → 7 anne → çocukları
-  const mothers = NAMES.filter(n => n.is_mother);
   const hierarchy = {
     key: 'root',
     children: mothers.map(m => ({
@@ -1013,6 +1023,37 @@ function buildSecere() {
       const t = d.data.name.transliteration.replace(/^(El|Er|Es|Ez|Ed|En|Et|Eş)-/, '');
       return d.depth === 1 ? t.toLocaleUpperCase('tr') : t;
     });
+}
+
+function buildSecereTree(wrap, mothers, colorMap) {
+  wrap.innerHTML = mothers.map(m => {
+    const children = NAMES.filter(n => n.mother === m.id);
+    const color = colorMap[m.classification] || '#c9a227';
+    return `
+      <div class="secere-group" data-mid="${m.id}" style="--step-c:${color}">
+        <button class="secere-group-header">
+          <span class="secere-group-arabic">${m.arabic}</span>
+          <span class="secere-group-names">
+            <span class="secere-group-tr">${m.transliteration}</span>
+            <span class="secere-group-count">${children.length} isim</span>
+          </span>
+          <span class="secere-group-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="secere-group-body">
+          <div class="related-list">
+            ${children.map(c => `<span class="related-chip" data-id="${c.id}">${c.transliteration}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  wrap.querySelectorAll('.secere-group-header').forEach(btn => {
+    btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
+  });
+  wrap.querySelectorAll('.related-chip').forEach(chip => {
+    chip.addEventListener('click', () => openDetail(parseInt(chip.dataset.id, 10)));
+  });
 }
 
 function setCenter(ar, tr) {

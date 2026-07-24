@@ -269,6 +269,33 @@ text-align:center; pointer-events:none; z-index:5;
 .sc-ar { font-size:1.6rem; color:var(--gold); font-family:'Times New Roman',serif; direction:rtl; }
 .sc-tr { font-size:0.62rem; color:var(--text-dim); letter-spacing:0.12em; margin-top:0.2rem; }
 
+/* ŞECERE — MOBİL LİSTE (SVG sunburst'te 93 yaprak ismi dar ekranda okunaklı sığmıyor) */
+.secere-tree { display:none; }
+.secere-group {
+border:1px solid var(--border); border-radius:10px; background:var(--bg2);
+margin-bottom:0.6rem; overflow:hidden;
+}
+.secere-group-header {
+width:100%; display:flex; align-items:center; gap:0.7rem;
+padding:0.85rem 1rem; background:none; border:none; cursor:pointer;
+border-left:3px solid var(--step-c, var(--gold)); text-align:left;
+}
+.secere-group-arabic { font-size:1.35rem; color:var(--gold); font-family:'Times New Roman',serif; direction:rtl; flex-shrink:0; }
+.secere-group-names { flex:1; min-width:0; display:flex; flex-direction:column; gap:0.15rem; }
+.secere-group-tr { font-size:0.86rem; color:var(--cream); }
+.secere-group-count { font-size:0.65rem; color:var(--text-dim); letter-spacing:0.05em; }
+.secere-group-chevron { color:var(--text-dim); font-size:0.85rem; transition:transform 0.25s ease; flex-shrink:0; }
+.secere-group.open .secere-group-chevron { transform:rotate(180deg); color:var(--step-c, var(--gold)); }
+.secere-group-body { max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 1rem; }
+.secere-group.open .secere-group-body { max-height:800px; padding:0 1rem 1rem; }
+.secere-group-body .related-list { margin-top:0; }
+
+@media (max-width:760px) {
+  #view-secere { overflow-y:auto; }
+  #secere-svg, .secere-center-label { display:none; }
+  .secere-tree { display:block; padding:4rem 1rem 2rem; }
+}
+
 /* AYNA VIEW */
 #view-ayna { position:relative; height:calc(100vh - var(--topbar-h, 0px)); overflow:hidden; background:#04040e; }
 #ayna-canvas { position:absolute; top:0; left:0; width:100%; height:100%; cursor:crosshair; display:block; }
