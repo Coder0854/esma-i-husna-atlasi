@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esmâ-i Hüsnâ — İlâhî İsimlerin Atlası</title>
+<meta name="description" content="Allah'ın 99 güzel isminin (Esmâ-i Hüsnâ) anlam, kâinat, insan, bilim ve tasavvuf kaynaklarıyla işlendiği interaktif atlas — isim ağı, şecere, ayna ve nefs/ruh mertebeleri.">
+<meta name="theme-color" content="#080812">
+<meta property="og:title" content="Esmâ-i Hüsnâ — İlâhî İsimlerin Atlası">
+<meta property="og:description" content="99 ismin anlam, kâinat, insan, bilim ve tasavvuf kaynaklarıyla işlendiği interaktif atlas.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080812'/%3E%3Cg transform='translate(16,17)' fill='none' stroke='%23c9a227' stroke-width='1.5'%3E%3Cpolygon points='0,-11 9.5,5.5 -9.5,5.5'/%3E%3Cpolygon points='0,11 9.5,-5.5 -9.5,-5.5'/%3E%3C/g%3E%3C/svg%3E">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap"
+            rel="stylesheet"
+    >
+</head>
+<body>
+
+<header class="mobile-topbar">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="app-sidebar">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-topbar-brand">
+        <span class="mtb-arabic" lang="ar" dir="rtl">الأسماء الحسنى</span>
+        <span class="mtb-latin">Esmâ-i Hüsnâ</span>
+    </div>
+    <button class="mobile-search-toggle" id="mobile-search-toggle" aria-label="İsim ara">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <circle cx="11" cy="11" r="6.75"></circle>
+            <path d="m20 20-3.9-3.9"></path>
+        </svg>
+    </button>
+</header>
+<div class="nav-backdrop" id="nav-backdrop"></div>
+
+<nav class="sidebar" id="app-sidebar" aria-label="Navigation principale">
+
+    <header class="nav-brand">
+        <span class="brand-kicker">99 İSMİN TEFEKKÜRÜ</span>
+
+        <div class="brand-title">
+            <span class="brand-arabic" lang="ar" dir="rtl">الأسماء الحسنى</span>
+            <span class="brand-orbit" aria-hidden="true"></span>
+        </div>
+
+        <div class="brand-meta">
+            <span class="brand-latin">Esmâ-i Hüsnâ</span>
+            <span class="brand-line"></span>
+            <span class="brand-count">99 İSİM</span>
+        </div>
+    </header>
+
+    <div class="nav-section-label">GÖRÜNÜMLER</div>
+
+    <div class="nav-tabs" role="tablist" aria-label="Görünüm seçimi">
+
+        <button
+                class="nav-tab active"
+                data-view="grid"
+                data-short="Kart"
+                role="tab"
+                aria-selected="true"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">01</span>
+            <span class="nav-content">
+        <span class="nav-title">Kart Görünümü</span>
+        <span class="nav-short">Kart</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+                class="nav-tab"
+                data-view="graph"
+                data-short="Graf"
+                role="tab"
+                aria-selected="false"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">02</span>
+            <span class="nav-content">
+        <span class="nav-title">Graf Görünümü</span>
+        <span class="nav-short">Graf</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+                class="nav-tab"
+                data-view="secere"
+                data-short="Şecere"
+                role="tab"
+                aria-selected="false"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">03</span>
+            <span class="nav-content">
+        <span class="nav-title">Şecere</span>
+        <span class="nav-short">Şecere</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+                class="nav-tab"
+                data-view="ayna"
+                data-short="Ayna"
+                role="tab"
+                aria-selected="false"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">04</span>
+            <span class="nav-content">
+        <span class="nav-title">Ayna</span>
+        <span class="nav-short">Ayna</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+                class="nav-tab"
+                data-view="nefs"
+                data-short="Nefs"
+                role="tab"
+                aria-selected="false"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">05</span>
+            <span class="nav-content">
+        <span class="nav-title">Nefs Mertebeleri</span>
+        <span class="nav-short">Nefs</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+        <button
+                class="nav-tab"
+                data-view="ruhlar"
+                data-short="Ruhlar"
+                role="tab"
+                aria-selected="false"
+        >
+            <span class="nav-rail" aria-hidden="true"></span>
+            <span class="nav-number">06</span>
+            <span class="nav-content">
+        <span class="nav-title">Ruh Mertebeleri</span>
+        <span class="nav-short">Ruhlar</span>
+      </span>
+            <span class="nav-arrow" aria-hidden="true">↗</span>
+        </button>
+
+    </div>
+
+    <div class="nav-bottom">
+        <label class="nav-search" for="search-input">
+            <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+            >
+                <circle cx="11" cy="11" r="6.75"></circle>
+                <path d="m20 20-3.9-3.9"></path>
+            </svg>
+
+            <input
+                    type="search"
+                    id="search-input"
+                    placeholder="İsim ara..."
+                    autocomplete="off"
+            >
+
+            <kbd>/</kbd>
+        </label>
+
+        <footer class="sidebar-footer">
+            <span>ESMÂ HARİTASI</span>
+            <span class="footer-symbol" aria-hidden="true">✦</span>
+            <span>01—99</span>
+        </footer>
+    </div>
+
+</nav>
+<div id="view-grid" class="view active">
+  <div class="grid-header">
+    <h1>اَلْأَسْمَاءُ الْحُسْنَى</h1>
+    <p>Allah'ın yüz güzel isminin tecellileri, ilişkileri ve kâinattaki izleri</p>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Tümü (100)</button>
+    <button class="filter-btn" data-filter="celal">Celâl — Azamet</button>
+    <button class="filter-btn" data-filter="cemal">Cemâl — Rahmet</button>
+    <button class="filter-btn" data-filter="kemal">Kemâl — Hakikat</button>
+    <button class="filter-btn" data-filter="cem">Cem — Kuşatıcı</button>
+  </div>
+  <div class="search-summary" id="search-summary" style="display:none"></div>
+  <div class="names-grid" id="names-grid"></div>
+</div>
+
+<div id="view-graph" class="view">
+  <div class="graph-info">İsme tıkla → ayrıntı | Sürükle → konumu değiştir | Kaydır → zoom</div>
+  <svg id="graph-svg"></svg>
+  <div class="graph-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#c44040"></div>Celâl</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2e9e48"></div>Cemâl</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3058c0"></div>Kemâl</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#8030b8"></div>Cem</div>
+    <div class="legend-item" style="margin-top:0.5rem">
+      <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#c9a227" stroke-width="2"/></svg>
+      <span style="color:var(--text-dim)">Zıt çift</span>
+    </div>
+    <div class="legend-item">
+      <svg width="24" height="4"><line x1="0" y1="2" x2="24" y2="2" stroke="#555" stroke-width="1"/></svg>
+      <span style="color:var(--text-dim)">İlişkili</span>
+    </div>
+  </div>
+</div>
+
+<div id="view-secere" class="view">
+  <div class="graph-info">Ümmehâtü'l-Esmâ — her isim, öngerektirdiği ana sıfata bağlıdır · yakınlaştır, isme dokun</div>
+  <svg id="secere-svg"></svg>
+  <div class="secere-center-label" id="secere-hint">
+    <div class="sc-ar">الذّات</div>
+    <div class="sc-tr">Bir isme dokun</div>
+  </div>
+</div>
+
+<div id="view-ayna" class="view">
+  <canvas id="ayna-canvas"></canvas>
+
+  <div class="ayna-top-label">
+    <span>Tasavvuf · Varlık Ontolojisi</span>
+    <h2>Ayna — Eşya — Tecelli</h2>
+  </div>
+
+  <!-- Star of Solomon / Mühür-ü Süleyman -->
+  <div class="ayna-star-wrap">
+    <svg id="davut-svg" viewBox="-160 -160 320 320">
+      <!-- Upper triangle △ (Hak/Divine descending) — gold -->
+      <polygon points="0,-140 -121,70 121,70"
+        fill="rgba(201,162,39,0.04)" stroke="rgba(201,162,39,0.55)" stroke-width="1.2"/>
+      <!-- Lower triangle ▽ (Halk/Creation ascending) — blue -->
+      <polygon points="0,140 121,-70 -121,-70"
+        fill="rgba(100,130,255,0.03)" stroke="rgba(120,150,255,0.38)" stroke-width="1.2"/>
+
+      <!-- Horizontal berzah line -->
+      <line x1="-155" y1="0" x2="155" y2="0"
+        stroke="rgba(201,162,39,0.25)" stroke-width="0.8" stroke-dasharray="5 4"/>
+
+      <!-- Inner hexagon edges (faint) -->
+      <polygon points="0,-80 -69,-40 -69,40 0,80 69,40 69,-40"
+        fill="none" stroke="rgba(201,162,39,0.08)" stroke-width="0.7"/>
+
+      <!-- Center pulse -->
+      <circle cx="0" cy="0" r="5" fill="rgba(201,162,39,0.25)" stroke="rgba(201,162,39,0.7)" stroke-width="1">
+        <animate attributeName="r" values="5;8;5" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- VERTEX LABELS -->
+      <!-- Top: ZAT -->
+      <text x="0" y="-150" text-anchor="middle" fill="rgba(201,162,39,0.85)"
+        font-size="10" font-family="Georgia,serif" letter-spacing="2">ZÂT</text>
+      <text x="0" y="-133" text-anchor="middle" fill="rgba(201,162,39,0.55)"
+        font-size="19" font-family="Times New Roman,serif">الذّات</text>
+
+      <!-- Bottom: HALK -->
+      <text x="0" y="155" text-anchor="middle" fill="rgba(120,150,255,0.75)"
+        font-size="10" font-family="Georgia,serif" letter-spacing="2">HALK</text>
+      <text x="0" y="170" text-anchor="middle" fill="rgba(120,150,255,0.45)"
+        font-size="17" font-family="Times New Roman,serif">الخلق</text>
+
+      <!-- Upper-left: Tenzih -->
+      <text x="-128" y="-68" text-anchor="end" fill="rgba(201,162,39,0.6)"
+        font-size="9" font-family="Georgia,serif">Tenzîh ↑</text>
+
+      <!-- Upper-right: Teşbih -->
+      <text x="128" y="-68" text-anchor="start" fill="rgba(120,150,255,0.6)"
+        font-size="9" font-family="Georgia,serif">↑ Teşbîh</text>
+
+      <!-- Lower-left: Celal -->
+      <text x="-128" y="82" text-anchor="end" fill="rgba(180,55,55,0.75)"
+        font-size="9" font-family="Georgia,serif">Celâl ↓</text>
+
+      <!-- Lower-right: Cemal -->
+      <text x="128" y="82" text-anchor="start" fill="rgba(50,170,75,0.75)"
+        font-size="9" font-family="Georgia,serif">↓ Cemâl</text>
+
+      <!-- Center label -->
+      <text x="0" y="-7" text-anchor="middle" fill="rgba(240,224,184,0.5)"
+        font-size="7.5" letter-spacing="3">BERZAH</text>
+      <text x="0" y="16" text-anchor="middle" fill="rgba(240,224,184,0.3)"
+        font-size="15" font-family="Times New Roman,serif">مرآة</text>
+
+      <!-- Clickable vertex hit zones (invisible circles) -->
+      <g class="sv" data-c="zat">
+        <circle cx="0" cy="-140" r="14" fill="rgba(201,162,39,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="halk">
+        <circle cx="0" cy="140" r="14" fill="rgba(120,150,255,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="tenzih">
+        <circle cx="-121" cy="-70" r="14" fill="rgba(201,162,39,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="tesbih">
+        <circle cx="121" cy="-70" r="14" fill="rgba(120,150,255,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="celal">
+        <circle cx="-121" cy="70" r="14" fill="rgba(180,55,55,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="cemal">
+        <circle cx="121" cy="70" r="14" fill="rgba(50,170,75,0)" stroke="none"/>
+      </g>
+      <g class="sv" data-c="berzah">
+        <circle cx="0" cy="0" r="18" fill="rgba(201,162,39,0)" stroke="none"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Concept popup -->
+  <div class="ayna-concept" id="ayna-concept">
+    <button class="ac-close" id="ac-close">✕</button>
+    <div class="ac-arabic" id="ac-arabic"></div>
+    <div class="ac-title" id="ac-title"></div>
+    <div class="ac-body" id="ac-body"></div>
+  </div>
+
+  <!-- Rotating Sufi quotes -->
+  <div class="ayna-quote">
+    <div class="ayna-quote-text" id="ayna-q-text"></div>
+    <div class="ayna-quote-src" id="ayna-q-src"></div>
+  </div>
+
+  <div class="ayna-hint">Suya tıkla — dalga yarat</div>
+</div>
+
+<div id="view-nefs" class="view">
+  <div class="nefs-header">
+    <h1>مَرَاتِبُ النَّفْس</h1>
+    <p>Nefs Mertebeleri</p>
+  </div>
+  <div class="nefs-intro">
+    Kur'ân'da nefs, tek bir sabit varlık değil; arınma yolunda geçtiği <em>hâller</em> ile anılır.
+    Aşağıdaki yedi basamak, âyetlerde geçen üç temel mertebenin (emmâre, levvâme, mutmainne) İmâm-ı Gazzâlî'nin
+    <strong>İhyâ-u Ulûmi'd-Dîn</strong>'i ve Muhyiddîn İbn Arabî'nin <strong>Fütûhât-ı Mekkiyye</strong>'siyle
+    birlikte tasavvuf geleneğinde yedi basamağa açılmış hâlidir. Aşağıdan yukarı, karanlıktan nûra doğru bir merdiven —
+    bir basamağa dokun.
+  </div>
+  <div class="nefs-ladder" id="nefs-ladder"></div>
+  <div class="nefs-note">
+    Basamaklara eşlik eden renk ve zikir isimleri tarikattan tarikata değişir; burada tasavvuf edebiyatında
+    en yaygın aktarılan hâliyle, bir çerçeve olarak sunulmuştur — bağlayıcı bir hüküm değildir.
+  </div>
+</div>
+
+<div id="nefs-panel">
+  <button class="panel-close" id="nefs-panel-close">✕</button>
+  <div id="nefs-panel-inner"></div>
+</div>
+
+<div id="view-ruhlar" class="view">
+  <div class="nefs-header">
+    <h1>مَرَاتِبُ الرُّوح</h1>
+    <p>Ruh Mertebeleri</p>
+  </div>
+  <div class="nefs-intro">
+    Bazı tasavvuf sohbetlerinde (meselâ merhum Muzaffer Ozak Efendi'nin meclislerinde) insanın
+    <strong>yedi ruh yönünden</strong> söz edilir: madenî, nebatî, hayvanî, nefsânî, insanî, sırrî ve en sırlı (ahfâ).
+    Bu, "bedende yedi ayrı bağımsız ruh vardır" demek değildir — iki ayrı klasik hattın bir araya getirilmiş
+    hâlidir: felsefe ve tasavvuf edebiyatındaki <strong>dörtlü ruh hiyerarşisi</strong> (cemâdî/madenî → nebatî →
+    hayvanî → insanî) ile Nakşibendî yolunun <strong>letâif-i hamse</strong>'si (kalp, ruh, sır, hafî, ahfâ).
+    Aşağıdan yukarı — yoğun maddeden en mahrem noktaya doğru bir okuma sırası; bir basamağa dokun.
+  </div>
+  <div class="nefs-ladder" id="ruh-ladder"></div>
+  <div class="nefs-note">
+    Bu yedili tasnif; ne Kur'ân'da tek bir âyette bu sırayla verilir, ne de tek bir hadiste. Aşağıdaki her
+    kart, akademik (TDV İslâm Ansiklopedisi) ve klasik tasavvuf kaynaklarını ayrı ayrı işaretler — hangi
+    bilginin doğrudan kaynaklı, hangisinin yorum/tefekkür olduğunu görebilesin diye.
+  </div>
+</div>
+
+<div id="ruh-panel">
+  <button class="panel-close" id="ruh-panel-close">✕</button>
+  <div id="ruh-panel-inner"></div>
+</div>
+
+<div id="detail-panel">
+  <div class="panel-nav">
+    <button id="panel-prev" title="Önceki isim (←)">‹</button>
+    <button id="panel-next" title="Sonraki isim (→)">›</button>
+  </div>
+  <button class="panel-close" id="panel-close">✕</button>
+  <div id="panel-inner"></div>
+</div>
+
+<script>
+let NAMES = [];
+let currentFilter = 'all';
+let selectedId = null;
+
+const classLabels = {
+  celal: 'Celâl — Azamet ve Heybet',
+  cemal: 'Cemâl — Rahmet ve Güzellik',
+  kemal: 'Kemâl — Hakikat ve Mükemmellik',
+  cem: 'Cem — Kuşatıcı ve Bütünleyen'
+};
+
+async function loadData() {
+  try {
+    const r = await fetch('data/names.json');
+    NAMES = await r.json();
+    buildGrid();
+    buildGraph();
+    applyRoute();   // veri geldikten sonra: #/kart/isim/62 ile açılabilsin
+  } catch(e) {
+    console.error('JSON yüklenemedi:', e);
+  }
+}
+
+function nameById(id) { return NAMES.find(n => n.id === id); }
+
+// ── ARAMA ─────────────────────────────────────────────
+// Hangi alan hangi sekmede gösteriliyor
+const SEARCH_FIELDS = [
+  { key:'transliteration', tab:'anlam',     label:'İsim'     },
+  { key:'arabic',          tab:'anlam',     label:'Arapça'   },
+  { key:'tr_meaning',      tab:'anlam',     label:'Anlam'    },
+  { key:'root',            tab:'anlam',     label:'Kök'      },
+  { key:'cosmos',          tab:'kainat',    label:'Kâinat'   },
+  { key:'human',           tab:'insan',     label:'İnsan'    },
+  { key:'science',         tab:'bilim',     label:'Bilim'    },
+  { key:'contemplation',   tab:'tefekkur',  label:'Tefekkür' },
+  { key:'ghazali',         tab:'kaynaklar', label:'Gazzâlî'  },
+  { key:'ibn_arabi',       tab:'kaynaklar', label:'İbn Arabî'}
+];
+
+const ARABIC_MARKS = /[ً-ْٰـ]/g; // harekeler, hançerli elif, tatvil
+
+// Türkçe'ye duyarlı, aksan/hareke körü normalleştirme.
+// "KADİR", "kadir", "Kâdir" hepsi -> "kadir"; "Bâsıt" -> "basit"
+function norm(s) {
+  if (!s) return '';
+  return String(s)
+    .toLocaleLowerCase('tr')
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')   // latin aksanları (â, î, û, ş, ğ, ç, ö, ü)
+    .replace(ARABIC_MARKS, '')          // arapça harekeler
+    .replace(/ı/g, 'i');                // ı/i ayrımını kaldır
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+
+// Harf harf normalleştirip her normalleştirilmiş karakteri ham metindeki
+// indeksine geri eşler. Hareke silmek uzunluğu değiştirdiği için şart:
+// eşleşmeyi ham metinde doğru yerden kesebilelim.
+function normMap(s) {
+  let text = '';
+  const map = [];
+  for (let i = 0; i < s.length; i++) {
+    const t = norm(s[i]);
+    for (let k = 0; k < t.length; k++) { text += t[k]; map.push(i); }
+  }
+  return { text, map };
+}
+
+// Metinde eşleşmeyi bulup çevresinden bir alıntı çıkarır, eşleşeni <mark>'lar.
+function makeSnippet(raw, q, pad = 45) {
+  const { text, map } = normMap(raw);
+  const needle = norm(q);
+  const at = text.indexOf(needle);
+  if (at === -1) return null;
+
+  // normalleştirilmiş indeksleri ham metin indekslerine çevir
+  const hitStart = map[at];
+  const hitEnd   = map[at + needle.length - 1] + 1;
+  const start    = Math.max(0, hitStart - pad);
+  const end      = Math.min(raw.length, hitEnd + pad);
+
+  const pre  = (start > 0 ? '…' : '') + raw.slice(start, hitStart);
+  const hit  = raw.slice(hitStart, hitEnd);
+  const post = raw.slice(hitEnd, end) + (end < raw.length ? '…' : '');
+  return escapeHtml(pre) + '<mark>' + escapeHtml(hit) + '</mark>' + escapeHtml(post);
+}
+
+// Bir ismi sorguya karşı sınar.
+// Çok kelimeli sorgu = her kelime geçmeli (farklı alanlarda olabilir).
+// "gizli hazine" -> "gizli bir hazineydim" metnini bulur.
+// Tam ifade tek bir alanda geçiyorsa alıntı için o alan tercih edilir.
+function searchName(n, q) {
+  const phrase = norm(q);
+  if (!phrase) return { match:true, hit:null };
+
+  const tokens = phrase.split(/\s+/).filter(Boolean);
+  const found = new Set();
+  let best = null;   // { f, term, score }
+
+  for (const f of SEARCH_FIELDS) {
+    const raw = n[f.key];
+    if (!raw) continue;
+    const hay = norm(raw);
+
+    // Tam ifade bu alanda geçiyor → en iyi isabet, aramayı bitir
+    if (tokens.length > 1 && hay.includes(phrase)) {
+      tokens.forEach(t => found.add(t));
+      best = { f, term:q, score:Infinity };
+      break;
+    }
+
+    let score = 0, firstTerm = null;
+    for (const t of tokens) {
+      if (hay.includes(t)) {
+        found.add(t);
+        score++;
+        if (!firstTerm) firstTerm = t;
+      }
+    }
+    // Eşitlikte SEARCH_FIELDS sırası kazanır → isim/anlam öncelikli
+    if (score && (!best || score > best.score)) best = { f, term:firstTerm, score };
+  }
+
+  if (found.size !== tokens.length) return { match:false, hit:null };
+  return {
+    match: true,
+    hit: { tab:best.f.tab, label:best.f.label, key:best.f.key,
+           snippet: makeSnippet(n[best.f.key], best.term) }
+  };
+}
+
+// ── GRID ──────────────────────────────────────────────
+function buildGrid() {
+  const grid = document.getElementById('names-grid');
+  const summary = document.getElementById('search-summary');
+  grid.innerHTML = '';
+  const q = document.getElementById('search-input').value.trim();
+
+  let shown = 0, deepHits = 0;
+
+  NAMES.forEach(n => {
+    if (currentFilter !== 'all' && n.classification !== currentFilter) return;
+
+    const { match, hit } = searchName(n, q);
+    if (!match) return;
+    shown++;
+    // "derin" isabet = isim/anlam dışındaki bir metinde bulundu
+    if (hit && hit.tab !== 'anlam') deepHits++;
+
+    const card = document.createElement('div');
+    card.className = `name-card ${n.classification}`;
+    card.dataset.id = n.id;
+    if (n.id === selectedId) card.classList.add('selected');
+
+    const shortMeaning = n.tr_meaning.split(';')[0];
+
+    // Eşleşme isim/anlam dışında bir yerdeyse, nerede bulunduğunu göster
+    const hitHtml = (hit && hit.tab !== 'anlam' && hit.snippet) ? `
+      <div class="card-hit">
+        <span class="card-hit-tab">${hit.label}</span>
+        <span class="card-hit-text">${hit.snippet}</span>
+      </div>` : '';
+
+    card.innerHTML = `
+      <div class="card-num">${n.id}</div>
+      <div class="card-arabic">${n.arabic}</div>
+      <div class="card-latin">${n.transliteration}</div>
+      <div class="card-meaning">${escapeHtml(shortMeaning)}</div>
+      ${hitHtml}
+    `;
+    // Aramadan gelen isabet varsa, detayı doğrudan o sekmede aç
+    card.addEventListener('click', () => openDetail(n.id, hit ? hit.tab : null));
+    grid.appendChild(card);
+  });
+
+  if (!shown) {
+    grid.innerHTML = `<div class="search-empty">
+      “${escapeHtml(q)}” için sonuç yok.<br>
+      İsim, anlam, kök ya da metinlerin içinde arayabilirsin.
+    </div>`;
+  }
+
+  if (q) {
+    summary.textContent = shown
+      ? `${shown} isim bulundu` + (deepHits ? ` — ${deepHits} tanesi metin içinde` : '')
+      : '';
+    summary.style.display = shown ? 'block' : 'none';
+  } else {
+    summary.style.display = 'none';
+  }
+}
+
+// ── ROUTER ────────────────────────────────────────────
+// #/kart · #/graf · #/ayna · #/kart/isim/62 · #/kart/isim/62/bilim
+const VIEW_SLUG = { grid:'kart', graph:'graf', secere:'secere', ayna:'ayna', nefs:'nefs', ruhlar:'ruhlar' };
+const SLUG_VIEW = { kart:'grid', graf:'graph', secere:'secere', ayna:'ayna', nefs:'nefs', ruhlar:'ruhlar' };
+const PANEL_TABS = ['anlam','kainat','insan','bilim','tefekkur','kaynaklar'];
+let currentView = 'grid';
+let renderedId = null;
+
+function parseHash() {
+  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  const view = SLUG_VIEW[parts[0]] || 'grid';
+  let id = null, tab = null;
+  const i = parts.indexOf('isim');
+  if (i !== -1) {
+    const p = parseInt(parts[i + 1], 10);
+    if (Number.isFinite(p) && nameById(p)) id = p;
+    const t = parts[i + 2];
+    if (t && PANEL_TABS.includes(t)) tab = t;
+  }
+  return { view, id, tab };
+}
+
+function buildHash(view, id, tab) {
+  let h = '#/' + (VIEW_SLUG[view] || 'kart');
+  if (id) h += '/isim/' + id + (tab && tab !== 'anlam' ? '/' + tab : '');
+  return h;
+}
+
+function setView(view) {
+  if (view === currentView) return;
+  if (currentView === 'ayna') stopAyna();
+  if (currentView === 'nefs' && typeof closeNefsPanel === 'function') closeNefsPanel();
+  if (currentView === 'ruhlar' && typeof closeRuhPanel === 'function') closeRuhPanel();
+  currentView = view;
+  document.querySelectorAll('.nav-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.view === view));
+  document.querySelectorAll('.view').forEach(v =>
+    v.classList.toggle('active', v.id === `view-${view}`));
+  if (view === 'graph') buildGraph();
+  if (view === 'secere') buildSecere();
+  if (view === 'ayna') initAyna();
+}
+
+function closePanel() {
+  document.getElementById('detail-panel').classList.remove('open');
+  selectedId = null;
+  renderedId = null;
+  document.querySelectorAll('.name-card').forEach(c => c.classList.remove('selected'));
+}
+
+function applyRoute() {
+  const { view, id, tab } = parseHash();
+  setView(view);
+  if (id) renderDetail(id, tab);
+  else closePanel();
+}
+
+// Gezinme her zaman hash üzerinden — böylece her durum paylaşılabilir bir link.
+function openDetail(id, tab) {
+  const h = buildHash(currentView, id, tab);
+  if (location.hash === h) applyRoute();   // hash değişmezse olay tetiklenmez
+  else location.hash = h;
+}
+
+function activateTab(inner, tab) {
+  const target = tab && PANEL_TABS.includes(tab) ? tab : 'anlam';
+  inner.querySelectorAll('.panel-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.tab === target));
+  inner.querySelectorAll('.tab-section').forEach(s =>
+    s.classList.toggle('active', s.dataset.tabContent === target));
+}
+
+function renderDetail(id, tab) {
+  const n = nameById(id);
+  if (!n) return;
+  const panel = document.getElementById('detail-panel');
+  const inner = document.getElementById('panel-inner');
+
+  // Aynı isim zaten açıksa paneli yeniden kurma, sadece sekmeyi değiştir
+  if (renderedId === id) {
+    activateTab(inner, tab);
+    panel.scrollTop = 0;
+    return;
+  }
+  renderedId = id;
+  selectedId = id;
+
+  document.querySelectorAll('.name-card').forEach(c => {
+    c.classList.toggle('selected', parseInt(c.dataset.id) === id);
+  });
+
+  const pairName = n.pair ? nameById(n.pair) : null;
+  const relatedNames = (n.related || []).map(rid => nameById(rid)).filter(Boolean);
+  const motherStr = n.is_mother ? '<span class="mother-badge">⭑ Anne İsim (Ümmehâtü\'l-Esmâ)</span>' : '';
+  const motherName = n.mother ? nameById(n.mother) : null;
+  const children = n.is_mother ? NAMES.filter(x => x.mother === n.id) : [];
+
+  inner.innerHTML = `
+    <div class="panel-header">
+      <div class="panel-number">İsim ${n.id} / 100</div>
+      <div class="panel-arabic">${n.arabic}</div>
+      <div class="panel-latin">${n.transliteration}</div>
+      <div class="panel-meaning">${n.tr_meaning}</div>
+      <span class="panel-badge ${n.classification}">${classLabels[n.classification]}</span>
+      ${motherStr}
+    </div>
+    <div class="panel-tabs">
+      <button class="panel-tab active" data-tab="anlam">Anlam</button>
+      <button class="panel-tab" data-tab="kainat">Kâinat</button>
+      <button class="panel-tab" data-tab="insan">İnsan</button>
+      <button class="panel-tab" data-tab="bilim">Bilim</button>
+      <button class="panel-tab" data-tab="tefekkur">Tefekkür</button>
+      <button class="panel-tab" data-tab="kaynaklar">Kaynaklar</button>
+    </div>
+    <div class="panel-content">
+
+      <div class="tab-section active" data-tab-content="anlam">
+        <div class="section-title">Kök</div>
+        <div class="section-body" style="margin-bottom:1rem;direction:rtl;color:var(--gold);font-size:1.1rem">${n.root}</div>
+
+        ${motherName ? `
+        <div class="section-title">Bağlı Olduğu Ana Sıfat</div>
+        <div class="pair-link" onclick="openDetail(${motherName.id})">
+          <span class="pair-arrow">↑</span>
+          <div>
+            <div class="pair-label">Ümmehâtü'l-Esmâ</div>
+            <div class="pair-name">${motherName.arabic} — ${motherName.transliteration}</div>
+          </div>
+        </div>
+        ` : ''}
+
+        ${children.length ? `
+        <div class="section-title" style="margin-top:1rem">Bu Sıfattan Türeyen İsimler (${children.length})</div>
+        <div class="related-list">
+          ${children.map(c => `<span class="related-chip" onclick="openDetail(${c.id})">${c.transliteration}</span>`).join('')}
+        </div>
+        ` : ''}
+
+        ${pairName ? `
+        <div class="section-title">Yapısal Zıt Çift</div>
+        <div class="pair-link" onclick="openDetail(${pairName.id})">
+          <span class="pair-arrow">⇄</span>
+          <div>
+            <div class="pair-label">Bu ismin karşı kutbu</div>
+            <div class="pair-name">${pairName.arabic} — ${pairName.transliteration}</div>
+          </div>
+        </div>
+        ` : ''}
+
+        ${relatedNames.length ? `
+        <div class="section-title" style="margin-top:1rem">İlişkili İsimler</div>
+        <div class="related-list">
+          ${relatedNames.map(r => `<span class="related-chip" onclick="openDetail(${r.id})">${r.transliteration}</span>`).join('')}
+        </div>
+        ` : ''}
+      </div>
+
+      <div class="tab-section" data-tab-content="kainat">
+        <div class="section-title">Kâinattaki Tecelli</div>
+        <div class="section-body">${n.cosmos}</div>
+      </div>
+
+      <div class="tab-section" data-tab-content="insan">
+        <div class="section-title">İnsandaki Tecelli</div>
+        <div class="section-body">${n.human}</div>
+      </div>
+
+      <div class="tab-section" data-tab-content="bilim">
+        <div class="section-title">Bilim ve Doğadaki Yapısal Paralel</div>
+        <div class="section-body">${n.science}</div>
+      </div>
+
+      <div class="tab-section" data-tab-content="tefekkur">
+        <div class="section-title">Tefekkür Kapısı</div>
+        <div class="contemplation-box">
+          <div class="contemplation-q">${n.contemplation}</div>
+        </div>
+      </div>
+
+      <div class="tab-section" data-tab-content="kaynaklar">
+        <div class="section-title">Gazzâlî — el-Maksadü'l-Esnâ</div>
+        <div class="quote-box">
+          ${n.ghazali}
+          <div class="source-label">— İmâm-ı Gazzâlî</div>
+        </div>
+        <div class="section-title" style="margin-top:1rem">İbn Arabî — Fütûhât-ı Mekkiyye</div>
+        <div class="quote-box">
+          ${n.ibn_arabi}
+          <div class="source-label">— Muhyiddîn İbn Arabî</div>
+        </div>
+      </div>
+
+    </div>
+  `;
+
+  panel.classList.add('open');
+  panel.scrollTop = 0;
+
+  // Sekme değişimi de hash'e yazılır → sekme paylaşılabilir
+  inner.querySelectorAll('.panel-tab').forEach(t => {
+    t.addEventListener('click', () => openDetail(id, t.dataset.tab));
+  });
+
+  activateTab(inner, tab);
+  updatePanelNav(id);
+}
+
+// ── PANEL İLERİ / GERİ ────────────────────────────────
+function neighbourId(id, step) {
+  const i = NAMES.findIndex(n => n.id === id);
+  const next = NAMES[i + step];
+  return next ? next.id : null;
+}
+
+function updatePanelNav(id) {
+  const prev = neighbourId(id, -1), next = neighbourId(id, 1);
+  const pb = document.getElementById('panel-prev');
+  const nb = document.getElementById('panel-next');
+  pb.disabled = !prev;
+  nb.disabled = !next;
+  pb.onclick = () => prev && openDetail(prev);
+  nb.onclick = () => next && openDetail(next);
+}
+
+// ── GRAPH ─────────────────────────────────────────────
+function buildGraph() {
+  const svg = d3.select('#graph-svg');
+  svg.selectAll('*').remove();
+
+  const w = document.getElementById('view-graph').clientWidth || 1200;
+  const h = document.getElementById('view-graph').clientHeight || 800;
+
+  const colorMap = {
+    celal: '#c44040', cemal: '#2e9e48', kemal: '#3058c0', cem: '#8030b8'
+  };
+
+  const nodes = NAMES.map(n => ({
+    id: n.id, name: n, r: n.is_mother ? 14 : 8,
+    color: colorMap[n.classification]
+  }));
+
+  const links = [];
+  const seen = new Set();
+  NAMES.forEach(n => {
+    if (n.pair) {
+      const key = [Math.min(n.id, n.pair), Math.max(n.id, n.pair)].join('-');
+      if (!seen.has(key)) { seen.add(key); links.push({source:n.id, target:n.pair, type:'pair'}); }
+    }
+    (n.related || []).forEach(rid => {
+      const key = [Math.min(n.id, rid), Math.max(n.id, rid)].join('-');
+      if (!seen.has(key)) { seen.add(key); links.push({source:n.id, target:rid, type:'related'}); }
+    });
+  });
+
+  const g = svg.append('g');
+
+  svg.call(d3.zoom().scaleExtent([0.2, 3]).on('zoom', e => g.attr('transform', e.transform)));
+
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(d => d.type === 'pair' ? 80 : 120).strength(d => d.type === 'pair' ? 0.5 : 0.1))
+    .force('charge', d3.forceManyBody().strength(-200))
+    .force('center', d3.forceCenter(w/2, h/2))
+    .force('collision', d3.forceCollide(d => d.r + 12));
+
+  const link = g.append('g').selectAll('line')
+    .data(links).join('line')
+    .attr('class', d => d.type === 'pair' ? 'link pair-link-line' : 'link related-link')
+    .attr('stroke', d => d.type === 'pair' ? '#c9a227' : '#333')
+    .attr('stroke-width', d => d.type === 'pair' ? 1.5 : 0.8);
+
+  const node = g.append('g').selectAll('g')
+    .data(nodes).join('g')
+    .attr('class', 'node')
+    .call(d3.drag()
+      .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+      .on('drag', (e, d) => { d.fx=e.x; d.fy=e.y; })
+      .on('end', (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; })
+    )
+    // Panel grafın üstünde açılır — artık kart görünümüne atlamıyoruz
+    .on('click', (e, d) => openDetail(d.id));
+
+  node.append('circle')
+    .attr('r', d => d.r)
+    .attr('fill', d => d.color + '66')
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', d => d.name.is_mother ? 2 : 1);
+
+  node.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => d.r + 11)
+    .attr('fill', '#b8a882')
+    .attr('font-size', '7px')
+    .text(d => d.name.transliteration.replace('El-','').replace('Er-','').replace('Es-','').replace('Ez-','').replace('Ed-','').replace('En-','').replace('Et-','').replace('Eş-',''));
+
+  node.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', '0.35em')
+    .attr('fill', '#c9a227')
+    .attr('font-size', d => d.r > 10 ? '10px' : '8px')
+    .attr('font-family', 'serif')
+    .text(d => d.id);
+
+  sim.on('tick', () => {
+    link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+}
+
+// ── ŞECERE (SUNBURST) ─────────────────────────────────
+function buildSecere() {
+  const svg = d3.select('#secere-svg');
+  svg.selectAll('*').remove();
+
+  const el = document.getElementById('view-secere');
+  const w = el.clientWidth || 1200;
+  const h = el.clientHeight || 800;
+  const radius = Math.min(w, h) / 2 - 28;
+  if (radius <= 0) return;
+
+  const colorMap = { celal:'#c44040', cemal:'#2e9e48', kemal:'#3058c0', cem:'#8030b8' };
+
+  // Zât → 7 anne → çocukları
+  const mothers = NAMES.filter(n => n.is_mother);
+  const hierarchy = {
+    key: 'root',
+    children: mothers.map(m => ({
+      key: 'mother', name: m,
+      children: NAMES.filter(n => n.mother === m.id).map(n => ({ key:'leaf', name:n }))
+    }))
+  };
+
+  const root = d3.hierarchy(hierarchy)
+    .sum(d => d.key === 'leaf' ? 1 : 0)
+    .sort((a, b) => a.data.name && b.data.name ? a.data.name.id - b.data.name.id : 0);
+
+  d3.partition().size([2 * Math.PI, radius])(root);
+
+  // Halka yarıçapları tek yerden — yaylar ve etiketler aynı hesabı kullansın,
+  // yoksa anne halkası yaprak halkasının içine taşar.
+  const rIn  = d => d.depth === 1 ? d.y0 + 20 : d.y0 + 8;
+  const rOut = d => d.depth === 1 ? d.y1 - 10 : d.y1;
+
+  const arc = d3.arc()
+    .startAngle(d => d.x0)
+    .endAngle(d => d.x1)
+    .padAngle(d => d.depth === 1 ? 0.012 : 0.002)
+    .padRadius(radius / 2)
+    .innerRadius(rIn)
+    .outerRadius(rOut);
+
+  // Dış grup merkezler, iç grup zoom'lanır — böylece pan/pinch merkeze göre çalışır
+  const outer = svg.append('g').attr('transform', `translate(${w/2},${h/2})`);
+  const g = outer.append('g');
+  svg.call(d3.zoom().scaleExtent([0.7, 6]).on('zoom', e => g.attr('transform', e.transform)));
+
+  // Dar ekranda yaprak halkası ~45px'e düşüyor, uzun isimler taşıyor.
+  // Etiketleri gizle; isim dokunarak açılır, yakınlaştırınca da görünür.
+  const showLeafLabels = radius >= 240;
+  const motherFont = Math.max(6, Math.min(8.5, radius / 46));
+
+  const segments = root.descendants().filter(d => d.depth > 0);
+
+  const path = g.selectAll('path')
+    .data(segments).join('path')
+    .attr('class', 'sb-arc')
+    .attr('d', arc)
+    .attr('fill', d => d.depth === 1 ? '#c9a227' : colorMap[d.data.name.classification])
+    .attr('fill-opacity', d => d.depth === 1 ? 0.5 : 0.62)
+    .attr('stroke', '#080812')
+    .attr('stroke-width', 0.6)
+    .on('click', (e, d) => openDetail(d.data.name.id))
+    .on('mouseenter', (e, d) => {
+      // Aynı anneye bağlı olmayanları soldur
+      const mid = d.depth === 1 ? d.data.name.id : d.parent.data.name.id;
+      path.attr('fill-opacity', o => {
+        const omid = o.depth === 1 ? o.data.name.id : o.parent.data.name.id;
+        if (omid !== mid) return 0.12;
+        return o.depth === 1 ? 0.75 : 0.85;
+      });
+      setCenter(d.data.name.arabic, d.data.name.transliteration);
+    })
+    .on('mouseleave', () => {
+      path.attr('fill-opacity', o => o.depth === 1 ? 0.5 : 0.62);
+      setCenter('الذّات', 'Bir isme dokun');
+    });
+
+  path.append('title')
+    .text(d => d.depth === 1
+      ? `${d.data.name.transliteration} — ${d.children ? d.children.length : 0} isim`
+      : `${d.data.name.transliteration} — ${d.data.name.tr_meaning.split(';')[0]}`);
+
+  // Anne etiketi bandın ortasında; yaprak etiketi iç kenardan dışa doğru okunur.
+  function labelTransform(d) {
+    const ang = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+    const r = d.depth === 1 ? (rIn(d) + rOut(d)) / 2 : rIn(d) + 4;
+    return `rotate(${ang - 90}) translate(${r},0) rotate(${ang > 180 ? 180 : 0})`;
+  }
+
+  g.selectAll('text')
+    .data(segments.filter(d =>
+      (d.x1 - d.x0) > 0.035 && (d.depth === 1 || showLeafLabels))).join('text')
+    .attr('class', 'sb-label')
+    .attr('transform', labelTransform)
+    .attr('text-anchor', d => d.depth === 1
+      ? 'middle'
+      : (((d.x0 + d.x1) / 2 > Math.PI) ? 'end' : 'start'))
+    .attr('dy', '0.32em')
+    .attr('fill', d => d.depth === 1 ? '#080812' : '#d8c89c')
+    .attr('font-size', d => d.depth === 1 ? motherFont + 'px' : '6.5px')
+    .attr('font-family', 'Georgia, serif')
+    .attr('letter-spacing', d => d.depth === 1 ? '0.06em' : '0')
+    .text(d => {
+      const t = d.data.name.transliteration.replace(/^(El|Er|Es|Ez|Ed|En|Et|Eş)-/, '');
+      return d.depth === 1 ? t.toLocaleUpperCase('tr') : t;
+    });
+}
+
+function setCenter(ar, tr) {
+  const hint = document.getElementById('secere-hint');
+  hint.querySelector('.sc-ar').textContent = ar;
+  hint.querySelector('.sc-tr').textContent = tr;
+}
+
+// ── EVENTS ────────────────────────────────────────────
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Görünüm değişince açık paneli kapat → hash'te isim taşımayalım
+    location.hash = buildHash(tab.dataset.view, null, null);
+    closeDrawer();
+  });
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    buildGrid();
+  });
+});
+
+document.getElementById('search-input').addEventListener('input', buildGrid);
+document.getElementById('panel-close').addEventListener('click', () => {
+  location.hash = buildHash(currentView, null, null);
+});
+
+// Klavye: ← → isimler arası, Esc paneli kapatır
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'Escape') {
+    if (renderedId) location.hash = buildHash(currentView, null, null);
+    return;
+  }
+  if (!renderedId) return;
+  if (e.key === 'ArrowLeft')  { const p = neighbourId(renderedId, -1); if (p) openDetail(p); }
+  if (e.key === 'ArrowRight') { const n = neighbourId(renderedId,  1); if (n) openDetail(n); }
+});
+
+window.addEventListener('hashchange', applyRoute);
+
+// ── MOBİL ÇEKMECE (DRAWER) ────────────────────────────
+const sidebarEl = document.getElementById('app-sidebar');
+const navToggle = document.getElementById('nav-toggle');
+const navBackdrop = document.getElementById('nav-backdrop');
+const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+
+function openDrawer() {
+  sidebarEl.classList.add('open');
+  navBackdrop.classList.add('open');
+  navToggle.classList.add('active');
+  navToggle.setAttribute('aria-expanded', 'true');
+  document.body.classList.add('drawer-open');
+}
+function closeDrawer() {
+  sidebarEl.classList.remove('open');
+  navBackdrop.classList.remove('open');
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('drawer-open');
+}
+navToggle.addEventListener('click', () =>
+  sidebarEl.classList.contains('open') ? closeDrawer() : openDrawer());
+navBackdrop.addEventListener('click', closeDrawer);
+mobileSearchToggle.addEventListener('click', () => {
+  openDrawer();
+  setTimeout(() => document.getElementById('search-input').focus(), 320);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && sidebarEl.classList.contains('open')) closeDrawer();
+});
+
+// Graf, şecere ve ayna viewport ölçüsüne göre çizildiği için
+// döndürme/yeniden boyutlandırmada yeniden kurulmaları gerekiyor.
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (window.innerWidth > 760) closeDrawer();
+    if (!NAMES.length) return;
+    if (currentView === 'graph')  buildGraph();
+    if (currentView === 'secere') buildSecere();
+    if (currentView === 'ayna')   { stopAyna(); initAyna(); }
+  }, 200);
+});
+
+// ── AYNA ──────────────────────────────────────────────
+(function() {
+  const RW = 200, RH = 120; // ripple buffer resolution
+  let bufA = new Float32Array(RW * RH);
+  let bufB = new Float32Array(RW * RH);
+  let cur = 0;
+  let running = false;
+  let raf = null;
+  let qtTimer = null;
+  let qtIdx = 0;
+  let floatT = 0;
+  let offscreen = null; // small canvas for pixel work
+  let offCtx = null;
+
+  const QUOTES = [
+    { t: '"Ben bende değil, sen bendesin; seni sende arayanlara ne söyleyeyim"', s: '— Yunus Emre' },
+    { t: '"Her kim bu âleme bakar, Hakk\'ı görür; zira her eşya Hakk\'ın aynasıdır"', s: '— Muhyiddîn İbn Arabî' },
+    { t: '"Kendini bilen Rabbini bilir"', s: '— Hz. Peygamber ﷺ' },
+    { t: '"Kalp, aynaya benzer; temizlenirse Hakk\'ın cemâlini yansıtır"', s: '— Mevlânâ Celâleddîn Rûmî' },
+    { t: '"Hak, âlemi kendi isimlerinin aynası olsun diye yarattı"', s: '— İbn Arabî, Fütûhât-ı Mekkiyye' },
+    { t: '"Dışarıda ne ararsın? İçinde ara; aradığın sende gizlidir"', s: '— Yunus Emre' },
+    { t: '"Su yüzeyine bak: hem yansıtır, hem geçirir — işte Berzah budur"', s: '— Tasavvuf geleneği' }
+  ];
+
+  const CONCEPTS = {
+    zat:    { ar:'الذّات',  title:'ZÂT — İlâhî Öz',          body:'Hiçbir sıfat ve isimle kuşatılamayan saf varlık. Tenzih mertebesi — mutlak aşkınlık. Zât, aynada görünen değil; aynayı var edendir. Gözle değil, kalbin derinliğiyle hissedilir.' },
+    halk:   { ar:'الخلق',  title:'HALK — Yaratılış',          body:'İlâhî isimlerin maddî âlemdeki yansımaları. Her eşya kendi başına var değil; taşıdığı isim tecellisi kadar vardır. Teşbih mertebesi — ilâhî olanın içindelik hâli.' },
+    tenzih: { ar:'التنزيه', title:'TENZİH — Aşkınlık',        body:'Allah\'ı her türlü benzetme ve sınırlamadan tenzih etmek (uzak tutmak). Yıldız yıldıza benzemez, yaratan yaratılana benzemez — bu uzaklık gerçeğin ta kendisidir.' },
+    tesbih: { ar:'التشبيه', title:'TEŞBİH — İçkinlik',        body:'İlâhî isimlerin yaratılmışta görünmesi. "Nereye dönerseniz Allah\'ın vechi oradadır" (Bakara 115). Benzeme değil; isimlerin tecellisi. Tenzih\'in karşı kutbu, her ikisi birlikte hakikati kuşatır.' },
+    celal:  { ar:'الجلال', title:'CELÂL — Azamet ve Heybet', body:'Kudret, kahır, büyüklük isimleri. Kâinatta: fırtına, deprem, kara delik. İnsanda: korku, huşu, diz çökme hâli. Celâl, içimizi boşaltarak yer açar.' },
+    cemal:  { ar:'الجمال', title:'CEMÂL — Güzellik ve Rahmet',body:'Sevgi, şefkat, güzellik isimleri. Çiçeğin açılışı, annenin yüzü, baharın geliş sesi. Cemâl, içimizi doldurarak taşırır. Celâl boşaltır, Cemâl doldurur.' },
+    berzah: { ar:'البرزخ', title:'BERZAH — Ayna Noktası',     body:'İki âlemin birleştiği geçit. Su yüzeyi gibi: hem yansıtır hem geçirir. İnsân-ı Kâmil bu noktada durur — hem Hakk\'a hem Halka dönük. İbn Arabî\'ye göre insan bu berzah olmak üzere yaratılmıştır.' }
+  };
+
+  const SKY_NAMES = [
+    {a:'الله',   x:.13,y:.09},{a:'الرحمن',x:.50,y:.06},{a:'الرحيم',x:.82,y:.12},
+    {a:'الحي',   x:.30,y:.21},{a:'القيوم',x:.65,y:.19},{a:'النور',  x:.20,y:.32},
+    {a:'العليم', x:.76,y:.30},{a:'القادر',x:.44,y:.38},{a:'الجميل',x:.90,y:.22}
+  ];
+  const STARS = Array.from({length:110}, () => ({
+    x:Math.random(), y:Math.random()*.92,
+    r:Math.random()*1.1+.2,
+    ph:Math.random()*Math.PI*2,
+    sp:Math.random()*.016+.004
+  }));
+
+  function initAyna() {
+    const canvas = document.getElementById('ayna-canvas');
+    if (!canvas) return;
+
+    canvas.width  = canvas.offsetWidth  || 1200;
+    canvas.height = canvas.offsetHeight || 700;
+
+    // Small offscreen canvas for pixel manipulation (ripple buffer res)
+    offscreen = document.createElement('canvas');
+    offscreen.width = RW; offscreen.height = RH;
+    offCtx = offscreen.getContext('2d');
+
+    bufA.fill(0); bufB.fill(0); cur = 0; floatT = 0;
+
+    // Click → big splash
+    canvas.onclick = (e) => {
+      const r = canvas.getBoundingClientRect();
+      const cx = Math.floor((e.clientX - r.left) / r.width  * RW);
+      const cy = Math.floor((e.clientY - r.top)  / r.height * RH);
+      splash(cx, cy, 220, 4);
+    };
+    // Drag → gentle trail
+    canvas.onmousemove = (e) => {
+      if (!(e.buttons & 1)) return;
+      const r = canvas.getBoundingClientRect();
+      const cx = Math.floor((e.clientX - r.left) / r.width  * RW);
+      const cy = Math.floor((e.clientY - r.top)  / r.height * RH);
+      splash(cx, cy, 50, 2);
+    };
+
+    // Star vertex clicks
+    document.querySelectorAll('.sv').forEach(g => {
+      g.onclick = (e) => { e.stopPropagation(); showConcept(g.dataset.c); };
+    });
+    document.getElementById('ac-close').onclick = () =>
+      document.getElementById('ayna-concept').classList.remove('open');
+    canvas.addEventListener('click', () =>
+      document.getElementById('ayna-concept').classList.remove('open'), { capture: false });
+
+    // Quotes
+    showQuote();
+    qtTimer = setInterval(showQuote, 6500);
+
+    running = true;
+    raf = requestAnimationFrame(frame);
+  }
+  window.initAyna = initAyna;
+
+  function stopAyna() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+    if (qtTimer) clearInterval(qtTimer);
+    const c = document.getElementById('ayna-canvas');
+    if (c) { c.onclick = null; c.onmousemove = null; }
+  }
+  window.stopAyna = stopAyna;
+
+  function splash(cx, cy, str, rad) {
+    const b = cur === 0 ? bufA : bufB;
+    for (let dy = -rad; dy <= rad; dy++)
+      for (let dx = -rad; dx <= rad; dx++)
+        if (dx*dx+dy*dy <= rad*rad) {
+          const nx = cx+dx, ny = cy+dy;
+          if (nx>=1&&nx<RW-1&&ny>=1&&ny<RH-1) b[ny*RW+nx] = str;
+        }
+  }
+
+  function stepRipple() {
+    const prev = cur===0 ? bufA : bufB;
+    const next = cur===0 ? bufB : bufA;
+    for (let y = 1; y < RH-1; y++)
+      for (let x = 1; x < RW-1; x++) {
+        const i = y*RW+x;
+        next[i] = (prev[i-1]+prev[i+1]+prev[i-RW]+prev[i+RW])*.5 - next[i];
+        next[i] *= .983;
+      }
+    cur = 1 - cur;
+  }
+
+  function frame(t) {
+    if (!running) return;
+    const canvas = document.getElementById('ayna-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const waterY = Math.floor(H * .47);
+
+    floatT += .009;
+    stepRipple();
+
+    // ── SKY ──
+    const sg = ctx.createLinearGradient(0,0,0,waterY);
+    sg.addColorStop(0,'#03030c'); sg.addColorStop(.65,'#06061a'); sg.addColorStop(1,'#0c0820');
+    ctx.fillStyle = sg; ctx.fillRect(0,0,W,waterY);
+
+    STARS.forEach(s => {
+      s.ph += s.sp;
+      ctx.beginPath(); ctx.arc(s.x*W, s.y*waterY, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(255,248,210,${.28+.32*Math.sin(s.ph)})`;
+      ctx.fill();
+    });
+
+    ctx.textAlign = 'center';
+    SKY_NAMES.forEach((n,i) => {
+      const yo = Math.sin(floatT + i*1.2)*5;
+      const al = .16 + .07*Math.sin(floatT*.55+i*.9);
+      ctx.font = '16px serif'; ctx.fillStyle = `rgba(201,162,39,${al})`;
+      ctx.fillText(n.a, n.x*W, n.y*waterY + yo);
+    });
+
+    // ── WATER REFLECTION via small canvas ──
+    // Draw sky into offscreen (scaled down)
+    offCtx.drawImage(canvas, 0,0,W,waterY, 0,0,RW,RH);
+    const skyPx = offCtx.getImageData(0,0,RW,RH);
+
+    const wRH = Math.floor(RH*.5); // water half of buffer
+    const wImg = offCtx.createImageData(RW, wRH);
+    const d = wImg.data;
+    const ripBuf = cur===0 ? bufA : bufB;
+
+    for (let wy = 0; wy < wRH; wy++) {
+      for (let wx = 0; wx < RW; wx++) {
+        const ri = wy*RW + wx;
+        const nx = wx < RW-1 ? (ripBuf[ri+1]-ripBuf[ri])*3.5 : 0;
+        const ny = wy < wRH-1 ? (ripBuf[ri+RW]-ripBuf[ri])*3.5 : 0;
+        const sx = Math.max(0,Math.min(RW-1, wx + Math.round(nx)));
+        const sy = Math.max(0,Math.min(RH-1, RH-1-wy + Math.round(ny)));
+        const si = (sy*RW+sx)*4;
+        const di = (wy*RW+wx)*4;
+        const fade = .58 - wy/wRH*.22;
+        d[di]   = skyPx.data[si]  *fade;
+        d[di+1] = skyPx.data[si+1]*fade;
+        d[di+2] = skyPx.data[si+2]*fade + 12;
+        d[di+3] = 255;
+      }
+    }
+    offCtx.putImageData(wImg, 0, 0);
+
+    // Scale reflection up to water area
+    const wH = H - waterY;
+    ctx.drawImage(offscreen, 0,0,RW,wRH, 0,waterY,W,wH);
+
+    // Deep-water fade
+    const dg = ctx.createLinearGradient(0,waterY+wH*.4,0,H);
+    dg.addColorStop(0,'rgba(3,3,14,0)'); dg.addColorStop(1,'rgba(3,3,14,0.72)');
+    ctx.fillStyle = dg; ctx.fillRect(0,waterY+wH*.4,W,wH*.6);
+
+    // ── SURFACE LINE ──
+    const lg = ctx.createLinearGradient(0,waterY-1,0,waterY+2);
+    lg.addColorStop(0,'rgba(201,162,39,0.9)'); lg.addColorStop(1,'rgba(201,162,39,0.15)');
+    ctx.fillStyle = lg; ctx.fillRect(0,waterY-1,W,2);
+
+    // shimmer dots
+    for (let k=0;k<7;k++) {
+      const sx = (t*.03 + k*139) % W;
+      ctx.beginPath(); ctx.arc(sx,waterY,1.4,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(255,238,160,0.65)'; ctx.fill();
+    }
+
+    raf = requestAnimationFrame(frame);
+  }
+
+  function showConcept(key) {
+    const c = CONCEPTS[key];
+    if (!c) return;
+    document.getElementById('ac-arabic').textContent = c.ar;
+    document.getElementById('ac-title').textContent  = c.title;
+    document.getElementById('ac-body').textContent   = c.body;
+    document.getElementById('ayna-concept').classList.add('open');
+  }
+
+  function showQuote() {
+    const q = QUOTES[qtIdx % QUOTES.length]; qtIdx++;
+    const te = document.getElementById('ayna-q-text');
+    const se = document.getElementById('ayna-q-src');
+    if (!te||!se) return;
+    te.style.opacity = '0';
+    setTimeout(() => { te.textContent = q.t; se.textContent = q.s; te.style.opacity = '1'; }, 500);
+  }
+})();
+
+// ── NEFS MERTEBELERİ ──────────────────────────────────
+const NEFS = [
+  {
+    id:'emmare', level:1, ar:'النَّفْسُ الْأَمَّارَةُ', tr:'Nefs-i Emmâre',
+    tagline:'Kötülüğü emreden nefis — gaflet ve şehvetin hâkim olduğu ilk basamak',
+    color:'#b5342c', colorName:'Siyah / Koyu Kızıl',
+    ayet_meal:'"Ben nefsimi temize çıkarmıyorum; çünkü nefis, Rabbimin merhamet ettiği hariç, daima kötülüğü emreder (emmâratün bi\'s-sûi). Şüphesiz Rabbim çok bağışlayan, çok merhamet edendir."',
+    ayet_kaynak:'Yûsuf, 12:53',
+    tanim:'Nefsin en kaba, en alt mertebesi. Şehvet, öfke, kibir ve hırs gibi dürtüler kalbi tamamen kuşatmıştır; vicdan henüz uyanmamış, kul yaptığı kötülükten rahatsızlık duymaz — hatta onu meşrulaştırır. Gaflet perdesi bu mertebenin adıdır.',
+    haller:[
+      'Günahta ısrar edip pişmanlık duymamak, hatayı hep dışarıda aramak',
+      'Mal, mevki ve şehvet hırsının önüne geçilememesi',
+      'Kibir ve büyüklenme; küçük görülmeye tahammülsüzlük',
+      'Hasedin kolayca harekete geçmesi, başkasının iyiliğine sıkılmak',
+      'İbadeti angarya, zikri sıkıcı bir yük olarak hissetmek',
+      'Yalanı, vicdan azabı duymadan kolayca söyleyebilmek'
+    ],
+    gazzali:'Gazzâlî, İhyâ\'nın "Riyâzetü\'n-Nefs" bölümünde nefsi bu hâliyle bir tedavi konusu olarak ele alır: kalbin hastalıkları (kibir, ucb, hased, gazab, buhl) teşhis edilmeli, her biri zıddıyla tedavi edilmelidir (mücâhede bi\'z-zıd). "Nefsini yenmeyen kimse başka hiçbir şeyi yenemez" der; riyâzeti bir işkence değil, kalbi asıl fıtratına döndüren bir perhiz olarak görür.',
+    ibn_arabi:'İbn Arabî, Fütûhât-ı Mekkiyye\'de nefsi kendi başına kötü saymaz; nefis, hangi ilâhî ismin kendisinde tecelli ettiğine göre şekil alan bir mahaldir. Emmâre hâli, celâlî isimlerin (Kahhâr, Müzill, Cebbâr) kalpte perde olacak biçimde baskın gelmesidir. Ona göre mesele nefsi yok etmek değil, hangi ismin o an tecelli ettiğini fark edip dizginlemeyi öğrenmektir.',
+    zikir:'لَا إِلٰهَ إِلَّا اللّٰه', zikir_tr:'Lâ ilâhe illallah',
+    zikir_not:'Nefsin taptığı "benlik putlarını" (heva, mal, makam) yıkan ilk zikir olarak anlatılır; tasavvuf geleneğinde bu mertebeye çoğunlukla siyah — karanlık ve cehaletin rengi — yakıştırılır.'
+  },
+  {
+    id:'levvame', level:2, ar:'النَّفْسُ اللَّوَّامَةُ', tr:'Nefs-i Levvâme',
+    tagline:'Kendini kınayan nefis — vicdanın ilk kez uyandığı mücadele hâli',
+    color:'#c9432f', colorName:'Kırmızı',
+    ayet_meal:'"Kıyamet gününe yemin ederim. Kendini kınayan nefse (nefs-i levvâme) yemin ederim ki, siz mutlaka diriltileceksiniz."',
+    ayet_kaynak:'Kıyâme, 75:1-2',
+    tanim:'Günahtan sonra pişmanlık duyan, kendini kınayan, artık huzursuz olabilen nefis. Tövbe ile nüks (eski hâle dönüş) iç içedir — kul bazen galip gelir, bazen tekrar düşer. Vicdan sesi belirmiştir ama henüz istikrar kazanmamıştır.',
+    haller:[
+      'Günahtan sonra huzursuzluk ve tövbe isteği duymak',
+      'İbadette gösteriş (riya) ile ihlas arasında gidip gelmek',
+      'Aynı hataları tekrarlasa da artık kendini eleştirebilmek',
+      'Vicdan azabının ilk kez belirgin biçimde hissedilmesi',
+      'Hakkı bildiği hâlde nefsine yenilip sonra utanmak'
+    ],
+    gazzali:'Gazzâlî bu hâli "muhâsebe" (nefsi hesaba çekme) kavramıyla açıklar: "Nasıl ki bir tüccar her gün kâr-zararını hesap eder, mü\'min de her akşam gününü öyle hesaba çekmelidir." Levvâme, bu iç hesaplaşmanın başladığı, kalbin artık kendi hâline kayıtsız kalamadığı andır.',
+    ibn_arabi:'İbn Arabî levvâmeyi, kalbin celâl ile cemâl arasında salındığı bir berzah hâli olarak görür. Kul artık tam gaflette değildir, ama tam huzurda da değildir; bu gel-git bizzat terbiyenin ta kendisidir — sükûnet vaktinden önce gelen fırtına.',
+    zikir:'اَللّٰه', zikir_tr:'Allah (ism-i celâl)',
+    zikir_not:'Uyanan kanı, harekete geçen iradeyi temsil eden kırmızı ile birlikte anılır; nefsin artık kendi hâline kayıtsız kalamadığı bu mücadele evresinde tavsiye edilen zikirdir.'
+  },
+  {
+    id:'mulhime', level:3, ar:'النَّفْسُ الْمُلْهَمَةُ', tr:'Nefs-i Mülhime',
+    tagline:'İlham alan nefis — hayrı seçme gücünün belirginleştiği basamak',
+    color:'#cdbfa0', colorName:'Beyaz',
+    ayet_meal:'"Nefse ve onu düzgün bir biçimde şekillendirip ona kötülüğünü ve takvâsını ilham edene yemin olsun (fe elhemehâ fücûrahâ ve takvâhâ)."',
+    ayet_kaynak:'Şems, 91:7-8',
+    tanim:'Hem kötülük hem hayır nefse ilham olunur; ama bu mertebede hayrı seçme kabiliyeti belirgin biçimde güçlenmiştir. Sabır, kanaat, tevekkül gibi hâller artık zorlanmadan, âdeta içe doğarak yaşanmaya başlar.',
+    haller:[
+      'İçe doğan iyi düşüncelerin (ilhamların) artması',
+      'İbadette önceden tatsız gelen şeylerin tat vermeye başlaması',
+      'Sabır ve kanaatin zorlanmadan, kolaylaşarak yaşanması',
+      'Nefis muhasebesinin süreklilik kazanması, artık ara sıra değil düzenli hâle gelmesi',
+      'Kalpte ara sıra beliren marifet ve huzur anları'
+    ],
+    gazzali:'Gazzâlî bu aşamayı kalbin "münevver" olmaya, yani nurlanmaya başladığı bir hâl olarak tarif eder: ilim ve amel artık birbirini besler, zikir ve murakabe kalpte gerçek bir iz bırakmaya başlamıştır. Bilgi artık sadece zihinde değil, hâl olarak yaşanır.',
+    ibn_arabi:'İbn Arabî mülhime mertebesini "ilham kapısının" açılması olarak anlatır: kalp artık yalnız nefsin sesini değil, rabbânî bir feyzi de duymaya başlamıştır. Ancak bu ilhamın şeytânî vesveseden ayırt edilmesi için mürşid rehberliğini ve Kitap-Sünnet mizanını şart koşar.',
+    zikir:'هُوَ', zikir_tr:'Hû',
+    zikir_not:'Saflaşmanın başlangıcını temsil eden beyaz ile anılır — henüz tam aydınlık değil, ama artık karanlık da değildir.'
+  },
+  {
+    id:'mutmainne', level:4, ar:'النَّفْسُ الْمُطْمَئِنَّةُ', tr:'Nefs-i Mutmainne',
+    tagline:'Huzura kavuşmuş nefis — zikirle sükûnet bulan kalp',
+    color:'#2e9e48', colorName:'Yeşil',
+    ayet_meal:'"Ey mutmain olmuş nefis! Râzı olmuş ve râzı olunmuş olarak Rabbine dön." — "Bilesiniz ki kalpler ancak Allah\'ı zikretmekle mutmain olur (huzur bulur)."',
+    ayet_kaynak:'Fecr, 89:27-28 · Ra\'d, 13:28',
+    tanim:'Şüphe ve tereddütlerden büyük ölçüde kurtulmuş, zikirle ve yakîn imanla sükûnet bulmuş nefis. Nefis-ruh çatışması dinmiştir; kul artık iç fırtınalarla değil, derin bir huzurla yaşar.',
+    haller:[
+      'Sıkıntı ve musibet karşısında iç huzurun büyük ölçüde bozulmaması',
+      'Zikirde ve ibadette derin bir haz ve sükûnet hissetmek',
+      'Şüphe ve vesvesenin belirgin biçimde azalması',
+      'Ölüm ve gelecek korkusunun yerini teslimiyete bırakması',
+      'Başkalarının hatasına karşı sabır ve hoşgörünün kolaylaşması'
+    ],
+    gazzali:'Gazzâlî bu hâli "yakîn" mertebesiyle birlikte anlatır: kalbin, dünyevî sebeplerin ötesinde doğrudan Allah\'a itminan bulduğu an. Kimyâ-yı Saâdet\'te bunu, fırtınadan sonra durulan bir denize benzetir — dalgalar dinmiştir, derinlik değişmemiştir ama artık görünür olmuştur.',
+    ibn_arabi:'İbn Arabî mutmainne nefsi, cemâlî isimlerin (Rahmân, Vedûd, Latîf) baskın geldiği bir tecelli hâli olarak görür. Burada nefis artık kendi hevâsından değil, doğrudan Hakk\'ın isimlerinden hareket eder; huzur, nefsin kendi çabasının değil, tecellinin sonucudur.',
+    zikir:'اَلْحَقّ', zikir_tr:'Hakk',
+    zikir_not:'Huzur, hayat ve cennetin rengi kabul edilen yeşil ile anılır; bazı gelenekte "Allah Hû" zikri de bu mertebeyle birlikte anılır.'
+  },
+  {
+    id:'radiye', level:5, ar:'النَّفْسُ الرَّاضِيَةُ', tr:'Nefs-i Râdiye',
+    tagline:'Rabbinden râzı olan nefis — kadere itirazın düştüğü teslimiyet',
+    color:'#3058c0', colorName:'Lacivert',
+    ayet_meal:'"...râzıyeten..." — Rabbinden râzı olarak (Rabbine dön).',
+    ayet_kaynak:'Fecr, 89:28',
+    tanim:'Kula ne takdir edilirse edilsin -acı da olsa- gönül huzuruyla razı olduğu mertebe. Kazâ ve kadere itiraz kalmamıştır; nimet de imtihan da aynı rızayla karşılanır.',
+    haller:[
+      'Musibet karşısında şikâyet etmemek, iç isyanın dinmesi',
+      'Nimeti de sıkıntıyı da aynı rıza ile karşılayabilmek',
+      'Dünyevî kayıplara duyulan üzüntünün derinliğinin azalması',
+      '"Ne verirsen râzıyım" duygusunun geçici değil kalıcı hâle gelmesi',
+      'Başkalarının kendisine yaptığı haksızlığı da teslimiyetle karşılayabilmek'
+    ],
+    gazzali:'Gazzâlî rızayı tevekkülün en olgun meyvesi sayar; kulun Allah\'ın takdirine itiraz etmemesini, imanın gerçek tadını almanın şartı olarak anlatır. Ona göre rıza, kadere boyun eğmek değil, kaderin arkasındaki hikmete gönülden teslim olmaktır.',
+    ibn_arabi:'İbn Arabî râdiyeyi, kulun iradesinin Hakk\'ın iradesinde fâni olduğu bir makam olarak açıklar. Bu mertebede kul artık kendi isteğini değil, Hakk\'ın kendisi için dilediğini ister hâle gelir — irade çatışması yerini tam bir uyuma bırakmıştır.',
+    zikir:'يَا رَحْمٰن', zikir_tr:'Yâ Rahmân',
+    zikir_not:'Derinliği ve teslimiyeti çağrıştıran lacivert ile anılır; bazı kaynaklarda "Hasbiyallah" virdi de bu mertebeyle birlikte zikredilir.'
+  },
+  {
+    id:'mardiyye', level:6, ar:'النَّفْسُ الْمَرْضِيَّةُ', tr:'Nefs-i Mardiyye',
+    tagline:'Allah\'ın kendisinden râzı olduğu nefis — karşılıklı rıza ve olgunluk',
+    color:'#c9a227', colorName:'Altın / Amber',
+    ayet_meal:'"...merdıyyeten..." — Rabbin de senden râzı olarak (Rabbine dön).',
+    ayet_kaynak:'Fecr, 89:28',
+    tanim:'Kulun rızasına karşılık Allah\'ın da o kuldan râzı olduğu mertebe. Bu olgunlukta kul artık yalnız kendi hâliyle değil, çevresine yansıyan şefkat ve hizmetle de tanınır.',
+    haller:[
+      'Yaratılmışlara karşı şefkat ve merhametin belirgin biçimde artması',
+      'Amelleri kendi menfaati için değil, sadece Hakk rızası için işlemek',
+      'Başkalarının hidayeti ve iyiliği için içten dua ve gayret göstermek',
+      'Nefsin artık kendi çıkarını gözetmeden hareket edebilmesi',
+      'Eleştiriye ve övgüye karşı iç dengenin bozulmaması'
+    ],
+    gazzali:'Gazzâlî bu makamı, ihlâsın kemâle erdiği, kulun amelini yalnızca Allah rızası için işlediği ve bu amelin toplumsal fayda ile rahmete dönüştüğü bir olgunluk olarak tasvir eder — kişisel kurtuluş arayışı, artık başkalarına da uzanan bir rahmete dönüşmüştür.',
+    ibn_arabi:'İbn Arabî mardiyyeyi, insân-ı kâmile yaklaşan kulun kendi nefsinden çıkıp halka rahmet nazarıyla bakması olarak tanımlar. Peygamberlerin ve velîlerin topluma dönük şefkati, ona göre bu makamdan doğar; kul artık kendisi için değil, yaratılmışlar için bir rahmet vesilesi hâline gelir.',
+    zikir:'يَا وَدُود', zikir_tr:'Yâ Vedûd',
+    zikir_not:'Olgunluğu ve ışığın etrafa yayılmasını çağrıştıran altın/amber rengiyle anılır; "Yâ Rahîm" zikri de bu mertebeyle birlikte sayılır.'
+  },
+  {
+    id:'kamile', level:7, ar:'النَّفْسُ الْكَامِلَةُ الصَّافِيَةُ', tr:'Nefs-i Kâmile (Sâfiye)',
+    tagline:'Arınmış, kemâle ermiş nefis — insân-ı kâmil ufku',
+    color:'#f5e6b8', colorName:'Nûr (Beyaz-Altın)',
+    ayet_meal:'Kur\'ân\'da doğrudan isimlendirilmez; tasavvuf ehli, Fecr sûresindeki rıza mertebesinin nihâî meyvesi olarak bu yedinci basamağı ekler. Kimi kaynakta "Sâfiye" (arınmış), kimisinde "Kâmile" (olgunlaşmış) denir.',
+    ayet_kaynak:'Fecr, 89:27-30 üzerine tasavvufî yorum',
+    tanim:'Nefsin bütün kesafetten arındığı, tamamen Hakk\'ın nûruyla saflaştığı nihâî mertebe. Burada nefis artık bir engel değil, ilâhî isimlerin en tam biçimde tecelli ettiği bir ayna hâline gelmiştir.',
+    haller:[
+      'Benlik davasının, "ben" iddiasının büyük ölçüde düşmesi (fenâ)',
+      'Varlığın Hakk ile sükûnet bulması, telaşsız bir bekâ hâli (bekâ billâh)',
+      'Söz ve davranışların doğrudan hikmet ve rahmet taşır hâle gelmesi',
+      'Çokluk (kesret) içinde birliği, birlik içinde çokluğu aynı anda görebilme',
+      'Celâl ve cemâl tecellilerini çelişkisiz, dengeli taşıyabilmek'
+    ],
+    gazzali:'Gazzâlî İhyâ\'da bu mertebeyi "nefs-i kâmile" diye adlandırmaz, ama eserin sonunda tasvir ettiği ârifin hâli tam olarak budur: dünyayı terk etmiş değil, dünyanın içindeyken kalbi tamamen Hakk\'a bağlanmış kişi. Ona göre bu, riyâzetin nihâî meyvesidir — çaba biter, hâl kalır.',
+    ibn_arabi:'İbn Arabî bu mertebeyi doğrudan "İnsân-ı Kâmil" kavramıyla birleştirir. Fütûhât-ı Mekkiyye\'de insanın yaratılış gayesinin, bütün ilâhî isimleri en tam biçimde yansıtan bir ayna (berzah) olmak olduğunu anlatır. Kâmil nefis, Zât\'ın bütün isimlerini -celâlini de cemâlini de- çelişkisiz taşıyabilen nefistir.',
+    zikir:'يَا وَاحِد', zikir_tr:'Yâ Vâhid / Yâ Ehad',
+    zikir_not:'Bütün renklerin birleşimi olan nûr (beyaz-altın) ile anılır; bu mertebede zikrin kendisi de çoğu zaman yalnız "Allah" ism-i zâtına döner.'
+  }
+];
+
+let openNefsId = null;
+
+function buildNefs() {
+  const wrap = document.getElementById('nefs-ladder');
+  if (!wrap) return;
+  wrap.innerHTML = NEFS.map(s => `
+    <div class="nefs-step lvl-${s.level}" style="--step-c:${s.color}" data-id="${s.id}">
+      <div class="nefs-step-num">${s.level}</div>
+      <div class="nefs-step-dot"></div>
+      <div class="nefs-step-names">
+        <div class="nefs-step-arabic">${s.ar}</div>
+        <div class="nefs-step-tr">${s.tr}</div>
+      </div>
+      <div class="nefs-step-tagline">${s.tagline}</div>
+    </div>
+  `).join('');
+  wrap.querySelectorAll('.nefs-step').forEach(el => {
+    el.addEventListener('click', () => openNefsDetail(el.dataset.id));
+  });
+}
+
+const NEFS_TABS = ['tanim', 'kaynaklar', 'haller', 'zikir'];
+
+function openNefsDetail(id) {
+  const s = NEFS.find(x => x.id === id);
+  if (!s) return;
+  openNefsId = id;
+
+  document.querySelectorAll('.nefs-step').forEach(el =>
+    el.classList.toggle('open', el.dataset.id === id));
+
+  const panel = document.getElementById('nefs-panel');
+  const inner = document.getElementById('nefs-panel-inner');
+
+  inner.innerHTML = `
+    <div class="nefs-panel-header" style="--step-c:${s.color}">
+      <div class="nefs-panel-level">Basamak ${s.level} / 7</div>
+      <div class="nefs-panel-arabic">${s.ar}</div>
+      <div class="nefs-panel-tr">${s.tr}</div>
+      <span class="nefs-panel-badge"><span class="nefs-panel-badge-dot"></span>${s.colorName}</span>
+    </div>
+    <div class="panel-tabs">
+      <button class="panel-tab active" data-ntab="tanim">Tanım</button>
+      <button class="panel-tab" data-ntab="kaynaklar">Gazzâlî &amp; İbn Arabî</button>
+      <button class="panel-tab" data-ntab="haller">Hâller — Nasıl Anlaşılır</button>
+      <button class="panel-tab" data-ntab="zikir">Renk &amp; Zikir</button>
+    </div>
+    <div class="panel-content" style="--step-c:${s.color}">
+
+      <div class="tab-section active" data-ntab-content="tanim">
+        <div class="section-title">Âyet</div>
+        <div class="quote-box">
+          ${s.ayet_meal}
+          <div class="source-label">— ${s.ayet_kaynak}</div>
+        </div>
+        <div class="section-title" style="margin-top:1rem">Tanım</div>
+        <div class="section-body">${s.tanim}</div>
+      </div>
+
+      <div class="tab-section" data-ntab-content="kaynaklar">
+        <div class="section-title">Gazzâlî — İhyâ-u Ulûmi'd-Dîn</div>
+        <div class="quote-box">
+          ${s.gazzali}
+          <div class="source-label">— İmâm-ı Gazzâlî</div>
+        </div>
+        <div class="section-title" style="margin-top:1rem">İbn Arabî — Fütûhât-ı Mekkiyye</div>
+        <div class="quote-box">
+          ${s.ibn_arabi}
+          <div class="source-label">— Muhyiddîn İbn Arabî</div>
+        </div>
+      </div>
+
+      <div class="tab-section" data-ntab-content="haller">
+        <div class="section-title">Bu mertebede olduğunu nasıl anlarsın</div>
+        <ul class="haller-list">
+          ${s.haller.map(h => `<li>${h}</li>`).join('')}
+        </ul>
+      </div>
+
+      <div class="tab-section" data-ntab-content="zikir">
+        <div class="section-title">Renk</div>
+        <div class="zikir-box">
+          <div class="zikir-swatch"></div>
+          <div>
+            <div class="section-body" style="margin:0">${s.colorName}</div>
+          </div>
+        </div>
+        <div class="section-title">Zikir</div>
+        <div class="zikir-box">
+          <div>
+            <div class="zikir-word">${s.zikir}</div>
+            <div class="zikir-sub">${s.zikir_tr}</div>
+          </div>
+        </div>
+        <div class="section-body" style="color:var(--text-dim);font-size:0.8rem;margin-top:0.5rem">${s.zikir_not}</div>
+      </div>
+
+    </div>
+  `;
+
+  panel.classList.add('open');
+  panel.scrollTop = 0;
+
+  inner.querySelectorAll('.panel-tab').forEach(t => {
+    t.addEventListener('click', () => {
+      inner.querySelectorAll('.panel-tab').forEach(x => x.classList.toggle('active', x === t));
+      inner.querySelectorAll('.tab-section').forEach(sec =>
+        sec.classList.toggle('active', sec.dataset.ntabContent === t.dataset.ntab));
+    });
+  });
+}
+
+function closeNefsPanel() {
+  document.getElementById('nefs-panel').classList.remove('open');
+  document.querySelectorAll('.nefs-step').forEach(el => el.classList.remove('open'));
+  openNefsId = null;
+}
+
+document.getElementById('nefs-panel-close').addEventListener('click', closeNefsPanel);
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'Escape' && openNefsId) closeNefsPanel();
+});
+
+buildNefs();
+
+// ── RUH MERTEBELERİ ────────────────────────────────────
+// Kaynaklar: TDV İslâm Ansiklopedisi ("Ruh", "Nefis", "Letâif-i Hamse", "Ahfâ" maddeleri)
+// ve Edebiyat ve Sanat Akademisi (edebiyatvesanatakademisi.com, "Ruh-ı Küllî / Nebatî / Hayvanî / İnsanî" sayfaları).
+// Bu yedili tasnif tek bir nas veya sabit tarikat şeması değil; felsefî dörtlü ruh hiyerarşisi ile
+// Nakşibendî letâif-i hamse'sinin sohbet dilinde bir araya getirilmiş hâlidir — her kartta bu ayrım
+// akademik/klasik rozetleriyle işaretlenir.
+const ROZET_LABELS = { akademik:'Akademik (TDV)', tasavvuf:'Klasik Tasavvuf', ayet:"Kur'ân" };
+
+const RUH = [
+  {
+    id:'madeni', level:1, ar:'الرُّوحُ الْمَعْدِنِيُّ', tr:'Ruh-ı Madenî (Cemâdî)',
+    tagline:'Cansız varlıkların ruhu — maddenin en yoğun, en durağan hâli',
+    color:'#5c6470', colorName:'Kurşuni / Taş Rengi', rozet:['tasavvuf'],
+    tanim:'Tasavvuf edebiyatındaki dörtlü ruh tasnifinin en alt basamağı. Taş, toprak, maden gibi cansız varlıklarda bulunduğu kabul edilen; kendinden hareketi, büyümesi ve duyusu olmayan, yalnız varlığını koruyan mertebedir. Bu düzey Kur\'ân veya hadiste "ruh" adıyla doğrudan geçmez; tasavvuf ve irfan edebiyatının bir tasnif dilidir.',
+    akademik:{ text:'Edebiyat ve Sanat Akademisi\'nin derlediği bilgiye göre tasavvufçular ruhu dört çeşide ayırmıştır: ruh-ı insanî, ruh-ı hayvanî, ruh-ı nebatî ve ruh-ı cemâdî. Bunlardan yalnız insandaki ruh Yaratıcı\'dan doğrudan üflendiği için ölümsüz kabul edilir; cansızlardaki, bitkilerdeki ve hayvanlardaki ruh türleri ise ölümlüdür.', kaynak:'Edebiyat ve Sanat Akademisi, "Ruh-ı Küllî Nedir"' },
+    klasik:{ text:'TDV İslâm Ansiklopedisi\'nin "Ruh" maddesinde, Osmanlı dönemi müfessiri İsmâil Hakkı Bursevî\'nin ruhu zâtî, izâfî ve hayvanî olmak üzere üçe ayırdığı, her mertebenin bir öncekinden daha "lâtif" (ince, maddeden uzak) kabul edildiği aktarılır. Cemâdî/madenî düzey, bu hiyerarşide maddeye en yakın, en "kesif" uçtur.', kaynak:'TDV İslâm Ansiklopedisi, "Ruh" md. (Tasavvuf bl., Süleyman Uludağ)' },
+    kainat:'Dağların sükûneti, kayaların dayanıklılığı, elementlerin kararlı dizilimi — tefekkür ehli bunda el-Metîn ve el-Bâkî gibi isimlerin bir izini okur. Bu okuma bir din hükmü değil, bir tefekkür/benzetme alışkanlığıdır.',
+    insan:'Bedenin mineral iskeleti — kemik, kalsiyum, elementler — bu düzeye karşılık sayılır. Kur\'ân insanın yaratılışını çamur ve balçıkla da anar (bk. es-Sâffât 37:11; el-Hicr 15:26).'
+  },
+  {
+    id:'nebati', level:2, ar:'الرُّوحُ النَّبَاتِيُّ', tr:'Ruh-ı Nebatî',
+    tagline:'Bitkisel ruh — beslenme, büyüme ve üremenin kaynağı',
+    color:'#3f7d3a', colorName:'Toprak Yeşili', rozet:['tasavvuf','akademik'],
+    tanim:'Bitkilerde bulunduğu kabul edilen, beslenme, büyüme, üreme ve kendini onarma gücünü taşıyan mertebe. Klasik İslam felsefesinde (Fârâbî-İbn Sînâ çizgisi) bu düzey "nebâtî nefis" adıyla, canlılığın en temel ve ortak katmanı olarak ele alınır.',
+    akademik:{ text:'TDV İslâm Ansiklopedisi\'nin "Ruh" maddesinde İlhan Kutluer, Fârâbî ve İbn Sînâ\'nın ruh/nefis anlayışını "faal akıl, ruh ve nefis ayrımı yapan ontolojik bir hiyerarşi" olarak aktarır; bu hiyerarşide nebatî düzey, hayvanî ve insanî düzeylerin üzerine kurulduğu ortak yaşam ilkesidir.', kaynak:'TDV İslâm Ansiklopedisi, "Ruh" md. (Felsefe bl., İlhan Kutluer)' },
+    klasik:{ text:'TDV\'nin "Nefis" maddesinde, Muhyiddin İbnü\'l-Arabî\'nin nefiste nebatî, hayvanî ve aklî olmak üzere üç nitelik tanımladığı belirtilir — yani bu üçlü ayrım tek bir düşünürün değil, İbn Arabî\'nin de içinde olduğu geniş bir geleneğin ortak diliydi.', kaynak:'TDV İslâm Ansiklopedisi, "Nefis" md. (Ömer Türker)' },
+    kainat:'Bir tohumun toprağı yarıp filizlenmesi, mevsimlere göre ölür gibi olup yeniden yeşermesi — el-Bâri, el-Muhyî (dirilten) ve er-Rezzâk gibi isimlerin eseri olarak tefekkür edilir.',
+    insan:'Metabolizma, hücre yenilenmesi, büyüme ve uyku hâlindeki bedensel bakım bu düzeye karşılık gelir. Uykuda şuur ve irade çekilse de nefes, sindirim ve dolaşımın sürmesi çoğu sohbette bu ve bir sonraki (hayvanî) düzeyin faaliyeti olarak anlatılır.'
+  },
+  {
+    id:'hayvani', level:3, ar:'الرُّوحُ الْحَيَوَانِيُّ', tr:'Ruh-ı Hayvanî',
+    tagline:'Duyu ve hareketin kaynağı — canlılığın bedensel motoru',
+    color:'#c9432f', colorName:'Kızıl-Turuncu', rozet:['tasavvuf','akademik'],
+    tanim:'Duyum, irade dışı ve iradî hareket, açlık-korku-öfke-haz gibi bedensel dürtülerin kaynağı sayılan mertebe. "Hayvan" kelimesi burada küçültücü bir anlam taşımaz; Arapçadaki hayât (canlılık) köküyle ilgilidir.',
+    akademik:{ text:'Edebiyat ve Sanat Akademisi\'nin "Ruh-ı Hayvan" sayfasına göre hayvan (حيوان) kelimesi Arapça\'da canlılık, dirilik anlamına gelir; ruh (روح) ise "revh" kökünden nefes, soluk, rüzgâr ve canlılarda hayatı sağlayan unsur mânasını taşır. Hayvanlardaki bu ruh, hayvanın ölümüyle birlikte söner — insandaki ruhtan temel farkı budur.', kaynak:'Edebiyat ve Sanat Akademisi, "Ruh-ı Hayvan Nedir"' },
+    klasik:{ text:'TDV\'nin "Ruh" maddesi, ruh-beden ilişkisini klasik tasavvuf metinlerinde bir "biniş" (binek) ilişkisi olarak aktarır: ruh bedeni tasarruf eder ve yönetir. Hayvanî ruh, bu tasarrufun en ham, en dürtüsel katmanıdır — nefs-i emmârenin de hammaddesini oluşturur.', kaynak:'TDV İslâm Ansiklopedisi, "Ruh" md. (Tasavvuf bl., Süleyman Uludağ)' },
+    kainat:'Hayvanlar âleminin içgüdüsel dengesi, avın ve avcının ölçülü döngüsü, hiçbir türün ihtiyacından fazlasını almaması — tefekkür ehlince bir "ölçü" (mîzan) tecellisi olarak okunur.',
+    insan:'Açlık, korku, öfke, haz, kaçınma; bedenin "hayatta kal" refleksleri. Bu düzey kötü değildir — dizginlenmediğinde nefs-i emmârenin sahnesi hâline gelir; ölçülü kullanıldığında bedenin ibadeti (oruç, hac, cihâd-ı nefs) taşıyabilmesinin de kaynağıdır.'
+  },
+  {
+    id:'nefsani', level:4, ar:'الرُّوحُ النَّفْسَانِيُّ', tr:'Ruh-ı Nefsânî',
+    tagline:'Kişisel benlik — "ben" algısının ve nefs mertebelerinin sahnesi',
+    color:'#a5672f', colorName:'Kehribar', rozet:['akademik','tasavvuf'],
+    tanim:'Bireysel benliğin, "ben" algısının, sahiplenme ve savunma dürtülerinin, kısacası nefsin bizzat kendisinin sahnelendiği düzey. Burada artık hayvanî dürtülerin ham hâli değil, onların bir kimlik ve tarih etrafında örgütlenmiş biçimi vardır.',
+    akademik:{ text:'TDV İslâm Ansiklopedisi "Nefis" maddesine göre nefis, "insanın özü, kendisi, ilâhî bir latife ve kötü huyların kaynağı" anlamında kullanılır; tasavvufta nefis denince "şer ve günahın kaynağı olan, kötü huy ve süflî arzuların tamamı" anlaşılır — ama bu, terbiye ile ıslah edilebilecek bir alandır, yok edilecek bir düşman değil.', kaynak:'TDV İslâm Ansiklopedisi, "Nefis" md. (Süleyman Uludağ / Ömer Türker)' },
+    klasik:{ text:'Nakşibendî yolunun letâif-i hamse (beş latife: kalp, ruh, sır, hafî, ahfâ) sistemine "nefs" altıncı unsur olarak eklenince letâif-i sitte (altı latife) oluşur. Nefs burada âlem-i emrin latifeleri arasında sayılan, ama en çok terbiyeye muhtaç olan uzuvdur.', kaynak:'TDV İslâm Ansiklopedisi, "Letâif-i Hamse" md. (Osman Türer)' },
+    kainat:'Toplumsal düzeyde rekabet, statü arayışı, "benim / senin" ayrımı — ölçüsüz hâliyle fesada, ölçülü hâliyle iş bölümüne ve medeniyete dönüşebilen ham bir enerji.',
+    insan:'Kişinin nefs mertebeleri (emmâre → levvâme → mülhime → mutmainne → râdıye → mardıyye → kâmile) arasındaki bütün yolculuğu tam olarak bu düzeyde yaşanır. Bir öfke, kibir veya haset anında hangi mertebenin hâkim olduğunu fark etmek, sitenin Nefs Mertebeleri haritasının konusudur.',
+    baglanti:{ view:'nefs', label:'Nefs Mertebeleri haritasını aç →' }
+  },
+  {
+    id:'insani', level:5, ar:'الرُّوحُ الْإِنْسَانِيُّ', tr:'Ruh-ı İnsanî',
+    tagline:'Akıl, vicdan ve idrakin kaynağı — eşref-i mahlûkat',
+    color:'#c9a227', colorName:'Altın', rozet:['ayet','akademik'],
+    ayet_meal:'"Onu düzenleyip içine rûhumdan üflediğim zaman, hemen ona secdeye kapanın."',
+    ayet_kaynak:'Sâd, 38:72 (bk. ayrıca el-Hicr, 15:29)',
+    tanim:'İnsanı sırf dürtü ve biyolojik ihtiyaçtan ayıran; bilinç, akıl, vicdan, irade ve ahlâkî sorumlulukla ilişkilendirilen düzey. Tasavvuf edebiyatında insanın "eşref-i mahlûkat" (yaratılmışların en şereflisi) sayılmasının dayanağı bu ruhtur.',
+    akademik:{ text:'TDV İslâm Ansiklopedisi "Ruh" maddesinde ruh, "canlılarda hayatı sağlayan" ve "idrak edici, bilici hakikati" ifade eden, meleğin ana rahminde bedene üflediği, insanın algılayıcı ve bilici bir varlık olmasının kaynağı olarak tanımlanır.', kaynak:'TDV İslâm Ansiklopedisi, "Ruh" md. (Kelâm bl., Yusuf Şevki Yavuz)' },
+    klasik:{ text:'Edebiyat ve Sanat Akademisi\'nin "Ruh-ı İnsanî" sayfasına göre bu ruh, ruh-ı küllî içindeki en şerefli türdür; Yaratıcı tarafından insana doğrudan üflendiği için ölümsüz kabul edilir ve insanı "eşref-i mahlûkat" kılan asıl sebep sayılır.', kaynak:'Edebiyat ve Sanat Akademisi, "Ruh-ı İnsanî — Eşref-i Mahlûkat Nedir"' },
+    kainat:'İnsanın yeryüzünde emanet ve halifelik taşıyabilmesi (bk. el-Bakara 2:30, el-Ahzâb 33:72) — yani sorumluluk yüklenebilen tek yaratılmış oluşu.',
+    insan:'Ahlâkî tercih, tefekkür, merhamet, vicdan azabı, hakikat arayışı; "nasıl ve ne için yaşamalıyım?" sorusu. Hayvanî ruhun "hayatta kalma" sorusundan farkı tam olarak budur.'
+  },
+  {
+    id:'sirri', level:6, ar:'رُوحُ السِّرِّ', tr:'Ruh-ı Sırrî (Sır)',
+    tagline:'Kalbin mahrem merkezi — Nakşibendî yolunun üçüncü latifesi',
+    color:'#6b4a9e', colorName:'Mor', rozet:['akademik','tasavvuf'],
+    tanim:'Kalbin ve aklın ötesinde, insanın en ince ve en mahrem manevî merkezlerinden biri sayılan "sır". Bu kavram klasik felsefî dörtlü ruh tasnifinde değil, tasavvufun letâif (incelikler) sisteminde yer alır.',
+    akademik:{ text:'TDV İslâm Ansiklopedisi\'nin "Letâif-i Hamse" maddesine göre sır, Nakşibendiyye-Müceddidiyye ve Hâlidiyye tarikatlarında seyrüsülûk usulünü oluşturan beş latifeden (kalp, ruh, sır, hafî, ahfâ) üçüncüsüdür; sol memenin iki parmak üstünde konumlandırılır ve kendine özgü zikir sayısı ile nur rengi vardır.', kaynak:'TDV İslâm Ansiklopedisi, "Letâif-i Hamse" md. (Osman Türer)' },
+    klasik:{ text:'Mahiyetinin gizli olması sebebiyle "sır" adı verildiği aktarılır; bazı geleneklerde kalbin manevî mertebeleri kalp, sır, sırrın sırrı ve hafî şeklinde de sıralanır — yani terim ve sıra tarikattan tarikata değişebilir, tek bir sabit şema yoktur.', kaynak:'TDV İslâm Ansiklopedisi, "Letâif-i Hamse" md.' },
+    kainat:'Doğrudan bir "kâinat tecellisi" örneği bu düzey için verilmez — sır, dışa dönük değil içe dönük bir latife olarak anlatılır.',
+    insan:'Kalbî yöneliş, samimiyet (ihlâs), sessiz ve derin zikir hâli; kişinin kimseye göstermediği, yalnız Allah ile kendisi arasındaki niyet ve muhasebe alanı.',
+    not:'Bu popüler yedili tasnifte "kalp" ve "hafî" latifeleri ayrıca yer almaz — letâif-i hamse\'nin beş durağından ikisi bu şemaya dahil edilmemiştir. Bunu açıkça belirtmek, tasnifin resmî bir dinî hüküm değil, öğretici bir sadeleştirme olduğunu hatırlatır.'
+  },
+  {
+    id:'ahfa', level:7, ar:'الرُّوحُ الْأَخْفَى', tr:'Ruh-ı Ahfâ (En Sırlı)',
+    tagline:'En mahrem nokta — letâifin sonuncusu, Hakk\'a en yakın makam',
+    color:'#e8c85a', colorName:'Nûr (Beyaz-Altın)', rozet:['akademik','tasavvuf'],
+    tanim:'Letâif-i hamsenin son ve en ince durağı. Bu makamda kul, kendi benliğini merkeze koymaktan sıyrılıp yönünü yalnızca Hakk\'a çevirir.',
+    akademik:{ text:'TDV İslâm Ansiklopedisi "Ahfâ" maddesine göre ahfâ, kalp-ruh-sır-hafî-ahfâ şeklinde sıralanan letâif-i hamsenin sonuncusudur; göğsün ortasında kabul edilir ve beş latifenin en içte, en Hak\'la ilişkili olanıdır.', kaynak:'TDV İslâm Ansiklopedisi, "Ahfâ" md.' },
+    klasik:{ text:'Letâif-i hamse zikrini tamamlayan sâlikin kalp latifesinde Hz. Âdem\'in makamına, ahfâda ise en yüksek makama yaklaştığı kabul edilir — bu tarikat içi bir seyrüsülûk sembolizmidir, herkes için aynı hızda işleyen bir zaman çizelgesi değildir.', kaynak:'TDV İslâm Ansiklopedisi, "Letâif-i Hamse" md. (Osman Türer)' },
+    kainat:'"Her şey her an yeniden yaratılmaktadır" fikri en çok bu düzeyle birlikte anılır: âlemin kendi başına sabit olmadığı, varlığını her an Hakk\'ın yaratmasından aldığı düşüncesi. Bunun "âlem Allah\'tır" değil, "âlem Allah\'tan zuhur etmiştir, yaratılmıştır ve O\'nun isimlerine işaret eder" biçiminde okunması tevhid çizgisini korur.',
+    insan:'Benlik davasının, "ben" iddiasının en aza indiği hâl — sitenin Nefs Mertebeleri haritasındaki nefs-i kâmile ufkuyla örtüşür. Fenâ (bağımsız varlık vehmini bırakma) ve bekâ (Hak ile sükûnet bulma) kavramları burada anlam kazanır.',
+    baglanti:{ view:'nefs', label:'Nefs-i Kâmile mertebesiyle karşılaştır →' }
+  }
+];
+
+let openRuhId = null;
+
+function buildRuh() {
+  const wrap = document.getElementById('ruh-ladder');
+  if (!wrap) return;
+  wrap.innerHTML = RUH.map(s => `
+    <div class="nefs-step lvl-${s.level}" style="--step-c:${s.color}" data-id="${s.id}">
+      <div class="nefs-step-num">${s.level}</div>
+      <div class="nefs-step-dot"></div>
+      <div class="nefs-step-names">
+        <div class="nefs-step-arabic">${s.ar}</div>
+        <div class="nefs-step-tr">${s.tr}</div>
+      </div>
+      <div class="nefs-step-tagline">${s.tagline}</div>
+    </div>
+  `).join('');
+  wrap.querySelectorAll('.nefs-step').forEach(el => {
+    el.addEventListener('click', () => openRuhDetail(el.dataset.id));
+  });
+}
+
+function openRuhDetail(id) {
+  const s = RUH.find(x => x.id === id);
+  if (!s) return;
+  openRuhId = id;
+
+  document.querySelectorAll('#ruh-ladder .nefs-step').forEach(el =>
+    el.classList.toggle('open', el.dataset.id === id));
+
+  const panel = document.getElementById('ruh-panel');
+  const inner = document.getElementById('ruh-panel-inner');
+
+  const ayetHtml = s.ayet_meal ? `
+    <div class="section-title">Âyet</div>
+    <div class="quote-box">
+      ${s.ayet_meal}
+      <div class="source-label">— ${s.ayet_kaynak}</div>
+    </div>
+  ` : '';
+
+  const linkHtml = s.baglanti ? `
+    <button class="ruh-link-btn" data-goto="${s.baglanti.view}">${s.baglanti.label}</button>
+  ` : '';
+
+  const notHtml = s.not ? `
+    <div class="section-title" style="margin-top:1rem">Not</div>
+    <div class="section-body" style="color:var(--text-dim);font-size:0.82rem">${s.not}</div>
+  ` : '';
+
+  inner.innerHTML = `
+    <div class="nefs-panel-header" style="--step-c:${s.color}">
+      <div class="nefs-panel-level">Mertebe ${s.level} / 7</div>
+      <div class="nefs-panel-arabic">${s.ar}</div>
+      <div class="nefs-panel-tr">${s.tr}</div>
+      <span class="nefs-panel-badge"><span class="nefs-panel-badge-dot"></span>${s.colorName}</span>
+      <div class="ruh-badges">
+        ${s.rozet.map(r => `<span class="ruh-badge tip-${r}">${ROZET_LABELS[r]}</span>`).join('')}
+      </div>
+    </div>
+    <div class="panel-tabs">
+      <button class="panel-tab active" data-rtab="tanim">Tanım</button>
+      <button class="panel-tab" data-rtab="kaynaklar">Kaynaklar</button>
+      <button class="panel-tab" data-rtab="tecelli">Kâinat &amp; İnsan</button>
+    </div>
+    <div class="panel-content" style="--step-c:${s.color}">
+
+      <div class="tab-section active" data-rtab-content="tanim">
+        ${ayetHtml}
+        <div class="section-title" style="margin-top:${s.ayet_meal ? '1rem' : '0'}">Tanım</div>
+        <div class="section-body">${s.tanim}</div>
+        ${linkHtml}
+        ${notHtml}
+      </div>
+
+      <div class="tab-section" data-rtab-content="kaynaklar">
+        <div class="section-title">Akademik Kaynak</div>
+        <div class="quote-box">
+          ${s.akademik.text}
+          <div class="source-label">— ${s.akademik.kaynak}</div>
+        </div>
+        <div class="section-title" style="margin-top:1rem">Klasik / Tasavvufî Kaynak</div>
+        <div class="quote-box">
+          ${s.klasik.text}
+          <div class="source-label">— ${s.klasik.kaynak}</div>
+        </div>
+      </div>
+
+      <div class="tab-section" data-rtab-content="tecelli">
+        <div class="section-title">Kâinattaki Tecelli</div>
+        <div class="section-body">${s.kainat}</div>
+        <div class="section-title" style="margin-top:1rem">İnsandaki Tecelli</div>
+        <div class="section-body">${s.insan}</div>
+      </div>
+
+    </div>
+  `;
+
+  panel.classList.add('open');
+  panel.scrollTop = 0;
+
+  inner.querySelectorAll('.panel-tab').forEach(t => {
+    t.addEventListener('click', () => {
+      inner.querySelectorAll('.panel-tab').forEach(x => x.classList.toggle('active', x === t));
+      inner.querySelectorAll('.tab-section').forEach(sec =>
+        sec.classList.toggle('active', sec.dataset.rtabContent === t.dataset.rtab));
+    });
+  });
+
+  const goBtn = inner.querySelector('.ruh-link-btn');
+  if (goBtn) goBtn.addEventListener('click', () => {
+    closeRuhPanel();
+    location.hash = buildHash(goBtn.dataset.goto, null, null);
+  });
+}
+
+function closeRuhPanel() {
+  document.getElementById('ruh-panel').classList.remove('open');
+  document.querySelectorAll('#ruh-ladder .nefs-step').forEach(el => el.classList.remove('open'));
+  openRuhId = null;
+}
+
+document.getElementById('ruh-panel-close').addEventListener('click', closeRuhPanel);
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'Escape' && openRuhId) closeRuhPanel();
+});
+
+buildRuh();
+
+loadData();
+</script>
+</body>
+</html>

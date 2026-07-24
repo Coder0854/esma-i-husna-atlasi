@@ -1,0 +1,15 @@
+# Recherche / matériel source volumineux (non nécessaire au site statique)
+Fütûhâtü'l-Mekkiyye/
+
+# Scripts internes de génération de données
+*.py
+apply_mothers.js
+
+# Fichiers de données intermédiaires / sauvegardes
+data/names.backup-*.json
+data/names_part2.json
+data/names_part3.json
+
+# Outils / IDE locaux
+.idea/
+.claude/
