@@ -323,7 +323,7 @@ transform:translate(-50%, -50%);
 width:320px; height:320px; z-index:8;
 transition:opacity 0.3s ease;
 }
-.ayna-mirror-wrap { width:460px; display:none; }
+.ayna-mirror-wrap { width:min(88vw, 560px); height:min(47vw, 300px); display:none; }
 .ayna-mirror-wrap.open { display:block; }
 #davut-svg, #mirror-svg { width:100%; height:100%; pointer-events:none; overflow:visible; }
 .sv { pointer-events:all; cursor:pointer; }
@@ -508,8 +508,8 @@ background:var(--step-c, var(--gold)); box-shadow:0 0 16px var(--step-c, var(--g
 @media(max-width:768px) {
 #nefs-panel, #ruh-panel, #mirror-panel { width:100%; }
 @media(max-width:760px) {
-  .ayna-star-wrap, .ayna-mirror-wrap { width:min(88vw, 320px); height:min(88vw, 320px); }
-  .ayna-mirror-wrap { width:min(94vw, 460px); height:min(60vw, 210px); }
+  .ayna-star-wrap { width:min(88vw, 320px); height:min(88vw, 320px); }
+  .ayna-mirror-wrap { width:min(94vw, 560px); height:min(50vw, 300px); }
   .ayna-mode-switch { flex-wrap:wrap; }
 }
 .nefs-step.lvl-1, .nefs-step.lvl-2, .nefs-step.lvl-3, .nefs-step.lvl-4,
