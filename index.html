@@ -246,6 +246,10 @@
   <div class="ayna-top-label">
     <span data-i18n="ayna_kicker">Tasavvuf · Varlık Ontolojisi</span>
     <h2 id="ayna-mode-title" data-i18n="ayna_title">Ayna — Eşya — Tecelli</h2>
+    <div class="ayna-mode-switch" id="ayna-mode-switch">
+      <button class="ayna-mode-btn active" data-mode="hexagram" data-i18n="ayna_mode_hexagram">Tecellî Şeması</button>
+      <button class="ayna-mode-btn" data-mode="mirror" data-i18n="ayna_mode_mirror">Aynanın Hakikati</button>
+    </div>
   </div>
 
   <!-- Star of Solomon / Mühür-ü Süleyman -->
@@ -334,7 +338,6 @@
 
   <!-- Aynanın Hakikati — optik şema: Vücûd'dan Bekā'ya ışığın yolu -->
   <div class="ayna-mirror-wrap" id="ayna-mirror-wrap">
-    <button class="ayna-mirror-back" id="ayna-mirror-back" data-i18n="ayna_back_label">← Tecellî Şeması</button>
     <svg id="mirror-svg" viewBox="-215 -115 430 230">
       <defs>
         <filter id="mSoftGlow" x="-150%" y="-150%" width="400%" height="400%">
@@ -634,7 +637,7 @@ const I18N_UI = {
     secere_hint_default: "Bir isme dokun",
     ayna_kicker: "Tasavvuf · Varlık Ontolojisi", ayna_title: "Ayna — Eşya — Tecelli",
     ayna_hint: "Suya tıkla — dalga yarat",
-    ayna_back_label: "← Tecellî Şeması",
+    ayna_mode_hexagram: "Tecellî Şeması", ayna_mode_mirror: "Aynanın Hakikati",
     ayna_mirror_title: "Vücûd — A'yân — Ayna — Tecellî — Bekā",
     ayna_mirror_hint: "Bir noktaya dokun — mertebeyi aç",
     nefs_view_title: "Nefs Mertebeleri", ruh_view_title: "Ruh Mertebeleri",
@@ -677,7 +680,7 @@ const I18N_UI = {
     secere_hint_default: "Tap a name",
     ayna_kicker: "Sufism · Ontology of Being", ayna_title: "Mirror — Object — Manifestation",
     ayna_hint: "Tap the water — create a ripple",
-    ayna_back_label: "← Manifestation Diagram",
+    ayna_mode_hexagram: "Manifestation Diagram", ayna_mode_mirror: "The Reality of the Mirror",
     ayna_mirror_title: "Being — Archetypes — Mirror — Manifestation — Subsistence",
     ayna_mirror_hint: "Tap a point — open the stage",
     nefs_view_title: "Stages of the Nafs", ruh_view_title: "Stages of the Spirit",
@@ -720,7 +723,7 @@ const I18N_UI = {
     secere_hint_default: "Touchez un nom",
     ayna_kicker: "Soufisme · Ontologie de l'Être", ayna_title: "Miroir — Objet — Manifestation",
     ayna_hint: "Touchez l'eau — créez une onde",
-    ayna_back_label: "← Schéma de la manifestation",
+    ayna_mode_hexagram: "Schéma de la manifestation", ayna_mode_mirror: "La réalité du miroir",
     ayna_mirror_title: "Être — Archétypes — Miroir — Manifestation — Subsistance",
     ayna_mirror_hint: "Touchez un point — ouvrez l'étape",
     nefs_view_title: "Étapes du Nafs", ruh_view_title: "Étapes de l'Esprit",
@@ -1827,14 +1830,10 @@ window.addEventListener('resize', () => {
     };
 
     // Star vertex clicks (hexagram concepts + mirror-diagram hotspots)
-    // Berzah — hexagramın ayna noktası — tıklanınca kısa tanıtım yerine
-    // doğrudan aynanın optik şemasını açar: iki diyagram değil, tek bir
-    // merkez-detay ilişkisi.
     document.querySelectorAll('.sv').forEach(g => {
       g.onclick = (e) => {
         e.stopPropagation();
-        if (g.dataset.c === 'berzah' && typeof setAynaMode === 'function') setAynaMode('mirror');
-        else if (g.dataset.c) showConcept(g.dataset.c);
+        if (g.dataset.c) showConcept(g.dataset.c);
         else if (g.dataset.mc && typeof openMirrorStep === 'function') openMirrorStep(g.dataset.mc);
       };
     });
@@ -2488,31 +2487,29 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && openMirrorId) closeMirrorPanel();
 });
 
-// ── AYNA GÖRÜNÜM MODU: hexagramın berzah/ayna noktası, aynanın optik ────
-// şemasına açılan kapıdır — iki ayrı yarışan diyagram değil, tek bir
-// bütünün merkez-detay ilişkisi.
+// ── AYNA GÖRÜNÜM MODU: hexagram şeması ⇄ ayna optik şeması ────────────
 let aynaMode = 'hexagram';
 
 function setAynaMode(mode) {
   aynaMode = mode;
-  const starWrap = document.getElementById('ayna-star-wrap');
   const mirWrap = document.getElementById('ayna-mirror-wrap');
   const title = document.getElementById('ayna-mode-title');
   const hint = document.getElementById('ayna-hint-text');
+  document.querySelectorAll('.ayna-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   if (mode === 'mirror') {
-    starWrap.classList.add('faded');
     mirWrap.classList.add('open');
     title.textContent = t('ayna_mirror_title');
     hint.textContent = t('ayna_mirror_hint');
   } else {
-    starWrap.classList.remove('faded');
     mirWrap.classList.remove('open');
     title.textContent = t('ayna_title');
     hint.textContent = t('ayna_hint');
   }
 }
 
-document.getElementById('ayna-mirror-back').addEventListener('click', () => setAynaMode('hexagram'));
+document.querySelectorAll('.ayna-mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => setAynaMode(btn.dataset.mode));
+});
 
 function buildRuh() {
   const wrap = document.getElementById('ruh-ladder');
