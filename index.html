@@ -347,6 +347,16 @@
   </div>
 
   <div class="ayna-hint" data-i18n="ayna_hint">Suya tıkla — dalga yarat</div>
+
+  <button class="ayna-mirror-btn" id="ayna-mirror-btn">
+    <span class="ayna-mirror-btn-ar">مرآة الحقيقة</span>
+    <span class="ayna-mirror-btn-tr">Aynanın Hakikati</span>
+  </button>
+</div>
+
+<div id="mirror-panel">
+  <button class="panel-close" id="mirror-panel-close">✕</button>
+  <div id="mirror-panel-inner"></div>
 </div>
 
 <div id="view-nefs" class="view">
@@ -2197,6 +2207,150 @@ const RUH = [
 ];
 
 let openRuhId = null;
+
+// ── AYNANIN HAKİKATİ (Vahdet-i Vücûd — teknik/kavramsal merdiven) ─────
+// Kaynaklar: TDV İslâm Ansiklopedisi ("Vahdet-i Vücûd" — Ekrem Demirli, "A'yân-ı Sâbite" —
+// Süleyman Uludağ, "Fenâ" — Mustafa Kara, "Kenz-i Mahfî" — İbrahim Hakkı Aydın) ve
+// İbnü'l-Arabî'nin Fütûhât-ı Mekkiyye / Fusûsu'l-Hikem'i.
+const MIRROR = [
+  {
+    id:'vucud', level:1, ar:'اَلْوُجُود', tr:'Vücûd — Hep Var Olan',
+    tagline:'Tek hakiki varlık — her şeyin kendisinden ödünç aldığı öz gerçeklik',
+    color:'#e8c85a', colorName:'Nûr (Beyaz-Altın)',
+    tanim:'Vücûd, var olmanın bizzat kendisidir; tasavvufta yalnızca Hakk\'a ait, zorunlu (vâcib) ve bizatihi kâim olan gerçekliktir. Âlemdeki hiçbir şey kendi başına "var" değildir — varlığını O\'ndan ödünç alır, O\'nsuz bir an bile ayakta duramaz. Ayna metaforunda vücûd, aynanın önündeki ışığın ta kendisidir: ayna ışığı üretmez, yalnız onu gösterir.',
+    akademik:{ text:'"Varlık birdir, o da Hakk\'ın varlığıdır" ve "Vücûd Hakk\'ın vücûdudur" — İbnü\'l-Arabî\'nin bu iki önermesi vahdet-i vücûd anlayışının merkezini oluşturur. Vahdet-i vücûd, varlığı zorunlu ve mümkün diye bölmeden, tek bir gerçeklik olarak ele alan tasavvufî düşünce sistemidir.', kaynak:'TDV İslâm Ansiklopedisi, "Vahdet-i Vücûd" md. (Ekrem Demirli)' },
+    klasik:{ text:'İbn Arabî, Fütûhât-ı Mekkiyye\'de vücûdu ikiye ayırır: Hakk\'a mahsus "vâcib" vücûd ve âleme ait "mümkün" vücûd. Mümkün olan, kendiliğinden yoktur; yalnız Hakk\'ın vücûduyla, O\'nun ışığını yansıtarak var görünür. — Not: İbn Arabî\'nin bu ayna öğretisini anlatırken sıkça andığı "Ben gizli bir hazineydim, bilinmek istedim, bilineyim diye halkı yarattım" sözü, hadis usulü bakımından sahih veya zayıf değil; hadis alimlerince mevzû (uydurma) kabul edilir. İbn Arabî bunu nakil yoluyla değil keşfen doğru sayar. Bu ayrımı bilerek okumak, tasavvufî yorumla sahih nas arasındaki farkı korur.', kaynak:'Fütûhât-ı Mekkiyye, İbn Arabî; TDV İslâm Ansiklopedisi, "Kenz-i Mahfî" md. (İbrahim Hakkı Aydın)' }
+  },
+  {
+    id:'ayan', level:2, ar:'اَلْأَعْيَانُ الثَّابِتَة', tr:"A'yân-ı Sâbite — Aynanın Şekli",
+    tagline:'Her şeyin ilâhî ilimdeki sabit sureti — aynanın hangi biçimde parlayacağını belirleyen kalıp',
+    color:'#8b5a2b', colorName:'Kehribar',
+    tanim:'A\'yân-ı sâbite, eşyanın dış âlemde görünmeden önce Allah\'ın ilmindeki değişmez hakikatleridir — kendi başlarına hiçbir zaman "var" olmamış, yalnız Hakk\'ın ilminde sabit duran "yoklar"dır (ma\'dûmât). Maddenin kendinde bağımsız bir gerçekliği de yoktur: her varlık, kendi a\'yânının izin verdiği ölçüde vücûdu yansıtan geçici bir sûrettir — çokluk, tek vücûdun farklı a\'yâna göre farklı aynalarda görünmesinden doğar.',
+    akademik:{ text:'"Eşyanın birbirinden farklı oluşu, ayrı ayrı varlıklara sahip oluşundan değil, a\'yân-ı sâbitelerinin farklı oluşundandır." Belli bir şeklin çeşitli aynalara farklı biçimde yansımasıyla çokluk meydana gelir; a\'yân-ı sâbite bizzat bu "ayna" durumundadır.', kaynak:'TDV İslâm Ansiklopedisi, "A\'yân-ı Sâbite" md. (Süleyman Uludağ)' },
+    klasik:{ text:'A\'yân-ı sâbite kavramı tasavvuf tarihine İbnü\'l-Arabî ile girmiştir. Ona göre Allah\'ın ilmi mâlûma tâbidir; fakat bu bir kusur değildir, çünkü hakikatte bilen de bilinen de O\'dur.', kaynak:'İbnü\'l-Arabî; TDV "A\'yân-ı Sâbite" md.' }
+  },
+  {
+    id:'mahal', level:3, ar:'مَحَلُّ الظُّهُور', tr:'Aynanın Kendisi — Mahal-i Zuhûr',
+    tagline:'Zuhurun gerçekleştiği yer — kâinat, insan ve kalp, hepsi birer ayna mahallidir',
+    color:'#3058c0', colorName:'Lacivert',
+    tanim:'Ayna, ışığın kaynağı değil, ışığın göründüğü yerdir (mahal-i zuhûr). Kâinatın tamamı, her bir varlık, insanın bedeni ve en yoğun biçimde insan kalbi — hepsi birer ayna mahallidir. Aynanın "içi" onun kabul kapasitesi (istidâdı) — ne kadar cilâlı, ne kadar temiz olduğu; "dışı" ise o kapasiteye göre görünen sûrettir. Aynı ışık, kırık bir aynada parçalı, berrak bir aynada tek ve tam görünür.',
+    akademik:{ text:'Ruh, "ilâhî tecellîyi kabul istidadının gerçekleşmesi" olarak tanımlanır — bu tam olarak bir "ayna olma" tanımıdır: kabul etme kapasitesi ne kadar açılırsa, tecellî o kadar tam görünür.', kaynak:'TDV İslâm Ansiklopedisi, "Ruh" md. (Tasavvuf bl., Süleyman Uludağ)' },
+    klasik:{ text:'İbn Arabî, Fütûhât-ı Mekkiyye\'de insan kalbini "en berrak ayna" olarak niteler; çünkü kalp, celâlî ve cemâlî isimlerin tamamını aynı anda taşıyabilecek genişliktedir — hiçbir başka mahal buna güç yetiremez.', kaynak:'Fütûhât-ı Mekkiyye, İbn Arabî' }
+  },
+  {
+    id:'tecelli2', level:4, ar:'اَلتَّجَلِّي', tr:'Yansıma — Tecellî',
+    tagline:'Aynada görünen sûret — Hakk\'ın isimlerinin eseri, Hakk\'ın zâtının kendisi değil',
+    color:'#2e9e48', colorName:'Yeşil',
+    tanim:'Tecellî, vücûdun bir aynada görünmesidir — ayna neyse tecellî o rengi taşır: kırık aynada kırık, berrak aynada berrak. Bu, "âlem Allah\'tır" demek değildir; âlem Allah\'ın isimlerinin eseridir, tıpkı aynadaki sûretin aynanın kendisi olmayıp yalnız orada görüneni yansıtması gibi. Tecellî her an yenilenir (tecdîd-i hâlk) — âlem her an yok olup her an yeniden var edilir; sabit duran tek şey vücûddur, tecellîler değil.',
+    akademik:{ text:'"Her şey Hakk\'ın tecellî ve görünümünden ibarettir" (Abdürrezzâk el-Kâşânî). Sûfîler, eşyanın Hakk\'ın sıfatlarıyla ilişkisini aynadaki sûretlere benzetir; tecellî, mutlak varlığın mertebelerde görünümünü ifade eder.', kaynak:'TDV İslâm Ansiklopedisi, "Vahdet-i Vücûd" md. (Ekrem Demirli)' },
+    klasik:{ text:'"Nereye dönerseniz Allah\'ın vechi oradadır" (Bakara, 2:115). İbn Arabî bunu, hiçbir mahalin tecellîden hâli olmadığının Kur\'ânî işareti sayar — mesele nereye bakıldığı değil, hangi berraklıkla bakıldığıdır.', kaynak:'Bakara 2:115; Fütûhât-ı Mekkiyye, İbn Arabî' }
+  },
+  {
+    id:'perde', level:5, ar:'حِجَابُ النَّفْس', tr:'Aynayı Perdeleyen — Nefs ve Gaflet',
+    tagline:'Benliğin buğusu — kendini asıl fail sanmak, aynayı kendi rengiyle boyar',
+    color:'#b5342c', colorName:'Siyah / Koyu Kızıl',
+    tanim:'Ayna, üzerine buğu, pas veya toz düştüğünde net yansıtamaz — bazen hiç yansıtmaz, yalnız kendi kirini gösterir. Benlik (nefs) tam olarak budur: kul kendini bağımsız bir fail, bağımsız bir "ben" sandığında, aynanın yüzeyi kendi hevâsıyla kaplanır ve arkasındaki ışığı değil, yalnız kendi gölgesini gösterir hâle gelir.',
+    akademik:{ text:'Tasavvufta nefis denince "şer ve günahın kaynağı olan, kötü huy ve süflî arzuların tamamı" anlaşılır — ama bu, terbiye edilmesi gereken bir alandır, yok edilecek bir düşman değil.', kaynak:'TDV İslâm Ansiklopedisi, "Nefis" md. (Süleyman Uludağ / Ömer Türker)' },
+    klasik:{ text:'Gazzâlî, İhyâ\'da kalbi bir aynaya benzetir; her günah ve her gaflet anı bu aynayı is gibi karartan bir leke bırakır. Kalp tamamen karardığında hiçbir hakikat orada görünmez olur — Kur\'ân bunu "kalplerinin üzerine kazandıkları pas tutmuştur" (Mutaffifîn, 83:14) diye anlatır.', kaynak:'İhyâ-u Ulûmi\'d-Dîn, İmâm-ı Gazzâlî; Mutaffifîn 83:14' }
+  },
+  {
+    id:'fena2', level:6, ar:'اَلْفَنَاء', tr:'Cilâ — Fenâ',
+    tagline:'Benliğin yok oluşu — aynanın kendi kirinden arınıp asıl parlaklığına dönmesi',
+    color:'#6b4a9e', colorName:'Mor',
+    tanim:'Fenâ, kulun kendi fiil ve sıfatlarını "kendinden" görmekten vazgeçmesidir — bağımsız bir ben iddiasının düşmesi. Bu, yok olmak (adem) değildir; kendine ait sandığı şeyin aslında hep Hakk\'a ait olduğunu görmektir. Ayna metaforunda fenâ, aynanın cilâlanması, üzerindeki pasın silinmesidir — ayna yok olmaz, tam tersine asıl işlevine kavuşur.',
+    akademik:{ text:'Ebû Saîd el-Harrâz\'a göre "Fenâ kulun kulluğunu görmekten fânî olması, bekā ise ilâhî tecellîleri temaşa etmekle bâkî olmasıdır." İbnü\'l-Arabî fenâyı yedi mertebeye ayırır: günahın, fiillerin, sıfatların, zâtın, âlemin, Allah\'tan başka her şeyin ve nihayet bu fenâ bilincinin de fânî olması.', kaynak:'TDV İslâm Ansiklopedisi, "Fenâ" md. (Mustafa Kara)' },
+    klasik:{ text:'Sitenin Nefs Mertebeleri haritasındaki nefs-i kâmile — "benlik davasının düşmesi" — tam olarak bu hâli tarif eder; fenâ, nefsin son mertebesiyle aynı ufuktur.', kaynak:'Krş. Nefs-i Kâmile (Sâfiye), bu site' },
+    baglanti:{ view:'nefs', label:'Nefs-i Kâmile mertebesiyle karşılaştır →' }
+  },
+  {
+    id:'beka2', level:7, ar:'اَلْبَقَاء', tr:'Perdesiz Görüş — Bekā',
+    tagline:'Aynanın tam berraklığı — Hakk\'ın tecellîsi araya hiçbir gölge girmeden görünür',
+    color:'#c9a227', colorName:'Altın',
+    tanim:'Bekā, fenâdan sonra kulun Hakk\'ın tecellîleriyle bâkî (kalıcı, sürekli) olmasıdır. Ayna artık kendi lekesini göstermez; yalnız karşısındakini, tam ve perdesiz biçimde yansıtır. Bu, kulun "Allah olması" değildir — kulun kendi bulanıklığının aradan çekilmesidir. Görünen hep Hakk\'ın nûrudur; ayna yalnız ona berraklaşarak hizmet eder.',
+    akademik:{ text:'Fenâ ve bekā birlikte kullanılan, tasavvuf yolculuğunun son durağını tanımlayan iki kavramdır — fenâ hâlinin ardından bekā hâli gelir.', kaynak:'TDV İslâm Ansiklopedisi, "Fenâ" md. (Mustafa Kara)' },
+    klasik:{ text:'İbn Arabî\'ye göre İnsân-ı Kâmil bu berzah noktasında durur: hem fânî (kendi bağımsız varlığından) hem bâkî (Hakk\'ın tecellîsiyle). Bu yüzden "en berrak ayna" odur — ne kendi sûretini araya sokar ne tecellîyi eksik yansıtır.', kaynak:'Fütûhât-ı Mekkiyye, İbn Arabî' }
+  }
+];
+
+let openMirrorId = null;
+
+function openMirrorStep(id) {
+  const s = MIRROR.find(x => x.id === id);
+  if (!s) return;
+  openMirrorId = id;
+
+  const inner = document.getElementById('mirror-panel-inner');
+  const linkHtml = s.baglanti ? `<button class="ruh-link-btn" data-goto="${s.baglanti.view}">${s.baglanti.label}</button>` : '';
+  const prevM = MIRROR.find(m => m.level === s.level - 1);
+  const nextM = MIRROR.find(m => m.level === s.level + 1);
+
+  inner.innerHTML = `
+    <div class="panel-nav">
+      <button id="mirror-prev" title="Önceki (←)" ${prevM ? '' : 'disabled'}>‹</button>
+      <button id="mirror-next" title="Sonraki (→)" ${nextM ? '' : 'disabled'}>›</button>
+    </div>
+    <div class="nefs-panel-header" style="--step-c:${s.color}">
+      <div class="nefs-panel-level">${t('panel_step_of')} ${s.level} / 7</div>
+      <div class="nefs-panel-arabic">${s.ar}</div>
+      <div class="nefs-panel-tr">${s.tr}</div>
+      <span class="nefs-panel-badge"><span class="nefs-panel-badge-dot"></span>${s.colorName}</span>
+    </div>
+    <div class="panel-tabs">
+      <button class="panel-tab active" data-mtab="tanim">${t('tab_tanim')}</button>
+      <button class="panel-tab" data-mtab="kaynaklar">${t('tab_kaynaklar')}</button>
+    </div>
+    <div class="panel-content" style="--step-c:${s.color}">
+      <div class="tab-section active" data-mtab-content="tanim">
+        ${trOnlyBadge()}
+        <div class="section-body">${s.tanim}</div>
+        ${linkHtml}
+      </div>
+      <div class="tab-section" data-mtab-content="kaynaklar">
+        ${trOnlyBadge()}
+        <div class="section-title">${t('label_academic_source')}</div>
+        <div class="quote-box">
+          ${s.akademik.text}
+          <div class="source-label">— ${s.akademik.kaynak}</div>
+        </div>
+        <div class="section-title" style="margin-top:1rem">${t('label_classical_source')}</div>
+        <div class="quote-box">
+          ${s.klasik.text}
+          <div class="source-label">— ${s.klasik.kaynak}</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  inner.querySelectorAll('.panel-tab').forEach(tb => {
+    tb.addEventListener('click', () => {
+      inner.querySelectorAll('.panel-tab').forEach(x => x.classList.toggle('active', x === tb));
+      inner.querySelectorAll('.tab-section').forEach(sec =>
+        sec.classList.toggle('active', sec.dataset.mtabContent === tb.dataset.mtab));
+    });
+  });
+  const goBtn = inner.querySelector('.ruh-link-btn');
+  if (goBtn) goBtn.addEventListener('click', () => {
+    closeMirrorPanel();
+    location.hash = buildHash(goBtn.dataset.goto, null, null);
+  });
+  if (prevM) document.getElementById('mirror-prev').addEventListener('click', () => openMirrorStep(prevM.id));
+  if (nextM) document.getElementById('mirror-next').addEventListener('click', () => openMirrorStep(nextM.id));
+
+  document.getElementById('mirror-panel').classList.add('open');
+  document.getElementById('mirror-panel').scrollTop = 0;
+}
+
+function closeMirrorPanel() {
+  document.getElementById('mirror-panel').classList.remove('open');
+  openMirrorId = null;
+}
+
+document.getElementById('ayna-mirror-btn').addEventListener('click', () => openMirrorStep('vucud'));
+document.getElementById('mirror-panel-close').addEventListener('click', closeMirrorPanel);
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'Escape' && openMirrorId) closeMirrorPanel();
+});
 
 function buildRuh() {
   const wrap = document.getElementById('ruh-ladder');
