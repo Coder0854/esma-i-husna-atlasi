@@ -245,11 +245,15 @@
 
   <div class="ayna-top-label">
     <span data-i18n="ayna_kicker">Tasavvuf · Varlık Ontolojisi</span>
-    <h2 data-i18n="ayna_title">Ayna — Eşya — Tecelli</h2>
+    <h2 id="ayna-mode-title" data-i18n="ayna_title">Ayna — Eşya — Tecelli</h2>
+    <div class="ayna-mode-switch" id="ayna-mode-switch">
+      <button class="ayna-mode-btn active" data-mode="hexagram" data-i18n="ayna_mode_hexagram">Tecellî Şeması</button>
+      <button class="ayna-mode-btn" data-mode="mirror" data-i18n="ayna_mode_mirror">Aynanın Hakikati</button>
+    </div>
   </div>
 
   <!-- Star of Solomon / Mühür-ü Süleyman -->
-  <div class="ayna-star-wrap">
+  <div class="ayna-star-wrap" id="ayna-star-wrap">
     <svg id="davut-svg" viewBox="-160 -160 320 320">
       <!-- Upper triangle △ (Hak/Divine descending) — gold -->
       <polygon points="0,-140 -121,70 121,70"
@@ -332,6 +336,95 @@
     </svg>
   </div>
 
+  <!-- Aynanın Hakikati — optik şema: Vücûd'dan Bekā'ya ışığın yolu -->
+  <div class="ayna-mirror-wrap" id="ayna-mirror-wrap">
+    <svg id="mirror-svg" viewBox="-200 -95 400 190">
+      <defs>
+        <linearGradient id="mirrorGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(120,150,255,0.06)"/>
+          <stop offset="45%" stop-color="rgba(220,230,255,0.22)"/>
+          <stop offset="55%" stop-color="rgba(220,230,255,0.22)"/>
+          <stop offset="100%" stop-color="rgba(120,150,255,0.06)"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Işık yolu: Vücûd -> A'yân -> Ayna -> Tecellî -> Bekā -->
+      <line x1="-165" y1="0" x2="-92" y2="0" stroke="rgba(232,200,90,0.35)" stroke-width="1" stroke-dasharray="2 3"/>
+      <line x1="-70" y1="0" x2="-8" y2="0" stroke="rgba(139,120,80,0.3)" stroke-width="1" stroke-dasharray="2 3"/>
+
+      <!-- VÜCÛD: kaynak -->
+      <circle cx="-165" cy="0" r="6" fill="rgba(232,200,90,0.35)" stroke="rgba(232,200,90,0.9)" stroke-width="1.2">
+        <animate attributeName="r" values="6;9;6" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <g stroke="rgba(232,200,90,0.35)" stroke-width="0.8">
+        <line x1="-165" y1="-16" x2="-165" y2="-11"/>
+        <line x1="-165" y1="11" x2="-165" y2="16"/>
+        <line x1="-181" y1="0" x2="-176" y2="0"/>
+        <line x1="-178" y1="-11" x2="-174" y2="-8"/>
+        <line x1="-178" y1="11" x2="-174" y2="8"/>
+      </g>
+      <text x="-165" y="-24" text-anchor="middle" fill="rgba(232,200,90,0.8)" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">VÜCÛD</text>
+
+      <!-- A'YÂN-I SÂBİTE: şekillendirici prizma -->
+      <polygon points="-82,-10 -71,0 -82,10 -93,0" fill="rgba(139,90,43,0.22)" stroke="rgba(180,130,70,0.75)" stroke-width="1"/>
+      <text x="-82" y="-18" text-anchor="middle" fill="rgba(180,130,70,0.85)" font-size="7.5" font-family="Georgia,serif" letter-spacing="0.5">A'YÂN-I SÂBİTE</text>
+
+      <!-- MAHAL-İ ZUHÛR: aynanın kendisi -->
+      <g transform="rotate(-7)">
+        <rect x="-7" y="-48" width="14" height="96" rx="4" fill="url(#mirrorGrad)" stroke="rgba(201,162,39,0.55)" stroke-width="1.1"/>
+        <!-- Perde: buğu/gaflet, alt yarı -->
+        <g opacity="0.85">
+          <ellipse cx="-1" cy="20" rx="9" ry="7" fill="rgba(140,140,150,0.28)"/>
+          <ellipse cx="2" cy="32" rx="7" ry="6" fill="rgba(140,140,150,0.22)"/>
+          <ellipse cx="-2" cy="10" rx="6" ry="5" fill="rgba(140,140,150,0.18)"/>
+        </g>
+        <!-- Fenâ: cilâ/parlaklık, üst yarı -->
+        <g stroke="rgba(240,224,184,0.8)" stroke-width="0.7" opacity="0.9">
+          <line x1="-4" y1="-30" x2="4" y2="-30"/>
+          <line x1="0" y1="-34" x2="0" y2="-26"/>
+          <line x1="-3" y1="-18" x2="3" y2="-18"/>
+          <line x1="0" y1="-21" x2="0" y2="-15"/>
+        </g>
+      </g>
+      <text x="0" y="62" text-anchor="middle" fill="rgba(201,162,39,0.85)" font-size="8" font-family="Georgia,serif" letter-spacing="1">MAHAL-İ ZUHÛR</text>
+      <text x="0" y="-30" text-anchor="middle" fill="rgba(240,224,184,0.55)" font-size="6.3" font-family="Georgia,serif" letter-spacing="0.5">fenâ — cilâ</text>
+      <text x="0" y="42" text-anchor="middle" fill="rgba(160,160,170,0.6)" font-size="6.3" font-family="Georgia,serif" letter-spacing="0.5">nefs — perde</text>
+
+      <!-- TECELLÎ: yansıyan ışınlar -->
+      <g stroke="rgba(46,158,72,0.5)" stroke-width="0.9">
+        <line x1="14" y1="0" x2="80" y2="-22"/>
+        <line x1="14" y1="0" x2="85" y2="0"/>
+        <line x1="14" y1="0" x2="80" y2="22"/>
+      </g>
+      <text x="55" y="-30" text-anchor="middle" fill="rgba(46,158,72,0.85)" font-size="7.5" font-family="Georgia,serif" letter-spacing="1">TECELLÎ</text>
+
+      <!-- BEKĀ: perdesiz, tam açılım -->
+      <circle cx="168" cy="0" r="10" fill="rgba(232,200,90,0.12)" stroke="rgba(232,200,90,0.85)" stroke-width="1.2">
+        <animate attributeName="r" values="10;13;10" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <g stroke="rgba(232,200,90,0.55)" stroke-width="0.9">
+        <line x1="168" y1="-24" x2="168" y2="-16"/>
+        <line x1="168" y1="16" x2="168" y2="24"/>
+        <line x1="144" y1="0" x2="152" y2="0"/>
+        <line x1="148" y1="-17" x2="154" y2="-11"/>
+        <line x1="148" y1="17" x2="154" y2="11"/>
+        <line x1="188" y1="-17" x2="182" y2="-11"/>
+        <line x1="188" y1="17" x2="182" y2="11"/>
+      </g>
+      <text x="168" y="-32" text-anchor="middle" fill="rgba(232,200,90,0.9)" font-size="8.5" font-family="Georgia,serif" letter-spacing="1.5">BEKĀ</text>
+
+      <!-- Tıklanabilir noktalar -->
+      <g class="sv" data-mc="vucud"><circle cx="-165" cy="0" r="15" fill="rgba(232,200,90,0)" stroke="none"/></g>
+      <g class="sv" data-mc="ayan"><circle cx="-82" cy="0" r="15" fill="rgba(180,130,70,0)" stroke="none"/></g>
+      <g class="sv" data-mc="fena2"><circle cx="0" cy="-26" r="14" fill="rgba(240,224,184,0)" stroke="none"/></g>
+      <g class="sv" data-mc="perde"><circle cx="0" cy="24" r="14" fill="rgba(140,140,150,0)" stroke="none"/></g>
+      <g class="sv" data-mc="mahal"><circle cx="0" cy="0" r="10" fill="rgba(201,162,39,0)" stroke="none"/></g>
+      <g class="sv" data-mc="tecelli2"><circle cx="55" cy="0" r="16" fill="rgba(46,158,72,0)" stroke="none"/></g>
+      <g class="sv" data-mc="beka2"><circle cx="168" cy="0" r="17" fill="rgba(232,200,90,0)" stroke="none"/></g>
+    </svg>
+  </div>
+
   <!-- Concept popup -->
   <div class="ayna-concept" id="ayna-concept">
     <button class="ac-close" id="ac-close">✕</button>
@@ -346,12 +439,7 @@
     <div class="ayna-quote-src" id="ayna-q-src"></div>
   </div>
 
-  <div class="ayna-hint" data-i18n="ayna_hint">Suya tıkla — dalga yarat</div>
-
-  <button class="ayna-mirror-btn" id="ayna-mirror-btn">
-    <span class="ayna-mirror-btn-ar">مرآة الحقيقة</span>
-    <span class="ayna-mirror-btn-tr">Aynanın Hakikati</span>
-  </button>
+  <div class="ayna-hint" id="ayna-hint-text" data-i18n="ayna_hint">Suya tıkla — dalga yarat</div>
 </div>
 
 <div id="mirror-panel">
@@ -481,6 +569,8 @@ function applyLanguage() {
   if (typeof buildRuh === 'function' && currentView === 'ruhlar') buildRuh();
   if (typeof openRuhDetail === 'function' && openRuhId) openRuhDetail(openRuhId);
   if (typeof buildSecere === 'function' && currentView === 'secere') buildSecere();
+  if (typeof setAynaMode === 'function' && typeof aynaMode !== 'undefined') setAynaMode(aynaMode);
+  if (typeof openMirrorStep === 'function' && openMirrorId) openMirrorStep(openMirrorId);
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -514,6 +604,9 @@ const I18N_UI = {
     secere_hint_default: "Bir isme dokun",
     ayna_kicker: "Tasavvuf · Varlık Ontolojisi", ayna_title: "Ayna — Eşya — Tecelli",
     ayna_hint: "Suya tıkla — dalga yarat",
+    ayna_mode_hexagram: "Tecellî Şeması", ayna_mode_mirror: "Aynanın Hakikati",
+    ayna_mirror_title: "Vücûd — A'yân — Ayna — Tecellî — Bekā",
+    ayna_mirror_hint: "Bir noktaya dokun — mertebeyi aç",
     nefs_view_title: "Nefs Mertebeleri", ruh_view_title: "Ruh Mertebeleri",
     content_tr_only: "Bu bölüm şu an yalnızca Türkçe",
     panel_name_of: "İsim",
@@ -554,6 +647,9 @@ const I18N_UI = {
     secere_hint_default: "Tap a name",
     ayna_kicker: "Sufism · Ontology of Being", ayna_title: "Mirror — Object — Manifestation",
     ayna_hint: "Tap the water — create a ripple",
+    ayna_mode_hexagram: "Manifestation Diagram", ayna_mode_mirror: "The Reality of the Mirror",
+    ayna_mirror_title: "Being — Archetypes — Mirror — Manifestation — Subsistence",
+    ayna_mirror_hint: "Tap a point — open the stage",
     nefs_view_title: "Stages of the Nafs", ruh_view_title: "Stages of the Spirit",
     content_tr_only: "This section is currently available in Turkish only",
     panel_name_of: "Name",
@@ -594,6 +690,9 @@ const I18N_UI = {
     secere_hint_default: "Touchez un nom",
     ayna_kicker: "Soufisme · Ontologie de l'Être", ayna_title: "Miroir — Objet — Manifestation",
     ayna_hint: "Touchez l'eau — créez une onde",
+    ayna_mode_hexagram: "Schéma de la manifestation", ayna_mode_mirror: "La réalité du miroir",
+    ayna_mirror_title: "Être — Archétypes — Miroir — Manifestation — Subsistance",
+    ayna_mirror_hint: "Touchez un point — ouvrez l'étape",
     nefs_view_title: "Étapes du Nafs", ruh_view_title: "Étapes de l'Esprit",
     content_tr_only: "Cette section n'est actuellement disponible qu'en turc",
     panel_name_of: "Nom",
@@ -1697,9 +1796,13 @@ window.addEventListener('resize', () => {
       splash(cx, cy, 50, 2);
     };
 
-    // Star vertex clicks
+    // Star vertex clicks (hexagram concepts + mirror-diagram hotspots)
     document.querySelectorAll('.sv').forEach(g => {
-      g.onclick = (e) => { e.stopPropagation(); showConcept(g.dataset.c); };
+      g.onclick = (e) => {
+        e.stopPropagation();
+        if (g.dataset.c) showConcept(g.dataset.c);
+        else if (g.dataset.mc && typeof openMirrorStep === 'function') openMirrorStep(g.dataset.mc);
+      };
     });
     document.getElementById('ac-close').onclick = () =>
       document.getElementById('ayna-concept').classList.remove('open');
@@ -2345,11 +2448,34 @@ function closeMirrorPanel() {
   openMirrorId = null;
 }
 
-document.getElementById('ayna-mirror-btn').addEventListener('click', () => openMirrorStep('vucud'));
 document.getElementById('mirror-panel-close').addEventListener('click', closeMirrorPanel);
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT') return;
   if (e.key === 'Escape' && openMirrorId) closeMirrorPanel();
+});
+
+// ── AYNA GÖRÜNÜM MODU: hexagram şeması ⇄ ayna optik şeması ────────────
+let aynaMode = 'hexagram';
+
+function setAynaMode(mode) {
+  aynaMode = mode;
+  const mirWrap = document.getElementById('ayna-mirror-wrap');
+  const title = document.getElementById('ayna-mode-title');
+  const hint = document.getElementById('ayna-hint-text');
+  document.querySelectorAll('.ayna-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  if (mode === 'mirror') {
+    mirWrap.classList.add('open');
+    title.textContent = t('ayna_mirror_title');
+    hint.textContent = t('ayna_mirror_hint');
+  } else {
+    mirWrap.classList.remove('open');
+    title.textContent = t('ayna_title');
+    hint.textContent = t('ayna_hint');
+  }
+}
+
+document.querySelectorAll('.ayna-mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => setAynaMode(btn.dataset.mode));
 });
 
 function buildRuh() {
